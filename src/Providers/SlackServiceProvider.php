@@ -26,9 +26,12 @@ class SlackServiceProvider extends ServiceProvider implements DeferrableProvider
 
     protected function registerConfiguration()
     {
-        $this->publishes([
-            __DIR__.'/../config/slack.php' => config_path('slack.php'),
-        ]);
+        if ($this->app->runningInConsole())
+        {
+            $this->publishes([
+                __DIR__.'/../../config/slack.php' => config_path('slack.php'),
+            ]);
+        }
     }
 
     protected function registerCommands()
