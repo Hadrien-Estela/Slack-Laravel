@@ -9,5 +9,5 @@ deploy:
   only:
     - tags
   script:
-	- apt install -y curl
-    - curl --header "Job-Token: $CI_JOB_TOKEN" --data tag=$CI_COMMIT_TAG "https://gitlab.virtuosereality.com/api/v4/projects/$CI_PROJECT_ID/packages/composer"
+    - apt install -y curl
+    - 'curl --header "Job-Token: $CI_JOB_TOKEN" --data tag=$CI_COMMIT_TAG "https://gitlab.virtuosereality.com/api/v4/projects/$CI_PROJECT_ID/packages/composer"'
