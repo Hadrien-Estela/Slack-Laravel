@@ -1,0 +1,15 @@
+<?php
+
+namespace {{ namespace }};
+
+use Slack\Objects\SlackView;
+
+class {{ class }} extends SlackView
+{
+
+    public function __construct()
+    {
+        parent::__construct({{ type }}, 'new View');
+    }
+
+}

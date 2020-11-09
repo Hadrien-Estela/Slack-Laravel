@@ -1,0 +1,15 @@
+<?php
+
+namespace {{ namespace }};
+
+use Slack\Objects\SlackMessage;
+
+class {{ class }} extends SlackMessage
+{
+
+    public function __construct()
+    {
+
+    }
+
+}

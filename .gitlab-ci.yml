@@ -8,6 +8,8 @@ deploy:
     GIT_STRATEGY: none
   only:
     - tags
+  except:
+    - branches
   script:
     - apt update -y
     - apt install -y curl
