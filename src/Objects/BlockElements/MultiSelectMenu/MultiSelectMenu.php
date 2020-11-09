@@ -1,6 +1,6 @@
 <?php
 
-namespace Slack\Objects\BlockElements\SelectMenu;
+namespace Slack\Objects\BlockElements\MultiSelectMenu;
 
 use Slack\Objects\BlockElements\Menu;
 
