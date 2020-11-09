@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Notifications\ChannelManager;
+
 use Slack\Services\Slack;
 use Slack\Notifications\Channels;
 
@@ -19,9 +20,26 @@ class SlackServiceProvider extends ServiceProvider implements DeferrableProvider
      */
     public function boot()
     {
+        $this->registerConfiguration();
+        $this->registerCommands();
+    }
+
+    protected function registerConfiguration()
+    {
         $this->publishes([
             __DIR__.'/../config/slack.php' => config_path('slack.php'),
         ]);
+    }
+
+    protected function registerCommands()
+    {
+        if ($this->app->runningInConsole())
+        {
+            $this->commands([
+                \Slack\Console\Commands\SlackMessageMakeCommand::class,
+                \Slack\Console\Commands\SlackViewMakeCommand::class
+            ]);
+        }
     }
 
     /**
