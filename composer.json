@@ -1,5 +1,5 @@
 {
-    "name": "vrs-laravel/slack",
+    "name": "virtuose-reality/slack-laravel",
     "description": "Slack API integration for Laravel framework.",
     "type": "package",
     "keywords": [
@@ -25,6 +25,9 @@
         "nesbot/carbon": "^2.41"
     },
     "autoload": {
+        "psr-4": {
+            "Slack\\": "src/"
+        },
         "files": [
             "src/helpers.php"
         ]
@@ -38,5 +41,5 @@
                 "Slack": "Slack\\Facades\\Slack"
             }
         }
-    },
+    }
 }

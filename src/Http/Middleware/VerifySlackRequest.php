@@ -12,7 +12,7 @@ use Carbon\Carbon;
 class VerifySlackRequest
 {
     /**
-     * Handle an incoming slack request.
+     * verify an incoming slack request.
      * https://api.slack.com/authentication/verifying-requests-from-slack
      * Source: https://gist.github.com/pingcheng/f7500adf1b1009df3ed341f511305b0d
      *
