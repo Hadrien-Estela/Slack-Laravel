@@ -1,7 +1,11 @@
 {
     "name": "vrs-laravel/slack",
     "description": "Slack API integration for Laravel framework.",
-    "type": "laravel, slack",
+    "type": "package",
+	"keywords": [
+		"laravel",
+		"slack"
+	],
     "license": "MIT",
     "authors": [
         {
@@ -9,7 +13,7 @@
             "email": "hadrien@virtuosereality.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
 		"php": "^7.3.0",
 		"laravel/framework": "^8.0"
