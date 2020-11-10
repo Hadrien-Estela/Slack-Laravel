@@ -27,6 +27,9 @@ abstract class SlackCommand
      */
     public function handle(Request $request, Closure $next)
     {
+        // Auth the user if exists.
+        $this->authenticateUser($request->input('user_id'));
+
         // Create GetOpt instance.
         $opt = new GetOpt(null, [GetOpt::SETTING_STRICT_OPERANDS => true]);
         $opt->getHelp()->setUsageTemplate($this->usageTemplatePath());
