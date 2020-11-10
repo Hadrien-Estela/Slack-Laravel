@@ -48,7 +48,7 @@ class Api
      * @param  string $content The content of the request
      * @return Illuminate\Http\Client\Response The Http response.
      */
-    public function post($method, $content)
+    public function post($method)
     {
         $response = Http::withToken($this->token)->asForm()->post($this->getUrl($method), $content);
 
@@ -65,7 +65,7 @@ class Api
      * @param  string $content The content of the request
      * @return Illuminate\Http\Client\Response The Http response.
      */
-    public function get($method, $content)
+    public function get($method, $content = null)
     {
         $response = Http::withToken($this->token)->asForm()->get($this->getUrl($method), $content);
 
