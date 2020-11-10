@@ -22,10 +22,13 @@ class ActionsBlock extends Block
 
     /**
      * Build a new block instance.
+     *
+     * @param array $elements
      */
-    public function __construct()
+    public function __construct(array $elements = [])
     {
         parent::__construct(Block::Actions);
+        $this->elements = $elements;
     }
 
     /**

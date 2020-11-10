@@ -19,7 +19,10 @@ abstract class SlackInteraction
     public function handle(Request $request, Closure $next)
     {
         // Get the JSON payload from the slack request.
-        $payload = json_decode($request->input('payload'));
+        if (is_object($request->input('payload'))) // In case already passed here
+            $payload = $request->input('payload');
+        else
+            $payload = json_decode($request->input('payload'));
 
         // Add the payload to the Request instance.
         $request->merge([

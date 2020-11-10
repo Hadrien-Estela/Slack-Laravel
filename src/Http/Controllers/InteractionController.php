@@ -101,7 +101,7 @@ abstract class InteractionController extends Controller
             //     break;
 
             default:
-                throw new Exception("Non implemented action type: $payload->type");
+                throw new Exception("Not implemented action type: $payload->type");
                 break;
         }
     }
@@ -120,12 +120,17 @@ abstract class InteractionController extends Controller
         {
             $callable = $callback_actions_arr[$view->callback_id];
             if (is_callable($callable))
-                return call_user_func(array(new $callable[0],$callable[1]), $request, $view);
+            if (is_callable($callable))
+            {
+                $controller = new $callable[0];
+                $method = $callable[1];
+                return call_user_func(array($controller,$method), $request, $view);
+            }
             else
                 throw new BadFunctionCallException('Non callable `view` callback.');
         }
         else
-            throw new Exception("Non implemented `view` callback: $callback_id");
+            throw new Exception("Not implemented `view` callback: $callback_id");
     }
 
     /**
@@ -142,12 +147,16 @@ abstract class InteractionController extends Controller
             {
                 $callable = $this->block_actions_callback_actions[$action->action_id];
                 if (is_callable($callable))
-                    call_user_func(array(new $callable[0],$callable[1]), $request, $action);
+                {
+                    $controller = new $callable[0];
+                    $method = $callable[1];
+                    call_user_func(array($controller,$method), $request, $action);
+                }
                 else
                     throw new BadFunctionCallException('Non callable `block_action` callback.');
             }
             else
-                throw new Exception("Non implemented `block_action` callback: $action->action_id");
+                throw new Exception("Not implemented `block_action` callback: $action->action_id");
         }
     }
 
@@ -163,12 +172,16 @@ abstract class InteractionController extends Controller
         {
             $callable = $this->block_suggestions_callback_actions[$action_id];
             if (is_callable($callable))
-                return call_user_func(array(new $callable[0],$callable[1]), $request);
+            {
+                $controller = new $callable[0];
+                $method = $callable[1];
+                return call_user_func(array($controller,$method), $request);
+            }
             else
                 throw new BadFunctionCallException('Non callable `block_suggestion` callback.');
         }
         else
-            throw new Exception("Non implemented `block_suggestion` callback: $action_id");
+            throw new Exception("Not implemented `block_suggestion` callback: $action_id");
     }
 
     private function shortcut(Request $request, string $callback_id)
@@ -177,12 +190,16 @@ abstract class InteractionController extends Controller
         {
             $callable = $this->shortcut_callback_actions[$callback_id];
             if (is_callable($callable))
-                return call_user_func(array(new $callable[0],$callable[1]), $request);
+            {
+                $controller = new $callable[0];
+                $method = $callable[1];
+                return call_user_func(array($controller,$method), $request);
+            }
             else
                 throw new BadFunctionCallException('Non callable `shortcut` callback.');
         }
         else
-            throw new Exception("Non implemented `shortcut` callback: $callback_id");
+            throw new Exception("Not implemented `shortcut` callback: $callback_id");
     }
 
 }

@@ -23,18 +23,18 @@ class StaticSelect extends SelectMenu
      * @param string $placeholder    [description]
      * @param array  $options        [description]
      * @param array  $groups         [description]
-     * @param array  $initialOptions [description]
+     * @param Option  $initialOptions [description]
      */
     public function __construct(string $action_id,
                                 string $placeholder = 'Select an option',
                                 array $options = [],
                                 array $groups = [],
-                                array $initialOptions = [])
+                                Option $initialOption = null)
     {
         parent::__construct(SelectMenu::Static, $action_id, $placeholder);
         $this->options = $options;
         $this->groups = $groups;
-        $this->initial_options = $initialOptions;
+        $this->initial_option = $initialOption;
     }
 
     /**

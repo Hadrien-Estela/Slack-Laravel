@@ -1,5 +1,11 @@
 # Changelog
 
+[UNRELEASED]
+
+* Fix `Slack\Objects\BlockElements\SelectMenu\StaticSelect`
+  Contruct now takes a single option as `initial_option`.
+* `Slack\Objects\Blocks\ActionBlock` can now take an array of elements in contructor.
+
 ## [1.1.0] - 2020-11-10
 
 * Add abstract class `Slack\Http\Middleware\SlackInteraction`.
