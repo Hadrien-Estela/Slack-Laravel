@@ -1,11 +1,14 @@
 # Changelog
 
-## [Unreleased]
+## [1.1.0]
 
 * Add abstract class \Slack\Http\Middleware\SlackInteraction.
   This class provides a way to handle a slack interaction payload and authenticate the user.
 * Add abstract class \Slack\Http\Middleware\SlackCommand.
   This class provides a way to handle a slack command using GetOpt and authenticate the user.
+* Add abstract class \Slack\Http\Controllers\InteractionController.
+  This class provides a way to handle interaction hand dispatch them to your application using callbacks.
+* `slack_response_action()` helper method can now be used to respond to block_suggestion by calling `slack_response_action()->options($options_array)`;
 
 ## [1.0.0] - 2020-11-09
 
