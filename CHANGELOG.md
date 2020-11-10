@@ -7,6 +7,7 @@
 * `Slack\Objects\Blocks\ActionBlock` can now take an array of elements in contructor.
 * Fix `Slack\Http\Controllers\InteractionController` block_suggestions.
 * Fix missing user authentication in `Slack\Http\Middleware\SlackCommand`.
+* Improve `Slack\Helpers\View`.
 
 ## [1.1.0] - 2020-11-10
 

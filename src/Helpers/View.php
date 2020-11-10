@@ -42,7 +42,23 @@ class View
         foreach ($view->state->values as $key => $value)
         {
             foreach ($value as $action_id => $content)
-                $values[$key] = $content->value;
+            {
+                switch ($content->type)
+                {
+                    case 'external_select':
+                        $values[$key] = $content->selected_option;
+                        break;
+
+                    case 'plain_text_input':
+                        $values[$key] = $content->value;
+                        break;
+
+                    default:
+                        $values[$key] = $content->value;
+                        break;
+                }
+
+            }
         }
         return $values;
     }

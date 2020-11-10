@@ -82,7 +82,7 @@ abstract class InteractionController extends Controller
                 break;
 
             case 'block_suggestion':
-                return $this->blockSuggestions($request);
+                return $this->blockSuggestions($request, $payload->action_id);
 
             case 'view_submission':
                 return $this->viewAction($request, $payload->view, $this->view_submission_callback_actions);
