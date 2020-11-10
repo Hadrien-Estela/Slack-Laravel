@@ -41,4 +41,11 @@ class ResponseActionFactory
         ]);
     }
 
+    public function options(array $options)
+    {
+        return response()->json([
+            'options' => $options
+        ]);
+    }
+
 }

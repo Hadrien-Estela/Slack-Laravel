@@ -22,7 +22,8 @@
         "illuminate/contracts": "^8.0",
         "illuminate/notifications": "^8.0",
         "illuminate/http": "^8.0",
-        "nesbot/carbon": "^2.41"
+        "nesbot/carbon": "^2.41",
+        "ulrichsg/getopt-php": "^3.4"
     },
     "autoload": {
         "psr-4": {
