@@ -18,11 +18,8 @@ deploy composer package:
 
 generate documentation:
   stage: deploy
-  when: always
-  only:
-    - tags
-  except:
-    - branches
+  image: php:7.4-cli
+  when: manual
   artifacts:
     paths:
       - doc
