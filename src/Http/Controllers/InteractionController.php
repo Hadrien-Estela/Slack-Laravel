@@ -155,8 +155,8 @@ abstract class InteractionController extends Controller
                 else
                     throw new BadFunctionCallException('Non callable `block_action` callback.');
             }
-            else
-                throw new Exception("Not implemented `block_action` callback: $action->action_id");
+            // else
+            //     throw new Exception("Not implemented `block_action` callback: $action->action_id");
         }
     }
 
