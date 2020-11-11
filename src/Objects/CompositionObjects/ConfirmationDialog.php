@@ -5,34 +5,40 @@ namespace Slack\Objects\CompositionObjects;
 use JsonSerializable;
 use Slack\Objects\CompositionObjects\Text;
 
+/**
+ * An object that defines a dialog that provides a confirmation step to any interactive element.
+ * This dialog will ask the user to confirm their action by offering a confirm and deny buttons.
+ *
+ * @link(https://api.slack.com/reference/block-kit/composition-objects#confirm, more)
+ */
 class ConfirmationDialog implements JsonSerializable
 {
 
     /**
      * A plain_text-only text object that defines the dialog's title.
      *
-     * @var Slack\Objects\CompositionObjects\Text
+     * @var Text
      */
     private $title;
 
     /**
      * A text object that defines the explanatory text that appears in the confirm dialog.
      *
-     * @var Slack\Objects\CompositionObjects\Text
+     * @var Text
      */
     private $text;
 
     /**
      * A plain_text-only text object to define the text of the button that confirms the action.
      *
-     * @var Slack\Objects\CompositionObjects\Text
+     * @var Text
      */
     private $confirm;
 
     /**
      * A plain_text-only text object to define the text of the button that cancels the action.
      *
-     * @var Slack\Objects\CompositionObjects\Text
+     * @var Text
      */
     private $deny;
 
@@ -44,11 +50,11 @@ class ConfirmationDialog implements JsonSerializable
     private $style;
 
     /**
-     * Build a new Instance
+     * Build a new Instance.
      *
      * @param string $title     The dialog title
      * @param string $text      The dialog text
-     * @param string $markdown  Should use markdown for the text
+     * @param boolean $markdown Should use markdown for the text
      * @param string $confirm   The confirm button text
      * @param string $deny      The deny button text
      */
@@ -68,7 +74,7 @@ class ConfirmationDialog implements JsonSerializable
      * Set the confirm dialog title.
      *
      * @param  string $title
-     * @return \Slack\Objects\CompositionObjects\ConfirmationDialog
+     * @return ConfirmationDialog
      */
     public function title(string $title)
     {
@@ -79,8 +85,9 @@ class ConfirmationDialog implements JsonSerializable
     /**
      * Set the confirm dialog text.
      *
-     * @param  string $title
-     * @return \Slack\Objects\CompositionObjects\ConfirmationDialog
+     * @param  string $text
+     * @param boolean $markdown
+     * @return ConfirmationDialog
      */
     public function text(string $text, bool $markdown = false)
     {
@@ -91,31 +98,31 @@ class ConfirmationDialog implements JsonSerializable
     /**
      * Set the `confirm` button text.
      *
-     * @param  string $title
-     * @return \Slack\Objects\CompositionObjects\ConfirmationDialog
+     * @param  string $label
+     * @return ConfirmationDialog
      */
-    public function confirm(string $confirm)
+    public function confirm(string $label)
     {
-        $this->confirm->text($confirm);
+        $this->confirm->text($label);
         return $this;
     }
 
     /**
      * Set the `deny` button text.
      *
-     * @param  string $title
-     * @return \Slack\Objects\CompositionObjects\ConfirmationDialog
+     * @param  string $label
+     * @return ConfirmationDialog
      */
-    public function deny(string $deny)
+    public function deny(string $label)
     {
-        $this->deny->text($deny);
+        $this->deny->text($label);
         return $this;
     }
 
     /**
-     * Set confirm button style to `primary`
+     * Set confirm button style to `primary`.
      *
-     * @return \Slack\Objects\CompositionObjects\ConfirmationDialog
+     * @return ConfirmationDialog
      */
     public function primary()
     {
@@ -124,9 +131,9 @@ class ConfirmationDialog implements JsonSerializable
     }
 
     /**
-     * Set confirm button style to `danger`
+     * Set confirm button style to `danger`.
      *
-     * @return \Slack\Objects\CompositionObjects\ConfirmationDialog
+     * @return ConfirmationDialog
      */
     public function danger()
     {

@@ -8,7 +8,7 @@ use Slack\Objects\BlockElements\MultiSelectMenu\MultiSelectMenu;
  * This multi-select menu will populate its options with a list of public channels
  * visible to the current user in the active workspace.
  *
- * https://api.slack.com/reference/block-kit/block-elements#channel_multi_select
+ * @link(https://api.slack.com/reference/block-kit/block-elements#channel_multi_select, more)
  */
 class ChannelMultiSelect extends MultiSelectMenu
 {
@@ -40,7 +40,7 @@ class ChannelMultiSelect extends MultiSelectMenu
      * Set the initial channel.
      *
      * @param  string $channelID
-     * @return \Slack\Objects\BlockElements\SelectMenu\ChannelSelect
+     * @return ChannelSelect
      */
     public function initialChannel(string $channelID)
     {
@@ -49,7 +49,6 @@ class ChannelMultiSelect extends MultiSelectMenu
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

@@ -8,7 +8,7 @@ use Slack\Objects\BlockElements\InteractiveBlockElement;
 /**
  * A block that collects information from users.
  *
- * https://api.slack.com/reference/block-kit/blocks#input
+ * @link(https://api.slack.com/reference/block-kit/blocks#input, more)
  */
 class InputBlock extends Block
 {
@@ -16,14 +16,14 @@ class InputBlock extends Block
     /**
      * A label that appears above an input element in the form.
      *
-     * @var Slack\Objects\CompositionObjects\Text
+     * @var Text
      */
     private $label;
 
     /**
      * The input element.
      *
-     * @var Slack\Objects\BlockElements\InteractiveBlockElement
+     * @var InteractiveBlockElement
      */
     private $element;
 
@@ -39,7 +39,7 @@ class InputBlock extends Block
     /**
      * An optional hint that appears below an input element in a lighter grey.
      *
-     * @var Slack\Objects\CompositionObjects\Text
+     * @var Text
      */
     private $hint;
 
@@ -75,7 +75,7 @@ class InputBlock extends Block
      * Set the label.
      *
      * @param  string $label
-     * @return \Slack\Objects\Blocks\InputBlock
+     * @return InputBlock
      */
     public function label(string $label)
     {
@@ -87,7 +87,7 @@ class InputBlock extends Block
      * Set the input element.
      *
      * @param  InteractiveBlockElement $element
-     * @return \Slack\Objects\Blocks\InputBlock
+     * @return InputBlock
      */
     public function element(InteractiveBlockElement $element)
     {
@@ -99,7 +99,7 @@ class InputBlock extends Block
      * Should dispatch the action.
      *
      * @param  boolean $dispatch
-     * @return \Slack\Objects\Blocks\InputBlock
+     * @return InputBlock
      */
     public function dispatch(bool $dispatch)
     {
@@ -111,7 +111,7 @@ class InputBlock extends Block
      * Set input Hint.
      *
      * @param  string $hint
-     * @return \Slack\Objects\Blocks\InputBlock
+     * @return InputBlock
      */
     public function hint(string $hint)
     {
@@ -123,7 +123,7 @@ class InputBlock extends Block
      * Set Input as optional.
      *
      * @param  boolean $optional
-     * @return \Slack\Objects\Blocks\InputBlock
+     * @return InputBlock
      */
    public function optional(bool $optional)
     {
@@ -132,7 +132,6 @@ class InputBlock extends Block
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

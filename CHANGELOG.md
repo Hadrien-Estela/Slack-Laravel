@@ -1,12 +1,22 @@
 # Changelog
 
-## [1.1.0]
+## [1.1.1] - 2020-11-11
 
-* Add abstract class \Slack\Http\Middleware\SlackInteraction.
+* Fix `Slack\Objects\BlockElements\SelectMenu\StaticSelect`
+  Contruct now takes a single option as `initial_option`.
+* `Slack\Objects\Blocks\ActionBlock` can now take an array of elements in contructor.
+* Fix `Slack\Http\Controllers\InteractionController` block_suggestions.
+* Fix missing user authentication in `Slack\Http\Middleware\SlackCommand`.
+* Improve `Slack\Helpers\View`.
+* Generate documentation.
+
+## [1.1.0] - 2020-11-10
+
+* Add abstract class `Slack\Http\Middleware\SlackInteraction`.
   This class provides a way to handle a slack interaction payload and authenticate the user.
-* Add abstract class \Slack\Http\Middleware\SlackCommand.
+* Add abstract class `Slack\Http\Middleware\SlackCommand`.
   This class provides a way to handle a slack command using GetOpt and authenticate the user.
-* Add abstract class \Slack\Http\Controllers\InteractionController.
+* Add abstract class `Slack\Http\Controllers\InteractionController`.
   This class provides a way to handle interaction hand dispatch them to your application using callbacks.
 * `slack_response_action()` helper method can now be used to respond to block_suggestion by calling `slack_response_action()->options($options_array)`;
 

@@ -7,7 +7,8 @@ use Slack\Objects\Blocks\Block;
 use Slack\Objects\Attachments\AttachmentField;
 
 /**
- * https://api.slack.com/reference/messaging/attachments
+ * Secondary content can be attached to messages
+ * @link(https://api.slack.com/reference/messaging/attachments, more)
  */
 class Attachment implements JsonSerializable
 {
@@ -25,7 +26,7 @@ class Attachment implements JsonSerializable
     /**
      * An array of layout blocks
      *
-     * @var array
+     * @var Block[]
      */
     private $blocks = [];
 
@@ -64,7 +65,7 @@ class Attachment implements JsonSerializable
      * An array of field objects that get displayed in a table-like way.
      * For best results, include no more than 2-3 field objects.
      *
-     * @var array
+     * @var AttachmentField[]
      */
     private $fields = [];
 
@@ -99,7 +100,7 @@ class Attachment implements JsonSerializable
     /**
      * An array of field names that should be formatted by mrkdwn syntax.
      *
-     * @var array
+     * @var string[]
      */
     private $mrkdwn_in = [];
 
@@ -158,7 +159,7 @@ class Attachment implements JsonSerializable
      * Set attachment's color.
      *
      * @param  string $hex
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function color(string $hex)
     {
@@ -169,7 +170,7 @@ class Attachment implements JsonSerializable
     /**
      * Add success color.
      *
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function success()
     {
@@ -180,7 +181,7 @@ class Attachment implements JsonSerializable
     /**
      * Add warning color.
      *
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function warning()
     {
@@ -191,7 +192,7 @@ class Attachment implements JsonSerializable
     /**
      * Add danger color.
      *
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function error()
     {
@@ -203,7 +204,7 @@ class Attachment implements JsonSerializable
      * Add block.
      *
      * @param  Slack\Objects\Blocks\Block $block
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function block(Block $block)
     {
@@ -215,7 +216,7 @@ class Attachment implements JsonSerializable
      * Set author's icon.
      *
      * @param  string $url
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function authorIcon(string $url)
     {
@@ -227,7 +228,7 @@ class Attachment implements JsonSerializable
      * Set author's link.
      *
      * @param  string $url
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function authorLink(string $url)
     {
@@ -239,7 +240,7 @@ class Attachment implements JsonSerializable
      * Set author's name
      *
      * @param  string $authorName
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function authorName(string $authorName)
     {
@@ -251,7 +252,7 @@ class Attachment implements JsonSerializable
      * Set attachment's fallback
      *
      * @param  string $fallback
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function fallback(string $fallback)
     {
@@ -263,7 +264,7 @@ class Attachment implements JsonSerializable
      * Add field.
      *
      * @param  Slack\Objects\Attachments\AttachmentField $field
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function field(AttachmentField $field)
     {
@@ -275,7 +276,7 @@ class Attachment implements JsonSerializable
      * Set attachment's footer
      *
      * @param  string $footer
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function footer(string $footer)
     {
@@ -287,7 +288,7 @@ class Attachment implements JsonSerializable
      * Set footer's icon
      *
      * @param  string $url
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function footerIcon(string $url)
     {
@@ -299,7 +300,7 @@ class Attachment implements JsonSerializable
      * Set attachment's image.
      *
      * @param  string $url
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function image(string $url)
     {
@@ -311,7 +312,7 @@ class Attachment implements JsonSerializable
      * Add markdown field.
      *
      * @param  string $field field name
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function markdown(string $field)
     {
@@ -323,7 +324,7 @@ class Attachment implements JsonSerializable
      * Set attachment's pretext.
      *
      * @param  string $pretext
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function pretext(string $pretext)
     {
@@ -335,7 +336,7 @@ class Attachment implements JsonSerializable
      * Set attachment's text.
      *
      * @param  string $text
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function text(string $text)
     {
@@ -347,7 +348,7 @@ class Attachment implements JsonSerializable
      * Set attachment's thumb icon.
      *
      * @param  string $url
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function thummb(string $url)
     {
@@ -359,7 +360,7 @@ class Attachment implements JsonSerializable
      * Set attachment's title.
      *
      * @param  string $title
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function title(string $title)
     {
@@ -371,7 +372,7 @@ class Attachment implements JsonSerializable
      * Set title link.
      *
      * @param  string $url
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function titleLink(string $url)
     {
@@ -380,10 +381,10 @@ class Attachment implements JsonSerializable
     }
 
     /**
-     * Set UNIX timestamp
+     * Set UNIX timestamp.
      *
      * @param  int $timestamp
-     * @return \Slack\Objects\Attachments\Attachment
+     * @return Attachment
      */
     public function timestamp(int $timestamp)
     {
@@ -422,7 +423,7 @@ class Attachment implements JsonSerializable
     }
 
     /**
-     * Get fields array
+     * Get fields payload.
      *
      * @return array|null
      */
@@ -435,7 +436,7 @@ class Attachment implements JsonSerializable
     }
 
     /**
-     * Get blocks array
+     * Get blocks payload.
      *
      * @return array
      */

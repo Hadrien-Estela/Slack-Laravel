@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Slack\Objects\BlockElements\Button</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Slack_Objects_BlockElements">Slack\Objects\BlockElements</a>
+          </li>
+          <li class="separator">Button</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Objects/BlockElements/Button.php.xhtml#line16">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Slack\Objects\BlockElements\</small>Button</h1>
+        <h4>An interactive component that inserts a button. The button can be a trigger for anything from opening a simple link to starting a complex workflow.</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Button
+                extends <a title="Slack\Objects\BlockElements\InteractiveBlockElement" href="../classes/Slack_Objects_BlockElements_InteractiveBlockElement.xhtml">InteractiveBlockElement</a>
+            {<br/><ul class="none"><li>// Inherited constants from <a title="Slack\Objects\BlockElements\InteractiveBlockElement" href="../classes/Slack_Objects_BlockElements_InteractiveBlockElement.xhtml">InteractiveBlockElement</a></li><li>const <a href="#Button">Button</a> = 'button';</li><li>const <a href="#Checkbox">Checkbox</a> = 'checkboxes';</li><li>const <a href="#Datepicker">Datepicker</a> = 'datepicker';</li><li>const <a href="#TextInput">TextInput</a> = 'plain_text_input';</li><li>const <a href="#RadioButton">RadioButton</a> = 'radio_buttons';</li><li>const <a href="#Timepicker">Timepicker</a> = 'timepicker';</li><li>const <a href="#OverflowMenu">OverflowMenu</a> = 'overflow';</li></ul><ul class="none"><li>// Inherited constants from <a title="Slack\Objects\BlockElements\BlockElement" href="../classes/Slack_Objects_BlockElements_BlockElement.xhtml">BlockElement</a></li><li>const <a href="#Image">Image</a> = 'image';</li></ul><ul class="none"><li>// members</li><li>private <span title="Slack\Objects\CompositionObjects\Text">Text</span> <a href="#members">$text</a>;
+                    </li><li>private <span title="Slack\Objects\BlockElements\string|null">string|null</span> <a href="#members">$url</a>;
+                    </li><li>private <span title="Slack\Objects\BlockElements\string|null">string|null</span> <a href="#members">$value</a>;
+                    </li><li>private <span title="Slack\Objects\BlockElements\string|null">string|null</span> <a href="#members">$style</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Slack\Objects\BlockElements\Button" href="../classes/Slack_Objects_BlockElements_Button/__construct.xhtml">__construct</a>()
+                    </li><li>public Button <a title="Slack\Objects\BlockElements\Button" href="../classes/Slack_Objects_BlockElements_Button/text.xhtml">text</a>()
+                    </li><li>public Button <a title="Slack\Objects\BlockElements\Button" href="../classes/Slack_Objects_BlockElements_Button/url.xhtml">url</a>()
+                    </li><li>public Button <a title="Slack\Objects\BlockElements\Button" href="../classes/Slack_Objects_BlockElements_Button/value.xhtml">value</a>()
+                    </li><li>public Button <a title="Slack\Objects\BlockElements\Button" href="../classes/Slack_Objects_BlockElements_Button/primary.xhtml">primary</a>()
+                    </li><li>public Button <a title="Slack\Objects\BlockElements\Button" href="../classes/Slack_Objects_BlockElements_Button/danger.xhtml">danger</a>()
+                    </li><li>public array <a title="Slack\Objects\BlockElements\Button" href="../classes/Slack_Objects_BlockElements_Button/jsonSerialize.xhtml">jsonSerialize</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Slack\Objects\BlockElements\InteractiveBlockElement">InteractiveBlockElement</span></li><li>public void <a title="Slack\Objects\BlockElements\InteractiveBlockElement" href="../classes/Slack_Objects_BlockElements_InteractiveBlockElement/__construct.xhtml">__construct</a>()
+                        </li><li>public array <a title="Slack\Objects\BlockElements\InteractiveBlockElement" href="../classes/Slack_Objects_BlockElements_InteractiveBlockElement/jsonSerialize.xhtml">jsonSerialize</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Slack\Objects\BlockElements\BlockElement">BlockElement</span></li><li>public void <a title="Slack\Objects\BlockElements\BlockElement" href="../classes/Slack_Objects_BlockElements_BlockElement/__construct.xhtml">__construct</a>()
+                        </li><li>public array <a title="Slack\Objects\BlockElements\BlockElement" href="../classes/Slack_Objects_BlockElements_BlockElement/jsonSerialize.xhtml">jsonSerialize</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Slack\Objects\BlockElements\Concerns\HasConfirm">HasConfirm</span></li><li>public BlockElement <a title="Slack\Objects\BlockElements\Concerns\HasConfirm" href="../traits/Slack_Objects_BlockElements_Concerns_HasConfirm/confirm.xhtml">confirm</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="Slack\Objects\BlockElements\InteractiveBlockElement" href="../classes/Slack_Objects_BlockElements_InteractiveBlockElement.xhtml">Slack\Objects\BlockElements\InteractiveBlockElement</a>
+            </li>
+          </ul>
+          <h4>Uses</h4>
+          <ul>
+            <li>
+              <a title="Slack\Objects\BlockElements\Concerns\HasConfirm" href="../traits/Slack_Objects_BlockElements_Concerns_HasConfirm.xhtml">Slack\Objects\BlockElements\Concerns\HasConfirm</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="Button">Button</td>
+              <td>'button'</td>
+            </tr>
+            <tr>
+              <td id="Checkbox">Checkbox</td>
+              <td>'checkboxes'</td>
+            </tr>
+            <tr>
+              <td id="Datepicker">Datepicker</td>
+              <td>'datepicker'</td>
+            </tr>
+            <tr>
+              <td id="TextInput">TextInput</td>
+              <td>'plain_text_input'</td>
+            </tr>
+            <tr>
+              <td id="RadioButton">RadioButton</td>
+              <td>'radio_buttons'</td>
+            </tr>
+            <tr>
+              <td id="Timepicker">Timepicker</td>
+              <td>'timepicker'</td>
+            </tr>
+            <tr>
+              <td id="OverflowMenu">OverflowMenu</td>
+              <td>'overflow'</td>
+            </tr>
+            <tr>
+              <td id="Image">Image</td>
+              <td>'image'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="style"><strong>$style</strong>
+                —
+                <a title="Slack\Objects\BlockElements\string|null" href="../classes/Slack_Objects_BlockElements_string|null.xhtml">Slack\Objects\BlockElements\string|null</a><br/><span class="indent">Decorates buttons with alternative visual color schemes.</span></li>
+            <li id="text"><strong>$text</strong>
+                —
+                <a title="Slack\Objects\CompositionObjects\Text" href="../classes/Slack_Objects_CompositionObjects_Text.xhtml">Slack\Objects\CompositionObjects\Text</a><br/><span class="indent">A text object that defines the button's text.</span></li>
+            <li id="url"><strong>$url</strong>
+                —
+                <a title="Slack\Objects\BlockElements\string|null" href="../classes/Slack_Objects_BlockElements_string|null.xhtml">Slack\Objects\BlockElements\string|null</a><br/><span class="indent">A URL to load in the user's browser when the button is clicked.</span></li>
+            <li id="value"><strong>$value</strong>
+                —
+                <a title="Slack\Objects\BlockElements\string|null" href="../classes/Slack_Objects_BlockElements_string|null.xhtml">Slack\Objects\BlockElements\string|null</a><br/><span class="indent">The value to send along with the interaction payload.</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Slack\Objects\BlockElements\Button" href="../classes/Slack_Objects_BlockElements_Button/__construct.xhtml">__construct()</a>
+                — Build a new instance.</li>
+            <li id="danger"><a title="Slack\Objects\BlockElements\Button" href="../classes/Slack_Objects_BlockElements_Button/danger.xhtml">danger()</a>
+                — Set button style to `danger`</li>
+            <li id="jsonSerialize"><a title="Slack\Objects\BlockElements\Button" href="../classes/Slack_Objects_BlockElements_Button/jsonSerialize.xhtml">jsonSerialize()</a>
+                — Convert the object into something JSON serializable.</li>
+            <li id="primary"><a title="Slack\Objects\BlockElements\Button" href="../classes/Slack_Objects_BlockElements_Button/primary.xhtml">primary()</a>
+                — Set button style to `primary`</li>
+            <li id="text"><a title="Slack\Objects\BlockElements\Button" href="../classes/Slack_Objects_BlockElements_Button/text.xhtml">text()</a>
+                — Set the button's text.</li>
+            <li id="url"><a title="Slack\Objects\BlockElements\Button" href="../classes/Slack_Objects_BlockElements_Button/url.xhtml">url()</a>
+                — Set the Url to open on click.</li>
+            <li id="value"><a title="Slack\Objects\BlockElements\Button" href="../classes/Slack_Objects_BlockElements_Button/value.xhtml">value()</a>
+                — Set the value of the Button.</li>
+          </ul>
+          <h3>Inherited from <a title="Slack\Objects\BlockElements\InteractiveBlockElement" href="../classes/Slack_Objects_BlockElements_InteractiveBlockElement.xhtml">Slack\Objects\BlockElements\InteractiveBlockElement</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="jsonSerialize"><a title="Slack\Objects\BlockElements\InteractiveBlockElement" href="../classes/Slack_Objects_BlockElements_InteractiveBlockElement/jsonSerialize.xhtml">jsonSerialize()</a>
+                — Convert the object into something JSON serializable.</li>
+          </ul>
+          <h3>Inherited from <a title="Slack\Objects\BlockElements\BlockElement" href="../classes/Slack_Objects_BlockElements_BlockElement.xhtml">Slack\Objects\BlockElements\BlockElement</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="jsonSerialize"><a title="Slack\Objects\BlockElements\BlockElement" href="../classes/Slack_Objects_BlockElements_BlockElement/jsonSerialize.xhtml">jsonSerialize()</a>
+                — Convert the object into something JSON serializable.</li>
+          </ul>
+          <h3>Inherited from <a title="Slack\Objects\BlockElements\Concerns\HasConfirm" href="../traits/Slack_Objects_BlockElements_Concerns_HasConfirm.xhtml">Slack\Objects\BlockElements\Concerns\HasConfirm</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="confirm"><a title="Slack\Objects\BlockElements\Concerns\HasConfirm" href="../traits/Slack_Objects_BlockElements_Concerns_HasConfirm/confirm.xhtml">confirm()</a>
+                — Set the confirm dialog.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.12.0 - Copyright (C) 2010 - 2020 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

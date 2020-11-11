@@ -9,7 +9,7 @@ use Slack\Objects\BlockElements\MutliSelectMenu\MutliSelectMenu;
  * This is the simplest form of select menu, with a static list of options
  * passed in when defining the element.
  *
- * https://api.slack.com/reference/block-kit/block-elements#static_multi_select
+ * @link(https://api.slack.com/reference/block-kit/block-elements#static_multi_select, more)
  */
 class StaticMultiSelect extends MutliSelectMenu
 {
@@ -41,7 +41,6 @@ class StaticMultiSelect extends MutliSelectMenu
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

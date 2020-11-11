@@ -8,7 +8,7 @@ use Slack\Objects\BlockElements\SelectMenu\SelectMenu;
  * This select menu will populate its options with a list of Slack users
  * visible to the current user in the active workspace.
  *
- * https://api.slack.com/reference/block-kit/block-elements#users_select
+ * @link(https://api.slack.com/reference/block-kit/block-elements#users_select, more)
  */
 class UserSelect extends SelectMenu
 {
@@ -39,7 +39,7 @@ class UserSelect extends SelectMenu
      * Set the initial user ID.
      *
      * @param  string $userID$
-     * @return Slack\Objects\BlockElements\SelectMenu\UserSelect
+     * @return UserSelect
      */
     public function initialUser(string $userID)
     {
@@ -48,7 +48,6 @@ class UserSelect extends SelectMenu
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

@@ -10,7 +10,7 @@ use Slack\Objects\BlockElements\BlockElement;
  * it can be used as a simple text block, in combination with text fields,
  * or side-by-side with any of the available block elements.
  *
- * https://api.slack.com/reference/block-kit/blocks#section
+ * @link(https://api.slack.com/reference/block-kit/blocks#section, more)
  */
 class SectionBlock extends Block
 {
@@ -18,21 +18,21 @@ class SectionBlock extends Block
     /**
      * The text for the block, in the form of a text object.
      *
-     * @var Slack\Objects\CompositionObjects\Text
+     * @var Text
      */
     private $text;
 
     /**
      * An array of text objects.
      *
-     * @var array
+     * @var Text[]
      */
     private $fields = [];
 
     /**
      * One of the available Block elements.
      *
-     * @var Slack\Objects\BlockElements\BlockElement;
+     * @var BlockElement;
      */
     private $accessory;
 
@@ -53,7 +53,7 @@ class SectionBlock extends Block
      *
      * @param  string   $text
      * @param  boolean  $markdown
-     * @return \Slack\Objects\Blocks\SectionBlock
+     * @return SectionBlock
      */
     public function text(string $text, bool $markdown = false)
     {
@@ -65,7 +65,7 @@ class SectionBlock extends Block
      * Add additionnal text.
      *
      * @param  Text   $field
-     * @return \Slack\Objects\Blocks\SectionBlock
+     * @return SectionBlock
      */
     public function field(Text $field)
     {
@@ -77,7 +77,7 @@ class SectionBlock extends Block
      * Set Accessory.
      *
      * @param  BlockElement $element
-     * @return \Slack\Objects\Blocks\SectionBlock
+     * @return SectionBlock
      */
     public function accessory(BlockElement $element)
     {
@@ -86,7 +86,6 @@ class SectionBlock extends Block
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

@@ -8,7 +8,7 @@ use JsonSerializable;
  * Blocks are a series of components that can be combined to create
  * visually rich and compellingly interactive messages.
  *
- * https://api.slack.com/reference/block-kit/blocks
+ * @link(https://api.slack.com/reference/block-kit/blocks, more)
  */
 abstract class Block implements JsonSerializable
 {
@@ -54,7 +54,7 @@ abstract class Block implements JsonSerializable
      * Set the blosk id
      *
      * @param  string $id
-     * @return \Slack\Objects\Blocks\Block
+     * @return Block
      */
     public function id(string $id)
     {

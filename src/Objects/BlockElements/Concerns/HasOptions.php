@@ -11,14 +11,14 @@ trait HasOptions
     /**
      * An array of option.
      *
-     * @var array \Slack\Objects\CompositionObjects\Option
+     * @var Option[]
      */
     private $options = [];
 
     /**
      * An option object that exactly matches one of the options within options.
      *
-     * @var array \Slack\Objects\CompositionObjects\Option|null
+     * @var array Option|null
      */
     private $initial_option;
 
@@ -26,23 +26,23 @@ trait HasOptions
      * An array of option objects that exactly matches one or more of
      * the options within options.
      *
-     * @var array \Slack\Objects\CompositionObjects\Option
+     * @var Option[]
      */
     private $initial_options = [];
 
     /**
      * An array of option group objects.
      *
-     * @var array
+     * @var OptionGroup[]
      */
     private $option_groups = [];
 
     /**
      * Add an option.
      *
-     * @param  \Slack\Objects\CompositionObjects\Option    $option
-     * @param  bool|boolean                                     $initial
-     * @return \Slack\Objects\BlockElements\BlockElement
+     * @param  Option $option
+     * @param  bool|boolean $initial
+     * @return BlockElement
      */
     public function option(Option $option, bool $initial = false)
     {
@@ -60,7 +60,7 @@ trait HasOptions
      *
      * @param  OptionGroup      $group
      * @param  bool|boolean     $initial
-     * @return \Slack\Objects\BlockElements\BlockElement
+     * @return BlockElement
      */
     public function group(OptionGroup $group, bool $initial = false)
     {
@@ -74,7 +74,7 @@ trait HasOptions
      * Set the initial option.
      *
      * @param  Option $option
-     * @return \Slack\Objects\BlockElements\BlockElement
+     * @return BlockElement
      */
     public function initialOption(Option $option)
     {

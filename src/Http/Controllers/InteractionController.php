@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 
+/**
+ * Abstract class as a base to handle slack interactions incoming requests.
+ * @link(https://api.slack.com/interactivity/handling, more)
+ */
 abstract class InteractionController extends Controller
 {
 
@@ -63,9 +67,11 @@ abstract class InteractionController extends Controller
     ];
 
     /**
-     * Receiving request from Slack Interactive Component.
+     * Handle the interaction request.
+     * @link(https://api.slack.com/reference/interaction-payloads/block-actions, more)
      *
-     * https://api.slack.com/reference/interaction-payloads/block-actions
+     * @param  \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
@@ -82,7 +88,7 @@ abstract class InteractionController extends Controller
                 break;
 
             case 'block_suggestion':
-                return $this->blockSuggestions($request);
+                return $this->blockSuggestions($request, $payload->action_id);
 
             case 'view_submission':
                 return $this->viewAction($request, $payload->view, $this->view_submission_callback_actions);
@@ -101,7 +107,7 @@ abstract class InteractionController extends Controller
             //     break;
 
             default:
-                throw new Exception("Non implemented action type: $payload->type");
+                throw new Exception("Not implemented action type: $payload->type");
                 break;
         }
     }
@@ -109,30 +115,36 @@ abstract class InteractionController extends Controller
     /**
      * Call the associated view callback action.
      *
-     * @param  Request $request
-     * @param  string  $callback_id
-     * @param  array   $callback_actions
+     * @param  \Illuminate\Http\Request $request
+     * @param  Object $view
+     * @param  array $callback_actions_arr
      * @return \Illuminate\Http\Response
      */
-    private function viewAction(Request $request, $view, array $callback_actions_arr)
+    private function viewAction(Request $request, Object $view, array $callback_actions_arr)
     {
         if (array_key_exists($view->callback_id, $callback_actions_arr))
         {
             $callable = $callback_actions_arr[$view->callback_id];
             if (is_callable($callable))
-                return call_user_func(array(new $callable[0],$callable[1]), $request, $view);
+            if (is_callable($callable))
+            {
+                $controller = new $callable[0];
+                $method = $callable[1];
+                return call_user_func(array($controller,$method), $request, $view);
+            }
             else
                 throw new BadFunctionCallException('Non callable `view` callback.');
         }
         else
-            throw new Exception("Non implemented `view` callback: $callback_id");
+            throw new Exception("Not implemented `view` callback: $callback_id");
     }
 
     /**
-     * Call method associated with action
+     * Call method associated with action.
      *
-     * @param  Request $request
-     * @return array $actions
+     * @param  \Illuminate\Http\Request $request
+     * @param  array $actions
+     * @return \Illuminate\Http\Response
      */
     private function blockActions(Request $request, array $actions)
     {
@@ -142,20 +154,24 @@ abstract class InteractionController extends Controller
             {
                 $callable = $this->block_actions_callback_actions[$action->action_id];
                 if (is_callable($callable))
-                    call_user_func(array(new $callable[0],$callable[1]), $request, $action);
+                {
+                    $controller = new $callable[0];
+                    $method = $callable[1];
+                    call_user_func(array($controller,$method), $request, $action);
+                }
                 else
                     throw new BadFunctionCallException('Non callable `block_action` callback.');
             }
-            else
-                throw new Exception("Non implemented `block_action` callback: $action->action_id");
+            // else
+            //     throw new Exception("Not implemented `block_action` callback: $action->action_id");
         }
     }
 
     /**
-     * Must return an array of options
+     * Return the options suggestion.
      *
-     * @param  Request $request
-     * @return array
+     * @param  \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     private function blockSuggestions(Request $request, string $action_id)
     {
@@ -163,13 +179,18 @@ abstract class InteractionController extends Controller
         {
             $callable = $this->block_suggestions_callback_actions[$action_id];
             if (is_callable($callable))
-                return call_user_func(array(new $callable[0],$callable[1]), $request);
+            {
+                $controller = new $callable[0];
+                $method = $callable[1];
+                return call_user_func(array($controller,$method), $request);
+            }
             else
                 throw new BadFunctionCallException('Non callable `block_suggestion` callback.');
         }
         else
-            throw new Exception("Non implemented `block_suggestion` callback: $action_id");
+            throw new Exception("Not implemented `block_suggestion` callback: $action_id");
     }
+
 
     private function shortcut(Request $request, string $callback_id)
     {
@@ -177,12 +198,16 @@ abstract class InteractionController extends Controller
         {
             $callable = $this->shortcut_callback_actions[$callback_id];
             if (is_callable($callable))
-                return call_user_func(array(new $callable[0],$callable[1]), $request);
+            {
+                $controller = new $callable[0];
+                $method = $callable[1];
+                return call_user_func(array($controller,$method), $request);
+            }
             else
                 throw new BadFunctionCallException('Non callable `shortcut` callback.');
         }
         else
-            throw new Exception("Non implemented `shortcut` callback: $callback_id");
+            throw new Exception("Not implemented `shortcut` callback: $callback_id");
     }
 
 }

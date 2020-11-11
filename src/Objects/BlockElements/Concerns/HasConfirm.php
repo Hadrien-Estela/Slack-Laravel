@@ -11,7 +11,7 @@ trait HasConfirm
      * A confirm object that defines an optional confirmation dialog that
      * appears after interaction.
      *
-     * @var \Slack\Objects\CompositionObjects\ConfirmationDialog|null
+     * @var ConfirmationDialog|null
      */
     private $confirm;
 
@@ -19,7 +19,7 @@ trait HasConfirm
      * Set the confirm dialog.
      *
      * @param  ConfirmationDialog $confirm
-     * @return Slack\Objects\BlockElements\BlockElement
+     * @return BlockElement
      */
     public function confirm(ConfirmationDialog $confirm)
     {

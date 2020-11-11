@@ -8,7 +8,9 @@ use Slack\Objects\Blocks\Block;
 use Slack\Objects\Attachments\Attachment;
 
 /**
- * https://api.slack.com/reference/messaging/payload
+ * Build a serializable message.
+ *
+ * @link(https://api.slack.com/reference/messaging/payload, more)
  */
 class SlackMessage implements JsonSerializable, Jsonable
 {
@@ -44,14 +46,14 @@ class SlackMessage implements JsonSerializable, Jsonable
     /**
      * An array of layout blocks
      *
-     * @var array
+     * @var Block[]
      */
     private $blocks = [];
 
     /**
      * An array of legacy secondary attachments.
      *
-     * @var array
+     * @var Attachment[]
      */
     private $attachments = [];
 
@@ -64,32 +66,37 @@ class SlackMessage implements JsonSerializable, Jsonable
 
     /**
      * Set your bot's user name.
-     * https://api.slack.com/methods/chat.postMessage#arg_username
+     * @link(https://api.slack.com/methods/chat.postMessage#arg_username, more)
      *
      * @var string|null
      */
     private $username;
 
     /**
-     * Build a new Instance
+     * Build a new SlackMessage Instance.
      *
-     * @param string    $text The Text content
-     * @param boolean   $markdown Use markdown.
+     * @param string $text The Text content.
+     * @param boolean|null $markdown Use markdown.
+     * @param string|null $channel_id The reciptent.
+     * @param Block[] $blocks
      */
     public function __construct(string $text = 'Empty message.',
                                 bool $markdown = null,
-                                string $channel = null)
+                                string $channel_id = null,
+                                array $blocks = [])
     {
         $this->text = $text;
         $this->mrkdwn = $markdown;
-        $this->channel = $channel;
+        $this->channel = $channel_id;
+        if ($blocks)
+            $this->blocks = $blocks;
     }
 
     /**
      * Set text content ofthe message.
      *
      * @param  string $text
-     * @return \Slack\Objects\SlackMessage
+     * @return SlackMessage
      */
     public function text(string $text)
     {
@@ -101,7 +108,7 @@ class SlackMessage implements JsonSerializable, Jsonable
      * Set the channel ID.
      *
      * @param  string $channel
-     * @return \Slack\Objects\SlackMessage
+     * @return SlackMessage
      */
     public function to(string $channel)
     {
@@ -110,10 +117,10 @@ class SlackMessage implements JsonSerializable, Jsonable
     }
 
     /**
-     * Enabling content markdown
+     * Enabling content markdown.
      *
      * @param  boolean $markdown
-     * @return \Slack\Objects\SlackMessage
+     * @return SlackMessage
      */
     public function markdown(bool $markdown)
     {
@@ -122,10 +129,10 @@ class SlackMessage implements JsonSerializable, Jsonable
     }
 
     /**
-     * Add blocks to message
+     * Add blocks to message.
      *
-     * @param  Slack\Objects\Blocks\Block $block
-     * @return \Slack\Objects\SlackMessage
+     * @param  Block $block
+     * @return SlackMessage
      */
     public function block(Block $block)
     {
@@ -136,8 +143,8 @@ class SlackMessage implements JsonSerializable, Jsonable
     /**
      * Add attachment.
      *
-     * @param  Slack\Objects\Attachments\Attachment $attachment
-     * @return \Slack\Objects\SlackMessage
+     * @param  Attachment $attachment
+     * @return SlackMessage
      */
     public function attachment(Attachment $attachment)
     {
@@ -149,7 +156,7 @@ class SlackMessage implements JsonSerializable, Jsonable
      * Set thread parent.
      *
      * @param  string $thread_ts
-     * @return \Slack\Objects\SlackMessage
+     * @return SlackMessage
      */
     public function thread(string $thread_ts)
     {
@@ -158,10 +165,10 @@ class SlackMessage implements JsonSerializable, Jsonable
     }
 
     /**
-     * Set bot username
+     * Set bot username.
      *
      * @param  string $username
-     * @return \Slack\Objects\SlackMessage
+     * @return SlackMessage
      */
     public function username(string $username)
     {
@@ -193,7 +200,7 @@ class SlackMessage implements JsonSerializable, Jsonable
     /**
      * Get Blocks JSON payload.
      *
-     * @return string\null
+     * @return string|null
      */
     private function blocks()
     {

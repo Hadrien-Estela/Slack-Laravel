@@ -9,7 +9,7 @@ use Slack\Objects\CompositionObjects\Option;
 /**
  * An object containing some text, formatted either as plain_text or using mrkdwn.
  *
- * https://api.slack.com/reference/block-kit/composition-objects#option_group
+ * @link(https://api.slack.com/reference/block-kit/composition-objects#option_group, more)
  */
 class OptionGroup implements JsonSerializable
 {
@@ -17,22 +17,22 @@ class OptionGroup implements JsonSerializable
     /**
      * A plain_text only text object that defines the label shown above this group of options.
      *
-     * @var Slack\Objects\CompositionObjects\Text
+     * @var Text
      */
     private $label;
 
     /**
      * An array of option objects that belong to this specific group.
      *
-     * @var array
+     * @var Option[]
      */
     private $options = [];
 
     /**
      * Build a new instance.
      *
-     * @param string $label   the group label
-     * @param array  $options the group options
+     * @param string $label the group label
+     * @param Option[] $options the group options
      */
     public function __construct(string $label = '', array $options = [])
     {
@@ -44,7 +44,7 @@ class OptionGroup implements JsonSerializable
      * Set the label.
      *
      * @param  string $label
-     * @return \Slack\Objects\CompositionObjects\OptionGroup
+     * @return OptionGroup
      */
     public function label(string $label)
     {
@@ -55,8 +55,8 @@ class OptionGroup implements JsonSerializable
     /**
      * Add an option.
      *
-     * @param  Slack\Objects\CompositionObjects\Option $option
-     * @return \Slack\Objects\CompositionObjects\OptionGroup
+     * @param  Option $option
+     * @return OptionGroup
      */
     public function option(Option $option)
     {
@@ -77,6 +77,11 @@ class OptionGroup implements JsonSerializable
         ];
     }
 
+    /**
+     * Get the options payload.
+     *
+     * @return array
+     */
     private function options()
     {
         $options = array();

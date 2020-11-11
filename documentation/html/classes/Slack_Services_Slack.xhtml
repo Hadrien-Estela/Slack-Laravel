@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Slack\Services\Slack</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Slack_Services">Slack\Services</a>
+          </li>
+          <li class="separator">Slack</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Services/Slack.php.xhtml#line11">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Slack\Services\</small>Slack</h1>
+        <h4/>
+        <p/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Slack
+            {<br/><ul class="none"><li>// members</li><li>private array <a href="#members">$webhooks</a> =
+                        ;
+                    </li><li>private array <a href="#members">$channels</a> =
+                        ;
+                    </li><li>private <span title="Slack\Api">Api</span> <a href="#members">$app</a>;
+                    </li><li>private <span title="Slack\Api">Api</span> <a href="#members">$bot</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/__construct.xhtml">__construct</a>()
+                    </li><li>public string <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/getWebhookUrl.xhtml">getWebhookUrl</a>()
+                    </li><li>public string <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/getChannelID.xhtml">getChannelID</a>()
+                    </li><li>public Object <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/findUserByEmail.xhtml">findUserByEmail</a>()
+                    </li><li>public Object <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/getUserProfile.xhtml">getUserProfile</a>()
+                    </li><li>public Response <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/sendMessageUsingWebhook.xhtml">sendMessageUsingWebhook</a>()
+                    </li><li>public Response <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/sendMessage.xhtml">sendMessage</a>()
+                    </li><li>public Response <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/openView.xhtml">openView</a>()
+                    </li><li>public Response <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/updateView.xhtml">updateView</a>()
+                    </li><li>public Response <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/pushView.xhtml">pushView</a>()
+                    </li><li>public Response <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/publishView.xhtml">publishView</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="app"><strong>$app</strong>
+                —
+                <a title="Slack\Api" href="../classes/Slack_Api.xhtml">Slack\Api</a><br/><span class="indent">App scoped API client.</span></li>
+            <li id="bot"><strong>$bot</strong>
+                —
+                <a title="Slack\Api" href="../classes/Slack_Api.xhtml">Slack\Api</a><br/><span class="indent">Bot scoped API client</span></li>
+            <li id="channels"><strong>$channels</strong>
+                —
+                array<br/><span class="indent">Slack channels.</span></li>
+            <li id="webhooks"><strong>$webhooks</strong>
+                —
+                array<br/><span class="indent">Slack webhooks.</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/__construct.xhtml">__construct()</a>
+            </li>
+            <li id="findUserByEmail"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/findUserByEmail.xhtml">findUserByEmail()</a>
+                — Find a user by its email address.</li>
+            <li id="getChannelID"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/getChannelID.xhtml">getChannelID()</a>
+                — Get a channel id.</li>
+            <li id="getUserProfile"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/getUserProfile.xhtml">getUserProfile()</a>
+                — Get a user's profile.</li>
+            <li id="getWebhookUrl"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/getWebhookUrl.xhtml">getWebhookUrl()</a>
+                — Get a webhook url.</li>
+            <li id="openView"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/openView.xhtml">openView()</a>
+                — Open a view for a user.</li>
+            <li id="publishView"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/publishView.xhtml">publishView()</a>
+                — Publish a static view for a User.</li>
+            <li id="pushView"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/pushView.xhtml">pushView()</a>
+                — Push a view onto the stack of a root view.</li>
+            <li id="sendMessage"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/sendMessage.xhtml">sendMessage()</a>
+                — Send a message on a channel.</li>
+            <li id="sendMessageUsingWebhook"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/sendMessageUsingWebhook.xhtml">sendMessageUsingWebhook()</a>
+                — Send a message on a webhook.</li>
+            <li id="updateView"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/updateView.xhtml">updateView()</a>
+                — Update an existing view.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.12.0 - Copyright (C) 2010 - 2020 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

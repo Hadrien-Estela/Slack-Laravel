@@ -5,7 +5,7 @@ namespace Slack\Objects\Attachments;
 use JsonSerializable;
 
 /**
- * https://api.slack.com/reference/messaging/attachments#field_objects
+ * @link(https://api.slack.com/reference/messaging/attachments#field_objects)
  */
 class AttachmentField implements JsonSerializable
 {
@@ -38,9 +38,9 @@ class AttachmentField implements JsonSerializable
     /**
      * Build a new Instance.
      *
-     * @param string  $title
-     * @param string  $value
-     * @param boolean $short
+     * @param string|null  $title
+     * @param string|null  $value
+     * @param boolean|null $short
      */
     public function __construct(string $title = null, string $value = null, bool $short = null)
     {
@@ -53,7 +53,7 @@ class AttachmentField implements JsonSerializable
      * Set field's title.
      *
      * @param  string $title
-     * @return \Slack\Objects\Attachments\AttachmentField
+     * @return AttachmentField
      */
     public function title(string $title)
     {
@@ -65,7 +65,7 @@ class AttachmentField implements JsonSerializable
      * Set field's value.
      *
      * @param  string $value
-     * @return \Slack\Objects\Attachments\AttachmentField
+     * @return AttachmentField
      */
     public function value(string $value)
     {
@@ -78,7 +78,7 @@ class AttachmentField implements JsonSerializable
      * Default false
      *
      * @param  boolean $short
-     * @return \Slack\Objects\Attachments\AttachmentField
+     * @return AttachmentField
      */
     public function short(bool $short)
     {

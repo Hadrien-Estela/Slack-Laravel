@@ -24,7 +24,10 @@ class SlackServiceProvider extends ServiceProvider implements DeferrableProvider
         $this->registerCommands();
     }
 
-    protected function registerConfiguration()
+    /**
+     * Register the configuration files of the service.
+     */
+    private function registerConfiguration()
     {
         if ($this->app->runningInConsole())
         {
@@ -34,7 +37,10 @@ class SlackServiceProvider extends ServiceProvider implements DeferrableProvider
         }
     }
 
-    protected function registerCommands()
+    /**
+     * Register the console commands of the service.
+     */
+    private function registerCommands()
     {
         if ($this->app->runningInConsole())
         {

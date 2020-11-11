@@ -5,7 +5,7 @@ namespace Slack\Objects\Blocks;
 /**
  * A content divider, like an <hr>, to split up different blocks inside of a message.
  *
- * https://api.slack.com/reference/block-kit/blocks#divider
+ * @link(https://api.slack.com/reference/block-kit/blocks#divider, more)
  */
 class DividerBlock extends Block
 {

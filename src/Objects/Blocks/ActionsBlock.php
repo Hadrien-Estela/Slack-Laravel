@@ -8,7 +8,7 @@ use Slack\Objects\BlockElements\InteractiveBlockElement;
 /**
  * A block that is used to hold interactive elements.
  *
- * https://api.slack.com/reference/block-kit/blocks#actions
+ * @link(https://api.slack.com/reference/block-kit/blocks#actions, more)
  */
 class ActionsBlock extends Block
 {
@@ -16,23 +16,26 @@ class ActionsBlock extends Block
     /**
      * An array of interactive element.
      *
-     * @var array of Slack\Objects\BlockElements\InteractiveBlockElement
+     * @var InteractiveBlockElement[]
      */
     private $elements = [];
 
     /**
      * Build a new block instance.
+     *
+     * @param InteractiveBlockElement[] An array of interactive elements
      */
-    public function __construct()
+    public function __construct(array $elements = [])
     {
         parent::__construct(Block::Actions);
+        $this->elements = $elements;
     }
 
     /**
      * Add an interactive element.
      *
-     * @param  Slack\Objects\BlockElements\InteractiveBlockElement $element
-     * @return \Slack\Objects\Blocks\ActionsBlock
+     * @param  InteractiveBlockElement $element
+     * @return ActionsBlock
      */
     public function element(InteractiveBlockElement $element)
     {
@@ -41,7 +44,6 @@ class ActionsBlock extends Block
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array
@@ -54,7 +56,7 @@ class ActionsBlock extends Block
     }
 
     /**
-     * Get elements as serializable array.
+     * Get elements payload.
      *
      * @return array
      */
@@ -67,7 +69,7 @@ class ActionsBlock extends Block
     }
 
     /**
-     * Check if block is empty
+     * Check if block is empty.
      *
      * @return boolean
      */

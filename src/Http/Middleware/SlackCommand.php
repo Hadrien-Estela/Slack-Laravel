@@ -19,7 +19,7 @@ use Slack\Objects\SlackMessage;
 abstract class SlackCommand
 {
     /**
-     * Handle a slash command from slack
+     * Handle a slash command from slack.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
@@ -27,6 +27,9 @@ abstract class SlackCommand
      */
     public function handle(Request $request, Closure $next)
     {
+        // Auth the user if exists.
+        $this->authenticateUser($request->input('user_id'));
+
         // Create GetOpt instance.
         $opt = new GetOpt(null, [GetOpt::SETTING_STRICT_OPERANDS => true]);
         $opt->getHelp()->setUsageTemplate($this->usageTemplatePath());
@@ -85,7 +88,7 @@ abstract class SlackCommand
     /**
      * Authenticate the user to your app using its slack ID.
      *
-     * @param  string   $slack_user_id
+     * @param  string $slack_user_id
      */
     abstract protected function authenticateUser(string $slack_user_id);
 

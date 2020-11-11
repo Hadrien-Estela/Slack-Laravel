@@ -5,9 +5,9 @@ use Slack\Factories\ResponseActionFactory;
 if (! function_exists('slack_response_action'))
 {
     /**
-     * Return a new response to a SlackView submission.
+     * Return a new ResponseAction.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     function slack_response_action()
     {

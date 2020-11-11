@@ -4,6 +4,9 @@ namespace Slack\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 
+/**
+ * Generate a SlackMessage class.
+ */
 class SlackMessageMakeCommand extends GeneratorCommand
 {
     /**

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<phpdox xmlns="http://xml.phpdox.net/config" silent="false">
+    <project name="slack-laravel" source="${basedir}/src" workdir="${basedir}/documentation/xml">
+        <collector publiconly="false" backend="parser" encoding="auto">
+            <include mask="*.php"/>
+            <exclude mask=""/>
+
+            <inheritance resolve="true">
+                <dependency  path="https://laravel.com/api/8.x/index.html" />
+            </inheritance>
+
+        </collector>
+
+        <generator output="${basedir}/documentation">
+            <build engine="html" enabled="true" output="html" />
+        </generator>
+    </project>
+
+</phpdox>

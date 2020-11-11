@@ -10,7 +10,7 @@ use Slack\Objects\CompositionObjects\ConversationFilter;
  * public and private channels, DMs, and MPIMs visible to the current
  * user in the active workspace.
  *
- * https://api.slack.com/reference/block-kit/block-elements#conversation_multi_select
+ * @link(https://api.slack.com/reference/block-kit/block-elements#conversation_multi_select, more)
  */
 class ConversationMultiSelect extends MultiSelectMenu
 {
@@ -21,7 +21,7 @@ class ConversationMultiSelect extends MultiSelectMenu
      * If default_to_current_conversation is also supplied,
      * initial_conversations will be ignored.
      *
-     * @var array
+     * @var string[]
      */
     private $initial_conversations = [];
 
@@ -37,7 +37,7 @@ class ConversationMultiSelect extends MultiSelectMenu
      * A filter object that reduces the list of available conversations
      * using the specified criteria.
      *
-     * @var \Slack\Objects\CompositionObjects\ConversationFilter|null
+     * @var ConversationFilter|null
      */
     private $filter;
 
@@ -66,7 +66,7 @@ class ConversationMultiSelect extends MultiSelectMenu
      * Add an initial conversation.
      *
      * @param  string $conversationID [description]
-     * @return \Slack\Objects\BlockElements\SelectMenu\ConversationSelect
+     * @return ConversationSelect
      */
     public function initialConversation(string $conversationID)
     {
@@ -78,7 +78,7 @@ class ConversationMultiSelect extends MultiSelectMenu
      * Set the conversation filter
      *
      * @param  ConversationFilter $filter [description]
-     * @return \Slack\Objects\BlockElements\SelectMenu\ConversationSelect
+     * @return ConversationSelect
      */
     public function filter(ConversationFilter $filter)
     {
@@ -89,7 +89,7 @@ class ConversationMultiSelect extends MultiSelectMenu
     /**
      * Set current conversation to initial by default.
      *
-     * @return \Slack\Objects\BlockElements\SelectMenu\ConversationSelect
+     * @return ConversationSelect
      */
     public function currentConversationByDefault()
     {
@@ -98,7 +98,6 @@ class ConversationMultiSelect extends MultiSelectMenu
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

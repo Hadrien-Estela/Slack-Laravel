@@ -11,7 +11,7 @@ use Slack\Objects\CompositionObjects\Option;
  * A radio button group that allows a user to choose one item from a
  * list of possible options.
  *
- * https://api.slack.com/reference/block-kit/block-elements#radio
+ * @link(https://api.slack.com/reference/block-kit/block-elements#radio, more)
  */
 class RadioButtonGroup extends InteractiveBlockElement
 {
@@ -39,7 +39,6 @@ class RadioButtonGroup extends InteractiveBlockElement
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

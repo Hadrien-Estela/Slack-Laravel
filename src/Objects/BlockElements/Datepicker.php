@@ -10,7 +10,7 @@ use Slack\Objects\CompositionObjects\Text;
 /**
  * An element which lets users easily select a date from a calendar style UI.
  *
- * https://api.slack.com/reference/block-kit/block-elements#datepicker
+ * @link(https://api.slack.com/reference/block-kit/block-elements#datepicker, more)
  */
 class Datepicker extends InteractiveBlockElement
 {
@@ -48,8 +48,8 @@ class Datepicker extends InteractiveBlockElement
     /**
      * Set the initiale picker date.
      *
-     * @param  \DateTime $date
-     * @return \Slack\Objects\BlockElements\Datepicker
+     * @param  DateTime $date
+     * @return Datepicker
      */
     public function initialDate(\DateTime $date)
     {
@@ -58,7 +58,6 @@ class Datepicker extends InteractiveBlockElement
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

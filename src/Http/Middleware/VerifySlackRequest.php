@@ -12,11 +12,12 @@ class VerifySlackRequest
 {
     /**
      * verify an incoming slack request.
-     * https://api.slack.com/authentication/verifying-requests-from-slack
-     * Source: https://gist.github.com/pingcheng/f7500adf1b1009df3ed341f511305b0d
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @link(https://api.slack.com/authentication/verifying-requests-from-slack, more)
+     * @link(https://gist.github.com/pingcheng/f7500adf1b1009df3ed341f511305b0d, source)
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
      * @return mixed
      */
     public function handle(Request $request, Closure $next)

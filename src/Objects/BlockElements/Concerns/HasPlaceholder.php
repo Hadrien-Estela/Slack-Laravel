@@ -10,7 +10,7 @@ trait HasPlaceholder
     /**
      * A plain_text only text object that defines the placeholder text.
      *
-     * @var \Slack\Objects\CompositionObjects\Text|null
+     * @varText|null
      */
     private $placeholder;
 
@@ -18,7 +18,7 @@ trait HasPlaceholder
      * Set the placeholder.
      *
      * @param  string $text
-     * @return \Slack\Objects\BlockElements\BlockElement
+     * @return BlockElement
      */
     public function placeholder(string $placeholder)
     {
