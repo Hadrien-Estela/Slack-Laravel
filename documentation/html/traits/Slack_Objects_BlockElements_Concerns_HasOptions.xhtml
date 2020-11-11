@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Slack\Objects\BlockElements\Concerns\HasOptions</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../traits.xhtml">Traits</a>
+          </li>
+          <li class="separator">
+            <a href="../traits.xhtml#Slack_Objects_BlockElements_Concerns">Slack\Objects\BlockElements\Concerns</a>
+          </li>
+          <li class="separator">HasOptions</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Objects/BlockElements/Concerns/HasOptions.php.xhtml#line8">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Slack\Objects\BlockElements\Concerns\</small>HasOptions</h1>
+        <h4/>
+        <p/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">trait HasOptions
+            {<br/><ul class="none"><li>// members</li><li>private array <a href="#members">$options</a> =
+                        ;
+                    </li><li>private  <a href="#members">$initial_option</a>;
+                    </li><li>private array <a href="#members">$initial_options</a> =
+                        ;
+                    </li><li>private array <a href="#members">$option_groups</a> =
+                        ;
+                    </li></ul><ul class="none"><li>// methods</li><li>public BlockElement <a title="Slack\Objects\BlockElements\Concerns\HasOptions" href="../traits/Slack_Objects_BlockElements_Concerns_HasOptions/option.xhtml">option</a>()
+                    </li><li>public BlockElement <a title="Slack\Objects\BlockElements\Concerns\HasOptions" href="../traits/Slack_Objects_BlockElements_Concerns_HasOptions/group.xhtml">group</a>()
+                    </li><li>public BlockElement <a title="Slack\Objects\BlockElements\Concerns\HasOptions" href="../traits/Slack_Objects_BlockElements_Concerns_HasOptions/initialOption.xhtml">initialOption</a>()
+                    </li><li>private array <a title="Slack\Objects\BlockElements\Concerns\HasOptions" href="../traits/Slack_Objects_BlockElements_Concerns_HasOptions/options.xhtml">options</a>()
+                    </li><li>private array <a title="Slack\Objects\BlockElements\Concerns\HasOptions" href="../traits/Slack_Objects_BlockElements_Concerns_HasOptions/initialOptions.xhtml">initialOptions</a>()
+                    </li><li>private array <a title="Slack\Objects\BlockElements\Concerns\HasOptions" href="../traits/Slack_Objects_BlockElements_Concerns_HasOptions/groups.xhtml">groups</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Used by</h4>
+          <ul>
+            <li>
+              <a title="Slack\Objects\BlockElements\RadioButtonGroup" href="../classes/Slack_Objects_BlockElements_RadioButtonGroup.xhtml">Slack\Objects\BlockElements\RadioButtonGroup</a>
+            </li>
+            <li>
+              <a title="Slack\Objects\BlockElements\OverflowMenu" href="../classes/Slack_Objects_BlockElements_OverflowMenu.xhtml">Slack\Objects\BlockElements\OverflowMenu</a>
+            </li>
+            <li>
+              <a title="Slack\Objects\BlockElements\MultiSelectMenu\ExternalMultiSelect" href="../classes/Slack_Objects_BlockElements_MultiSelectMenu_ExternalMultiSelect.xhtml">Slack\Objects\BlockElements\MultiSelectMenu\ExternalMultiSelect</a>
+            </li>
+            <li>
+              <a title="Slack\Objects\BlockElements\MultiSelectMenu\StaticMultiSelect" href="../classes/Slack_Objects_BlockElements_MultiSelectMenu_StaticMultiSelect.xhtml">Slack\Objects\BlockElements\MultiSelectMenu\StaticMultiSelect</a>
+            </li>
+            <li>
+              <a title="Slack\Objects\BlockElements\CheckboxGroup" href="../classes/Slack_Objects_BlockElements_CheckboxGroup.xhtml">Slack\Objects\BlockElements\CheckboxGroup</a>
+            </li>
+            <li>
+              <a title="Slack\Objects\BlockElements\SelectMenu\ExternalSelect" href="../classes/Slack_Objects_BlockElements_SelectMenu_ExternalSelect.xhtml">Slack\Objects\BlockElements\SelectMenu\ExternalSelect</a>
+            </li>
+            <li>
+              <a title="Slack\Objects\BlockElements\SelectMenu\StaticSelect" href="../classes/Slack_Objects_BlockElements_SelectMenu_StaticSelect.xhtml">Slack\Objects\BlockElements\SelectMenu\StaticSelect</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="initial_option"><strong>$initial_option</strong>
+                —
+                array<br/><span class="indent">An option object that exactly matches one of the options within options.</span></li>
+            <li id="initial_options"><strong>$initial_options</strong>
+                —
+                array<br/><span class="indent">An array of option objects that exactly matches one or more of the options within options.</span></li>
+            <li id="option_groups"><strong>$option_groups</strong>
+                —
+                array<br/><span class="indent">An array of option group objects.</span></li>
+            <li id="options"><strong>$options</strong>
+                —
+                array<br/><span class="indent">An array of option.</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="groups"><a title="Slack\Objects\BlockElements\Concerns\HasOptions" href="../traits/Slack_Objects_BlockElements_Concerns_HasOptions/groups.xhtml">groups()</a>
+                — Get the array of serializable option groups.</li>
+            <li id="initialOptions"><a title="Slack\Objects\BlockElements\Concerns\HasOptions" href="../traits/Slack_Objects_BlockElements_Concerns_HasOptions/initialOptions.xhtml">initialOptions()</a>
+                — Get the serializable options Array.</li>
+            <li id="options"><a title="Slack\Objects\BlockElements\Concerns\HasOptions" href="../traits/Slack_Objects_BlockElements_Concerns_HasOptions/options.xhtml">options()</a>
+                — Get the serializable options Array.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="group"><a title="Slack\Objects\BlockElements\Concerns\HasOptions" href="../traits/Slack_Objects_BlockElements_Concerns_HasOptions/group.xhtml">group()</a>
+                — Add an options group</li>
+            <li id="initialOption"><a title="Slack\Objects\BlockElements\Concerns\HasOptions" href="../traits/Slack_Objects_BlockElements_Concerns_HasOptions/initialOption.xhtml">initialOption()</a>
+                — Set the initial option.</li>
+            <li id="option"><a title="Slack\Objects\BlockElements\Concerns\HasOptions" href="../traits/Slack_Objects_BlockElements_Concerns_HasOptions/option.xhtml">option()</a>
+                — Add an option.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.12.0 - Copyright (C) 2010 - 2020 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

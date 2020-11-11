@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Slack\Objects\SlackMessage</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Slack_Objects">Slack\Objects</a>
+          </li>
+          <li class="separator">SlackMessage</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Objects/SlackMessage.php.xhtml#line13">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Slack\Objects\</small>SlackMessage</h1>
+        <h4>https://api.slack.com/reference/messaging/payload</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class SlackMessage
+                implements
+                <a title="JsonSerializable" href="../interfaces/JsonSerializable.xhtml">JsonSerializable</a>,Jsonable
+            {<br/><ul class="none"><li>// members</li><li>private string <a href="#members">$text</a> =
+                        '';
+                    </li><li>private <span title="Slack\Objects\boolean|null">boolean|null</span> <a href="#members">$mrkdwn</a>;
+                    </li><li>private <span title="Slack\Objects\string|null">string|null</span> <a href="#members">$channel</a>;
+                    </li><li>private array <a href="#members">$blocks</a> =
+                        ;
+                    </li><li>private array <a href="#members">$attachments</a> =
+                        ;
+                    </li><li>private <span title="Slack\Objects\string|null">string|null</span> <a href="#members">$thread_ts</a>;
+                    </li><li>private <span title="Slack\Objects\string|null">string|null</span> <a href="#members">$username</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/__construct.xhtml">__construct</a>()
+                    </li><li>public SlackMessage <a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/text.xhtml">text</a>()
+                    </li><li>public SlackMessage <a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/to.xhtml">to</a>()
+                    </li><li>public SlackMessage <a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/markdown.xhtml">markdown</a>()
+                    </li><li>public SlackMessage <a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/block.xhtml">block</a>()
+                    </li><li>public SlackMessage <a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/attachment.xhtml">attachment</a>()
+                    </li><li>public SlackMessage <a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/thread.xhtml">thread</a>()
+                    </li><li>public SlackMessage <a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/username.xhtml">username</a>()
+                    </li><li>public array <a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/jsonSerialize.xhtml">jsonSerialize</a>()
+                    </li><li>private null <a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/blocks.xhtml">blocks</a>()
+                    </li><li>private string|null <a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/attachments.xhtml">attachments</a>()
+                    </li><li>public string <a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/toJson.xhtml">toJson</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a title="JsonSerializable" href="../interfaces/JsonSerializable.xhtml">JsonSerializable</a>
+            </li>
+            <li>Illuminate\Contracts\Support\Jsonable</li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="attachments"><strong>$attachments</strong>
+                —
+                array<br/><span class="indent">An array of legacy secondary attachments.</span></li>
+            <li id="blocks"><strong>$blocks</strong>
+                —
+                array<br/><span class="indent">An array of layout blocks</span></li>
+            <li id="channel"><strong>$channel</strong>
+                —
+                <a title="Slack\Objects\string|null" href="../classes/Slack_Objects_string|null.xhtml">Slack\Objects\string|null</a><br/><span class="indent">The channel where the message will be published.</span></li>
+            <li id="mrkdwn"><strong>$mrkdwn</strong>
+                —
+                <a title="Slack\Objects\boolean|null" href="../classes/Slack_Objects_boolean|null.xhtml">Slack\Objects\boolean|null</a><br/><span class="indent">Determines whether the text field is rendered according to mrkdwn formatting or not.</span></li>
+            <li id="text"><strong>$text</strong>
+                —
+                string<br/><span class="indent">The usage of this field changes depending on whether you're using blocks or not.</span></li>
+            <li id="thread_ts"><strong>$thread_ts</strong>
+                —
+                <a title="Slack\Objects\string|null" href="../classes/Slack_Objects_string|null.xhtml">Slack\Objects\string|null</a><br/><span class="indent">The ID of another un-threaded message to reply to.</span></li>
+            <li id="username"><strong>$username</strong>
+                —
+                <a title="Slack\Objects\string|null" href="../classes/Slack_Objects_string|null.xhtml">Slack\Objects\string|null</a><br/><span class="indent">Set your bot's user name.</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>private</h4>
+          <ul>
+            <li id="attachments"><a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/attachments.xhtml">attachments()</a>
+                — Get attachment JSON payload.</li>
+            <li id="blocks"><a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/blocks.xhtml">blocks()</a>
+                — Get Blocks JSON payload.</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/__construct.xhtml">__construct()</a>
+                — Build a new Instance</li>
+            <li id="attachment"><a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/attachment.xhtml">attachment()</a>
+                — Add attachment.</li>
+            <li id="block"><a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/block.xhtml">block()</a>
+                — Add blocks to message</li>
+            <li id="jsonSerialize"><a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/jsonSerialize.xhtml">jsonSerialize()</a>
+                — Convert the object into something JSON serializable.</li>
+            <li id="markdown"><a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/markdown.xhtml">markdown()</a>
+                — Enabling content markdown</li>
+            <li id="text"><a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/text.xhtml">text()</a>
+                — Set text content ofthe message.</li>
+            <li id="thread"><a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/thread.xhtml">thread()</a>
+                — Set thread parent.</li>
+            <li id="to"><a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/to.xhtml">to()</a>
+                — Set the channel ID.</li>
+            <li id="toJson"><a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/toJson.xhtml">toJson()</a>
+                — Convert to JSON.</li>
+            <li id="username"><a title="Slack\Objects\SlackMessage" href="../classes/Slack_Objects_SlackMessage/username.xhtml">username()</a>
+                — Set bot username</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.12.0 - Copyright (C) 2010 - 2020 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

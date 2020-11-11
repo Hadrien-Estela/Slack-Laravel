@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Slack\Objects\BlockElements\SelectMenu\ConversationSelect</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Slack_Objects_BlockElements_SelectMenu">Slack\Objects\BlockElements\SelectMenu</a>
+          </li>
+          <li class="separator">ConversationSelect</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Objects/BlockElements/SelectMenu/ConversationSelect.php.xhtml#line15">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Slack\Objects\BlockElements\SelectMenu\</small>ConversationSelect</h1>
+        <h4>This select menu will populate its options with a list of public and private channels, DMs, and MPIMs visible to the current user in the active workspace.</h4>
+        <p>https://api.slack.com/reference/block-kit/block-elements#conversation_select</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class ConversationSelect
+                extends <a title="Slack\Objects\BlockElements\SelectMenu\SelectMenu" href="../classes/Slack_Objects_BlockElements_SelectMenu_SelectMenu.xhtml">SelectMenu</a>
+            {<br/><ul class="none"><li>// Inherited constants from <a title="Slack\Objects\BlockElements\SelectMenu\SelectMenu" href="../classes/Slack_Objects_BlockElements_SelectMenu_SelectMenu.xhtml">SelectMenu</a></li><li>const <a href="#Static">Static</a> = 'static_select';</li><li>const <a href="#External">External</a> = 'external_select';</li><li>const <a href="#User">User</a> = 'users_select';</li><li>const <a href="#Conversation">Conversation</a> = 'conversations_select';</li><li>const <a href="#Channel">Channel</a> = 'channels_select';</li></ul><ul class="none"><li>// Inherited constants from <a title="Slack\Objects\BlockElements\InteractiveBlockElement" href="../classes/Slack_Objects_BlockElements_InteractiveBlockElement.xhtml">InteractiveBlockElement</a></li><li>const <a href="#Button">Button</a> = 'button';</li><li>const <a href="#Checkbox">Checkbox</a> = 'checkboxes';</li><li>const <a href="#Datepicker">Datepicker</a> = 'datepicker';</li><li>const <a href="#TextInput">TextInput</a> = 'plain_text_input';</li><li>const <a href="#RadioButton">RadioButton</a> = 'radio_buttons';</li><li>const <a href="#Timepicker">Timepicker</a> = 'timepicker';</li><li>const <a href="#OverflowMenu">OverflowMenu</a> = 'overflow';</li></ul><ul class="none"><li>// Inherited constants from <a title="Slack\Objects\BlockElements\BlockElement" href="../classes/Slack_Objects_BlockElements_BlockElement.xhtml">BlockElement</a></li><li>const <a href="#Image">Image</a> = 'image';</li></ul><ul class="none"><li>// members</li><li>private <span title="Slack\Objects\BlockElements\SelectMenu\string|null">string|null</span> <a href="#members">$initial_conversation</a>;
+                    </li><li>private <span title="Slack\Objects\BlockElements\SelectMenu\boolean|null">boolean|null</span> <a href="#members">$default_to_current_conversation</a>;
+                    </li><li>private <span title="Slack\Objects\BlockElements\SelectMenu\boolean|null">boolean|null</span> <a href="#members">$response_url_enabled</a>;
+                    </li><li>private <span title="\Slack\Objects\CompositionObjects\ConversationFilter|null">ConversationFilter|null</span> <a href="#members">$filter</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Slack\Objects\BlockElements\SelectMenu\ConversationSelect" href="../classes/Slack_Objects_BlockElements_SelectMenu_ConversationSelect/__construct.xhtml">__construct</a>()
+                    </li><li>public ConversationSelect <a title="Slack\Objects\BlockElements\SelectMenu\ConversationSelect" href="../classes/Slack_Objects_BlockElements_SelectMenu_ConversationSelect/initialConversation.xhtml">initialConversation</a>()
+                    </li><li>public ConversationSelect <a title="Slack\Objects\BlockElements\SelectMenu\ConversationSelect" href="../classes/Slack_Objects_BlockElements_SelectMenu_ConversationSelect/filter.xhtml">filter</a>()
+                    </li><li>public ConversationSelect <a title="Slack\Objects\BlockElements\SelectMenu\ConversationSelect" href="../classes/Slack_Objects_BlockElements_SelectMenu_ConversationSelect/currentConversationByDefault.xhtml">currentConversationByDefault</a>()
+                    </li><li>public ConversationSelect <a title="Slack\Objects\BlockElements\SelectMenu\ConversationSelect" href="../classes/Slack_Objects_BlockElements_SelectMenu_ConversationSelect/enableResponseUrl.xhtml">enableResponseUrl</a>()
+                    </li><li>public array <a title="Slack\Objects\BlockElements\SelectMenu\ConversationSelect" href="../classes/Slack_Objects_BlockElements_SelectMenu_ConversationSelect/jsonSerialize.xhtml">jsonSerialize</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Slack\Objects\BlockElements\Menu">Menu</span></li><li>public void <a title="Slack\Objects\BlockElements\Menu" href="../classes/Slack_Objects_BlockElements_Menu/__construct.xhtml">__construct</a>()
+                        </li><li>public array <a title="Slack\Objects\BlockElements\Menu" href="../classes/Slack_Objects_BlockElements_Menu/jsonSerialize.xhtml">jsonSerialize</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Slack\Objects\BlockElements\InteractiveBlockElement">InteractiveBlockElement</span></li><li>public void <a title="Slack\Objects\BlockElements\InteractiveBlockElement" href="../classes/Slack_Objects_BlockElements_InteractiveBlockElement/__construct.xhtml">__construct</a>()
+                        </li><li>public array <a title="Slack\Objects\BlockElements\InteractiveBlockElement" href="../classes/Slack_Objects_BlockElements_InteractiveBlockElement/jsonSerialize.xhtml">jsonSerialize</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Slack\Objects\BlockElements\BlockElement">BlockElement</span></li><li>public void <a title="Slack\Objects\BlockElements\BlockElement" href="../classes/Slack_Objects_BlockElements_BlockElement/__construct.xhtml">__construct</a>()
+                        </li><li>public array <a title="Slack\Objects\BlockElements\BlockElement" href="../classes/Slack_Objects_BlockElements_BlockElement/jsonSerialize.xhtml">jsonSerialize</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Slack\Objects\BlockElements\Concerns\HasConfirm">HasConfirm</span></li><li>public BlockElement <a title="Slack\Objects\BlockElements\Concerns\HasConfirm" href="../traits/Slack_Objects_BlockElements_Concerns_HasConfirm/confirm.xhtml">confirm</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Slack\Objects\BlockElements\Concerns\HasPlaceholder">HasPlaceholder</span></li><li>public BlockElement <a title="Slack\Objects\BlockElements\Concerns\HasPlaceholder" href="../traits/Slack_Objects_BlockElements_Concerns_HasPlaceholder/placeholder.xhtml">placeholder</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="Slack\Objects\BlockElements\SelectMenu\SelectMenu" href="../classes/Slack_Objects_BlockElements_SelectMenu_SelectMenu.xhtml">Slack\Objects\BlockElements\SelectMenu\SelectMenu</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="Static">Static</td>
+              <td>'static_select'</td>
+            </tr>
+            <tr>
+              <td id="External">External</td>
+              <td>'external_select'</td>
+            </tr>
+            <tr>
+              <td id="User">User</td>
+              <td>'users_select'</td>
+            </tr>
+            <tr>
+              <td id="Conversation">Conversation</td>
+              <td>'conversations_select'</td>
+            </tr>
+            <tr>
+              <td id="Channel">Channel</td>
+              <td>'channels_select'</td>
+            </tr>
+            <tr>
+              <td id="Button">Button</td>
+              <td>'button'</td>
+            </tr>
+            <tr>
+              <td id="Checkbox">Checkbox</td>
+              <td>'checkboxes'</td>
+            </tr>
+            <tr>
+              <td id="Datepicker">Datepicker</td>
+              <td>'datepicker'</td>
+            </tr>
+            <tr>
+              <td id="TextInput">TextInput</td>
+              <td>'plain_text_input'</td>
+            </tr>
+            <tr>
+              <td id="RadioButton">RadioButton</td>
+              <td>'radio_buttons'</td>
+            </tr>
+            <tr>
+              <td id="Timepicker">Timepicker</td>
+              <td>'timepicker'</td>
+            </tr>
+            <tr>
+              <td id="OverflowMenu">OverflowMenu</td>
+              <td>'overflow'</td>
+            </tr>
+            <tr>
+              <td id="Image">Image</td>
+              <td>'image'</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="default_to_current_conversation"><strong>$default_to_current_conversation</strong>
+                —
+                <a title="Slack\Objects\BlockElements\SelectMenu\boolean|null" href="../classes/Slack_Objects_BlockElements_SelectMenu_boolean|null.xhtml">Slack\Objects\BlockElements\SelectMenu\boolean|null</a><br/><span class="indent">Pre-populates the select menu with the conversation that the user was viewing when they opened the modal, if available. Default is false.</span></li>
+            <li id="filter"><strong>$filter</strong>
+                —
+                <a title="\Slack\Objects\CompositionObjects\ConversationFilter|null" href="../classes/_Slack_Objects_CompositionObjects_ConversationFilter|null.xhtml">\Slack\Objects\CompositionObjects\ConversationFilter|null</a><br/><span class="indent">A filter object that reduces the list of available conversations using the specified criteria.</span></li>
+            <li id="initial_conversation"><strong>$initial_conversation</strong>
+                —
+                <a title="Slack\Objects\BlockElements\SelectMenu\string|null" href="../classes/Slack_Objects_BlockElements_SelectMenu_string|null.xhtml">Slack\Objects\BlockElements\SelectMenu\string|null</a><br/><span class="indent">The ID of any valid conversation to be pre-selected when the menu loads.</span></li>
+            <li id="response_url_enabled"><strong>$response_url_enabled</strong>
+                —
+                <a title="Slack\Objects\BlockElements\SelectMenu\boolean|null" href="../classes/Slack_Objects_BlockElements_SelectMenu_boolean|null.xhtml">Slack\Objects\BlockElements\SelectMenu\boolean|null</a><br/><span class="indent">When set to true, the view_submission payload from the menu's parent view will contain a response_url. This response_url can be used for message responses. The target conversation for the message will be determined by the value of this select menu.</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Slack\Objects\BlockElements\SelectMenu\ConversationSelect" href="../classes/Slack_Objects_BlockElements_SelectMenu_ConversationSelect/__construct.xhtml">__construct()</a>
+                — Build a new instance.</li>
+            <li id="currentConversationByDefault"><a title="Slack\Objects\BlockElements\SelectMenu\ConversationSelect" href="../classes/Slack_Objects_BlockElements_SelectMenu_ConversationSelect/currentConversationByDefault.xhtml">currentConversationByDefault()</a>
+                — Set current conversation to initial by default.</li>
+            <li id="enableResponseUrl"><a title="Slack\Objects\BlockElements\SelectMenu\ConversationSelect" href="../classes/Slack_Objects_BlockElements_SelectMenu_ConversationSelect/enableResponseUrl.xhtml">enableResponseUrl()</a>
+                — Enables the response URL.</li>
+            <li id="filter"><a title="Slack\Objects\BlockElements\SelectMenu\ConversationSelect" href="../classes/Slack_Objects_BlockElements_SelectMenu_ConversationSelect/filter.xhtml">filter()</a>
+                — Set the conversation filter</li>
+            <li id="initialConversation"><a title="Slack\Objects\BlockElements\SelectMenu\ConversationSelect" href="../classes/Slack_Objects_BlockElements_SelectMenu_ConversationSelect/initialConversation.xhtml">initialConversation()</a>
+                — Set the initial conversation.</li>
+            <li id="jsonSerialize">
+              <a title="Slack\Objects\BlockElements\SelectMenu\ConversationSelect" href="../classes/Slack_Objects_BlockElements_SelectMenu_ConversationSelect/jsonSerialize.xhtml">jsonSerialize()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="Slack\Objects\BlockElements\Menu" href="../classes/Slack_Objects_BlockElements_Menu.xhtml">Slack\Objects\BlockElements\Menu</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="jsonSerialize">
+              <a title="Slack\Objects\BlockElements\Menu" href="../classes/Slack_Objects_BlockElements_Menu/jsonSerialize.xhtml">jsonSerialize()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="Slack\Objects\BlockElements\InteractiveBlockElement" href="../classes/Slack_Objects_BlockElements_InteractiveBlockElement.xhtml">Slack\Objects\BlockElements\InteractiveBlockElement</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="jsonSerialize">
+              <a title="Slack\Objects\BlockElements\InteractiveBlockElement" href="../classes/Slack_Objects_BlockElements_InteractiveBlockElement/jsonSerialize.xhtml">jsonSerialize()</a>
+            </li>
+          </ul>
+          <h3>Inherited from <a title="Slack\Objects\BlockElements\BlockElement" href="../classes/Slack_Objects_BlockElements_BlockElement.xhtml">Slack\Objects\BlockElements\BlockElement</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="jsonSerialize"><a title="Slack\Objects\BlockElements\BlockElement" href="../classes/Slack_Objects_BlockElements_BlockElement/jsonSerialize.xhtml">jsonSerialize()</a>
+                — Convert the object into something JSON serializable.</li>
+          </ul>
+          <h3>Inherited from <a title="Slack\Objects\BlockElements\Concerns\HasConfirm" href="../traits/Slack_Objects_BlockElements_Concerns_HasConfirm.xhtml">Slack\Objects\BlockElements\Concerns\HasConfirm</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="confirm"><a title="Slack\Objects\BlockElements\Concerns\HasConfirm" href="../traits/Slack_Objects_BlockElements_Concerns_HasConfirm/confirm.xhtml">confirm()</a>
+                — Set the confirm dialog.</li>
+          </ul>
+          <h3>Inherited from <a title="Slack\Objects\BlockElements\Concerns\HasPlaceholder" href="../traits/Slack_Objects_BlockElements_Concerns_HasPlaceholder.xhtml">Slack\Objects\BlockElements\Concerns\HasPlaceholder</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="placeholder"><a title="Slack\Objects\BlockElements\Concerns\HasPlaceholder" href="../traits/Slack_Objects_BlockElements_Concerns_HasPlaceholder/placeholder.xhtml">placeholder()</a>
+                — Set the placeholder.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.12.0 - Copyright (C) 2010 - 2020 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

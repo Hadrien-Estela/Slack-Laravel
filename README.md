@@ -28,4 +28,4 @@
 
 ## How to use
 
-Follw the [Manual](https://gitlab.virtuosereality.com/virtuose-reality/slack-laravel/-/wikis/home) to learn moreabout the features.
+Follw the [Manual](https://gitlab.virtuosereality.com/virtuose-reality/slack-laravel/-/wikis/home) to learn more about the features.
