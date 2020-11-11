@@ -9,12 +9,14 @@ class Api
 
     /**
      * Slack API Url.
+     *
      * @var string
      */
     private $api_url;
 
     /**
      * The token used for requests.
+     *
      * @var string
      */
     private $token;
@@ -33,8 +35,8 @@ class Api
     /**
      * Get the Api method Url
      *
-     * @param  string $method The Api method
-     * @return string  Http Url
+     * @param  string $method The Api method.
+     * @return string The Url of the method.
      */
     private function getUrl($method)
     {
@@ -46,7 +48,7 @@ class Api
      *
      * @param  string $method  The Api method.
      * @param  string $content The content of the request
-     * @return Illuminate\Http\Client\Response The Http response.
+     * @return Illuminate\Http\Client\Response
      */
     public function post($method, $content)
     {
@@ -62,8 +64,8 @@ class Api
      * GET request to the slack Api
      *
      * @param  string $method  The Api method.
-     * @param  string $content The content of the request
-     * @return Illuminate\Http\Client\Response The Http response.
+     * @param  string|null $content The content of the request.
+     * @return Illuminate\Http\Client\Response
      */
     public function get($method, $content = null)
     {
@@ -76,11 +78,11 @@ class Api
     }
 
     /**
-     * POST request to a slack webhook url
+     * POST request to a slack webhook url.
      *
-     * @param  string $url  The webhook Url.
-     * @param  string $content The content of the request
-     * @return Illuminate\Http\Client\Response The Http response.
+     * @param  string $url The webhook Url.
+     * @param  string $content The content of the request.
+     * @return Illuminate\Http\Client\Response
      */
     public static function webhook($url, $content)
     {

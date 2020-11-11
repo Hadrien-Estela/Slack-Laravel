@@ -11,7 +11,7 @@ use Slack\Objects\CompositionObjects\ConfirmationDialog;
  * when a user clicks on this overflow button, they will
  * be presented with a list of options to choose from.
  *
- * https://api.slack.com/reference/block-kit/block-elements#overflow
+ * @link(https://api.slack.com/reference/block-kit/block-elements#overflow, more)
  */
 class OverflowMenu extends InteractiveBlockElement
 {
@@ -36,7 +36,6 @@ class OverflowMenu extends InteractiveBlockElement
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

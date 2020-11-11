@@ -10,7 +10,7 @@ use Slack\Objects\CompositionObjects\ConversationFilter;
  * and private channels, DMs, and MPIMs visible to the current user
  * in the active workspace.
  *
- * https://api.slack.com/reference/block-kit/block-elements#conversation_select
+ * @link(https://api.slack.com/reference/block-kit/block-elements#conversation_select, more)
  */
 class ConversationSelect extends SelectMenu
 {
@@ -46,7 +46,7 @@ class ConversationSelect extends SelectMenu
      * A filter object that reduces the list of available conversations
      * using the specified criteria.
      *
-     * @var \Slack\Objects\CompositionObjects\ConversationFilter|null
+     * @var -ConversationFilter|null
      */
     private $filter;
 
@@ -78,7 +78,7 @@ class ConversationSelect extends SelectMenu
      * Set the initial conversation.
      *
      * @param  string $conversationID [description]
-     * @return \Slack\Objects\BlockElements\SelectMenu\ConversationSelect
+     * @return -ConversationSelect
      */
     public function initialConversation(string $conversationID)
     {
@@ -90,7 +90,7 @@ class ConversationSelect extends SelectMenu
      * Set the conversation filter
      *
      * @param  ConversationFilter $filter [description]
-     * @return \Slack\Objects\BlockElements\SelectMenu\ConversationSelect
+     * @return -ConversationSelect
      */
     public function filter(ConversationFilter $filter)
     {
@@ -101,7 +101,7 @@ class ConversationSelect extends SelectMenu
     /**
      * Set current conversation to initial by default.
      *
-     * @return \Slack\Objects\BlockElements\SelectMenu\ConversationSelect
+     * @return -ConversationSelect
      */
     public function currentConversationByDefault()
     {
@@ -112,7 +112,7 @@ class ConversationSelect extends SelectMenu
     /**
      * Enables the response URL.
      *
-     * @return \Slack\Objects\BlockElements\SelectMenu\ConversationSelect
+     * @return ConversationSelect
      */
     public function enableResponseUrl()
     {
@@ -121,7 +121,6 @@ class ConversationSelect extends SelectMenu
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

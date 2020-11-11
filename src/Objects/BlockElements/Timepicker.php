@@ -10,7 +10,7 @@ use Slack\Objects\CompositionObjects\Text;
 /**
  * An element which allows selection of a time of day.
  *
- * https://api.slack.com/reference/block-kit/block-elements#timepicker
+ * @link(https://api.slack.com/reference/block-kit/block-elements#timepicker, more)
  */
 class Timepicker extends InteractiveBlockElement
 {
@@ -33,7 +33,7 @@ class Timepicker extends InteractiveBlockElement
      *
      * @param string                  $action_id    [description]
      * @param string|null             $placeholder  [description]
-     * @param \DateTime|null          $initial_time [description]
+     * @param DateTime|null          $initial_time [description]
      * @param ConfirmationDialog|null $confirm      [description]
      */
     public function __construct(string $action_id,
@@ -50,8 +50,8 @@ class Timepicker extends InteractiveBlockElement
     /**
      * Set the initiale picker time.
      *
-     * @param  \DateTime $date
-     * @return \Slack\Objects\BlockElements\Timepicker
+     * @param  DateTime $date
+     * @return Timepicker
      */
     public function initialTime(\DateTime $date)
     {
@@ -60,7 +60,6 @@ class Timepicker extends InteractiveBlockElement
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

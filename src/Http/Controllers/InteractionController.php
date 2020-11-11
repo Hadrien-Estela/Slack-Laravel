@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 
+/**
+ * Abstract class as a base to handle slack interactions incoming requests.
+ * @link(https://api.slack.com/interactivity/handling, more)
+ */
 abstract class InteractionController extends Controller
 {
 
@@ -63,9 +67,11 @@ abstract class InteractionController extends Controller
     ];
 
     /**
-     * Receiving request from Slack Interactive Component.
+     * Handle the interaction request.
+     * @link(https://api.slack.com/reference/interaction-payloads/block-actions, more)
      *
-     * https://api.slack.com/reference/interaction-payloads/block-actions
+     * @param  \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
@@ -109,9 +115,9 @@ abstract class InteractionController extends Controller
     /**
      * Call the associated view callback action.
      *
-     * @param  Request $request
-     * @param  string  $callback_id
-     * @param  array   $callback_actions
+     * @param  \Illuminate\Http\Request $request
+     * @param  Object $view
+     * @param  array $callback_actions_arr
      * @return \Illuminate\Http\Response
      */
     private function viewAction(Request $request, $view, array $callback_actions_arr)
@@ -134,10 +140,11 @@ abstract class InteractionController extends Controller
     }
 
     /**
-     * Call method associated with action
+     * Call method associated with action.
      *
-     * @param  Request $request
-     * @return array $actions
+     * @param  \Illuminate\Http\Request $request
+     * @param  array $actions
+     * @return \Illuminate\Http\Response
      */
     private function blockActions(Request $request, array $actions)
     {
@@ -161,10 +168,10 @@ abstract class InteractionController extends Controller
     }
 
     /**
-     * Must return an array of options
+     * Return the options suggestion.
      *
-     * @param  Request $request
-     * @return array
+     * @param  \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     private function blockSuggestions(Request $request, string $action_id)
     {
@@ -183,6 +190,7 @@ abstract class InteractionController extends Controller
         else
             throw new Exception("Not implemented `block_suggestion` callback: $action_id");
     }
+
 
     private function shortcut(Request $request, string $callback_id)
     {

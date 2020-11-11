@@ -10,7 +10,7 @@ use Slack\Objects\CompositionObjects\ConfirmationDialog;
  * A checkbox group that allows a user to choose multiple items from a
  * list of possible options.
  *
- * https://api.slack.com/reference/block-kit/block-elements#checkboxes
+ * @link(https://api.slack.com/reference/block-kit/block-elements#checkboxes, more)
  */
 class CheckboxGroup extends InteractiveBlockElement
 {
@@ -38,7 +38,6 @@ class CheckboxGroup extends InteractiveBlockElement
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

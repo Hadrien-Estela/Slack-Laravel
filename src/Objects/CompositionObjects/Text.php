@@ -7,7 +7,7 @@ use JsonSerializable;
 /**
  * An object containing some text, formatted either as plain_text or using mrkdwn.
  *
- * https://api.slack.com/reference/block-kit/composition-objects#text
+ * @link(https://api.slack.com/reference/block-kit/composition-objects#text, more)
  */
 class Text implements JsonSerializable
 {
@@ -44,7 +44,7 @@ class Text implements JsonSerializable
     private $verbatim;
 
     /**
-     * Build a new instance.
+     * Build a new Text instance.
      *
      * @param string    $type       The format type.
      * @param string    $text       The text content.
@@ -66,7 +66,7 @@ class Text implements JsonSerializable
      * Set text.
      *
      * @param  string $text
-     * @return \Slack\Objects\CompositionObjects\Text
+     * @return Text
      */
     public function text(string $text)
     {
@@ -77,7 +77,7 @@ class Text implements JsonSerializable
     /**
      * Escape emojis
      *
-     * @return \Slack\Objects\CompositionObjects\Text
+     * @return Text
      */
     public function escapeEmoji()
     {
@@ -86,9 +86,9 @@ class Text implements JsonSerializable
     }
 
     /**
-     * Force verbatim text
+     * Force verbatim text.
      *
-     * @return \Slack\Objects\CompositionObjects\Text
+     * @return Text
      */
     public function verbatim()
     {

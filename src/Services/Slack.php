@@ -14,34 +14,31 @@ class Slack
     /**
      * Slack webhooks.
      *
-     * @var string array
+     * @var string[]
      */
     private $webhooks = [];
 
     /**
      * Slack channels.
      *
-     * @var string array
+     * @var string[]
      */
     private $channels = [];
 
     /**
-     * App API client
-     * @var Slack\Api
+     * App scoped API client.
+     *
+     * @var Api
      */
     private $app;
 
     /**
-     * Bot API client
-     * @var Slack\Api
+     * Bot scoped API client
+     *
+     * @var Api
      */
     private $bot;
 
-    /**
-     * Create a new Ovh instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->webhooks = config('slack.webhooks');
@@ -51,28 +48,33 @@ class Slack
     }
 
     /**
-     * Gets a webhook url.
+     * Get a webhook url.
      *
-     * @param string  $webhookname
-     * @return string
+     * @param string $webhook_name The webhook name.
+     * @return string The webhook url.
      */
-    public function getWebhookUrl(string $webhookname)
+    public function getWebhookUrl(string $webhook_name)
     {
-        return $this->webhooks[$webhookname];
-    }
-
-    public function getChannelID(string $channelname)
-    {
-        return $this->channels[$channelname];
+        return $this->webhooks[$webhook_name];
     }
 
     /**
-     * Find a user with an email address.
+     * Get a channel id.
      *
-     * https://api.slack.com/methods/users.lookupByEmail#arg_email
+     * @param  string $channel_name The channel name.
+     * @return string The channel ID.
+     */
+    public function getChannelID(string $channel_name)
+    {
+        return $this->channels[$channel_name];
+    }
+
+    /**
+     * Find a user by its email address.
+     * @link(https://api.slack.com/methods/users.lookupByEmail#arg_email,more)
      *
-     * @param  string email
-     * @return https://api.slack.com/types/user user object
+     * @param  string The email to find.
+     * @return Object The user object.
      */
     public function findUserByEmail(string $email)
     {
@@ -87,12 +89,11 @@ class Slack
     }
 
     /**
-     * Retrieves a user's profile information.
+     * Get a user's profile.
+     * @link(https://api.slack.com/methods/users.profile.get, more)
      *
-     * https://api.slack.com/methods/users.profile.get
-     *
-     * @param  string                       $user_id
-     * @return profile object
+     * @param  string $user_id The id of the user to find profile for.
+     * @return Object The profile object.
      */
     public function getUserProfile(string $user_id)
     {
@@ -107,12 +108,11 @@ class Slack
     }
 
     /**
-     *  Sends a message on a webhook.
+     *  Send a message on a webhook.
+     * @link(https://api.slack.com/messaging/webhooks, more)
      *
-     * https://api.slack.com/messaging/webhooks
-     *
-     * @param  \Slack\Objects\SlackMessage     $message
-     * @param  string                              $webhookUrl
+     * @param  SlackMessage $message The message to send.
+     * @param  string $webhookUrl The webhook url.
      * @return \Illuminate\Http\Client\Response
      */
     public function sendMessageUsingWebhook(SlackMessage $message, string $webhookUrl)
@@ -123,11 +123,10 @@ class Slack
     }
 
     /**
-     * Sends a message to a channel.
+     * Send a message on a channel.
+     * @link(https://api.slack.com/methods/chat.postMessage, more)
      *
-     * https://api.slack.com/methods/chat.postMessage
-     *
-     * @param \Slack\Objects\SlackMessage  message
+     * @param SlackMessage message The message to send.
      * @return \Illuminate\Http\Client\Response
      */
     public function sendMessage(SlackMessage $message)
@@ -142,11 +141,10 @@ class Slack
 
     /**
      * Open a view for a user.
+     * @link(https://api.slack.com/methods/views.open, more)
      *
-     *  https://api.slack.com/methods/views.open
-     *
-     * @param  \Slack\Objects\SlackView     $view
-     * @param  string                           $trigger_id
+     * @param  SlackView $view The view to open.
+     * @param  string $trigger_id The trigger ID.
      * @return \Illuminate\Http\Client\Response
      */
     public function openView(SlackView $view, string $trigger_id)
@@ -164,13 +162,12 @@ class Slack
 
     /**
      * Update an existing view.
+     * @link(https://api.slack.com/methods/views.update, more)
      *
-     * https://api.slack.com/methods/views.update
-     *
-     * @param  \Slack\Objects\SlackView     $view
-     * @param  string|null                      $view_id
-     * @param  string|null                      $external_id
-     * @param  string|null                      $hash
+     * @param  SlackView $view The content to send as update.
+     * @param  string|null $view_id The ID of the view to update.
+     * @param  string|null $external_id The eternal ID of the view to update.
+     * @param  string|null $hash A string that represents view state.
      * @return \Illuminate\Http\Client\Response
      */
     public function updateView(SlackView $view,
@@ -196,11 +193,10 @@ class Slack
 
     /**
      * Push a view onto the stack of a root view.
+     * @link(https://api.slack.com/methods/views.push, more)
      *
-     * https://api.slack.com/methods/views.push
-     *
-     * @param  \Slack\Objects\SlackView     $view
-     * @param  string                           $trigger_id
+     * @param  SlackView $view The view to push.
+     * @param  string $trigger_id The trigger ID.
      * @return \Illuminate\Http\Client\Response
      */
     public function pushView(SlackView $view, string $trigger_id)
@@ -218,12 +214,11 @@ class Slack
 
     /**
      * Publish a static view for a User.
+     * @link(https://api.slack.com/methods/views.publish, more)
      *
-     * https://api.slack.com/methods/views.publish
-     *
-     * @param  \Slack\Objects\SlackView     $view
-     * @param  string                           $user_id
-     * @param  string|null                      $hash
+     * @param  lackView $view The view to publish.
+     * @param  string $user_id The ID of the user you want to push the view for.
+     * @param  string|null $hash A string that represents view state.
      * @return \Illuminate\Http\Client\Response
      */
     public function publishView(SlackView $view, string $user_id, string $hash = null)

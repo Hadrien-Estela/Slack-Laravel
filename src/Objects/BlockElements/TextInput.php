@@ -12,9 +12,7 @@ use Slack\Objects\CompositionObjects\DispatchActionConfig;
  * creates a field where a user can enter freeform data.
  * It can appear as a single-line field or a larger textarea using the multiline flag.
  *
- * ! Plain-text input elements are currently only available in modals.
- *
- * https://api.slack.com/reference/block-kit/block-elements#input
+ * @link(https://api.slack.com/reference/block-kit/block-elements#input, more)
  */
 class TextInput extends InteractiveBlockElement
 {
@@ -57,7 +55,7 @@ class TextInput extends InteractiveBlockElement
      * A dispatch configuration object that determines when during
      * text input the element returns a block_actions payload.
      *
-     * @var Slack\Objects\CompositionObjects\DispatchActionConfig|null
+     * @var DispatchActionConfig|null
      */
     private $dispatch_action_config;
 
@@ -93,7 +91,7 @@ class TextInput extends InteractiveBlockElement
      * Set the initial value.
      *
      * @param  string $initialValue
-     * @return \Slack\Objects\BlockElements\TextInput
+     * @return TextInput
      */
     public function initialValue($initialValue)
     {
@@ -104,7 +102,7 @@ class TextInput extends InteractiveBlockElement
     /**
      * make the input multiline.
      *
-     * @return \Slack\Objects\BlockElements\TextInput
+     * @return TextInput
      */
     public function multiline()
     {
@@ -116,7 +114,7 @@ class TextInput extends InteractiveBlockElement
      * Set the min length.
      *
      * @param  integer $min
-     * @return \Slack\Objects\BlockElements\TextInput
+     * @return TextInput
      */
     public function minLength(int $min)
     {
@@ -128,7 +126,7 @@ class TextInput extends InteractiveBlockElement
      * Set the max length.
      *
      * @param  integer $max
-     * @return \Slack\Objects\BlockElements\TextInput
+     * @return TextInput
      */
     public function maxLength(int $max)
     {
@@ -140,7 +138,7 @@ class TextInput extends InteractiveBlockElement
      * Set the dispatch config.
      *
      * @param  DispatchActionConfig $config
-     * @return \Slack\Objects\BlockElements\TextInput
+     * @return TextInput
      */
     public function dispatchConfig(DispatchActionConfig $config)
     {
@@ -149,7 +147,6 @@ class TextInput extends InteractiveBlockElement
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

@@ -8,7 +8,7 @@ use JsonSerializable;
  * Determines when a plain-text input element will return
  * a block_actionsinteraction payload.
  *
- * https://api.slack.com/reference/block-kit/composition-objects#dispatch_action_config
+ * @link(https://api.slack.com/reference/block-kit/composition-objects#dispatch_action_config, more)
  */
 class DispatchActionConfig implements JsonSerializable
 {
@@ -20,7 +20,7 @@ class DispatchActionConfig implements JsonSerializable
      * An array of interaction types that you would like to receive
      * a block_actions payload for.
      *
-     * @var array
+     * @var string[]
      */
     private $trigger_actions_on = [];
 

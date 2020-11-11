@@ -38,7 +38,7 @@ abstract class SlackInteraction
     /**
      * Authenticate the user to your app using its slack ID.
      *
-     * @param  string   $slack_user_id
+     * @param  string $slack_user_id
      */
     abstract protected function authenticateUser(string $slack_user_id);
 }

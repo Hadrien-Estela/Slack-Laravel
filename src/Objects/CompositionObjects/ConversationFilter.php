@@ -8,7 +8,7 @@ use JsonSerializable;
  * Provides a way to filter the list of options in a conversations
  * select menu or conversations multi-select menu.
  *
- * https://api.slack.com/reference/block-kit/composition-objects#filter_conversations
+ * @link(https://api.slack.com/reference/block-kit/composition-objects#filter_conversations, more)
  */
 class ConversationFilter implements JsonSerializable
 {
@@ -23,7 +23,7 @@ class ConversationFilter implements JsonSerializable
      * You should provide an array of strings from the following options:
      * `im`, `mpim`, `private`, and `public`. The array cannot be empty.
      *
-     * @var array
+     * @var string[]
      */
     private $include = [];
 
@@ -48,6 +48,7 @@ class ConversationFilter implements JsonSerializable
      *
      * @param boolean|null $excludeExternal
      * @param boolean|null $excludeBots
+     * @param string[]
      */
     public function __construct(bool $excludeExternal = null,
                                 bool $excludeBots = null,
@@ -61,7 +62,7 @@ class ConversationFilter implements JsonSerializable
     /**
      * Exclude External channels.
      *
-     * @return \Slack\Objects\CompositionObjects\ConversationFilter
+     * @return ConversationFilter
      */
     public function excludeExternal()
     {
@@ -72,7 +73,7 @@ class ConversationFilter implements JsonSerializable
     /**
      * Exclude Bots.
      *
-     * @return \Slack\Objects\CompositionObjects\ConversationFilter
+     * @return ConversationFilter
      */
     public function excludeBots()
     {
@@ -84,7 +85,7 @@ class ConversationFilter implements JsonSerializable
      * Include type of conversation.
      *
      * @param  string $type
-     * @return \Slack\Objects\CompositionObjects\ConversationFilter
+     * @return ConversationFilter
      */
     public function include(string $type)
     {

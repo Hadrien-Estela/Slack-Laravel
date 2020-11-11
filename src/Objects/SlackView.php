@@ -9,9 +9,9 @@ use Slack\Objects\CompositionObjects\Text;
 use Slack\Objects\Blocks\Block;
 
 /**
- * Views are app-customized visual areas within modals and Home tabs.
+ * Build a serializable view.
  *
- * https://api.slack.com/reference/surfaces/views
+ * @link(https://api.slack.com/reference/surfaces/views, more)
  */
 class SlackView implements JsonSerializable, Jsonable
 {
@@ -30,14 +30,14 @@ class SlackView implements JsonSerializable, Jsonable
      * The title that appears in the top-left of the modal.
      * Must be a plain_text text element with a max length of 24 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text
+     * @var Text
      */
     private $title;
 
     /**
      * An array of blocks that defines the content of the view. Max of 100 blocks.
      *
-     * @var array[Slack\Objects\Blocks\Block]
+     * @var Block[]
      */
     private $blocks = [];
 
@@ -45,7 +45,7 @@ class SlackView implements JsonSerializable, Jsonable
      * An optional plain_text element that defines the text displayed in the
      * close button at the bottom-right of the view. Max length of 24 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text|null
+     * @var Text|null
      */
     private $close;
 
@@ -54,7 +54,7 @@ class SlackView implements JsonSerializable, Jsonable
      * submit button at the bottom-right of the view. submit is required when
      * an input block is within the blocks array. Max length of 24 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text|null
+     * @var Text|null
      */
     private $submit;
 
@@ -100,18 +100,18 @@ class SlackView implements JsonSerializable, Jsonable
     private $external_id;
 
     /**
-     * Build a new instance
+     * Build a new SlackView instance.
      *
-     * @param string       $type             [description]
-     * @param string       $title            [description]
-     * @param array        $blocks           [description]
-     * @param string|null  $close            [description]
-     * @param string|null  $submit           [description]
-     * @param string|null  $private_metadata [description]
-     * @param string|null  $callbackID       [description]
-     * @param boolean|null $clearOnClose     [description]
-     * @param boolean|null $notifyOnClose    [description]
-     * @param string|null  $externalID       [description]
+     * @param string       $type
+     * @param string       $title
+     * @param Block[]      $blocks
+     * @param string|null  $close
+     * @param string|null  $submit
+     * @param string|null  $private_metadata
+     * @param string|null  $callbackID
+     * @param boolean|null $clearOnClose
+     * @param boolean|null $notifyOnClose
+     * @param string|null  $externalID
      */
     public function __construct(string $type,
                                 string $title = 'New view',
@@ -140,8 +140,8 @@ class SlackView implements JsonSerializable, Jsonable
     /**
      * Set the title.
      *
-     * @param  string $title [description]
-     * @return \Slack\Objects\SlackView
+     * @param  string $title
+     * @return SlackView
      */
     public function title (string $title)
     {
@@ -152,8 +152,8 @@ class SlackView implements JsonSerializable, Jsonable
     /**
      * Add a block.
      *
-     * @param  \Slack\Objects\Blocks\Bloc $block
-     * @return \Slack\Objects\SlackView
+     * @param  Block $block
+     * @return SlackView
      */
     public function block(Block $block, int $insert = null)
     {
@@ -168,7 +168,7 @@ class SlackView implements JsonSerializable, Jsonable
      * Set the close button text.
      *
      * @param  string $label
-     * @return \Slack\Objects\SlackView
+     * @return SlackView
      */
     public function closeLabel(string $label)
     {
@@ -180,7 +180,7 @@ class SlackView implements JsonSerializable, Jsonable
      * Set the submit button text.
      *
      * @param  string $label
-     * @return \Slack\Objects\SlackView
+     * @return SlackView
      */
     public function submitLabel(string $label)
     {
@@ -189,10 +189,10 @@ class SlackView implements JsonSerializable, Jsonable
     }
 
     /**
-     * Set the metadata
+     * Set the metadata.
      *
      * @param  string $data
-     * @return \Slack\Objects\SlackView
+     * @return SlackView
      */
     public function metadata(string $data)
     {
@@ -204,7 +204,7 @@ class SlackView implements JsonSerializable, Jsonable
      * Set the callback ID.
      *
      * @param  string $callbackID
-     * @return \Slack\Objects\SlackView
+     * @return SlackView
      */
     public function callback(string $callbackID)
     {
@@ -215,7 +215,7 @@ class SlackView implements JsonSerializable, Jsonable
     /**
      * Make view clear on close.
      *
-     * @return \Slack\Objects\SlackView
+     * @return SlackView
      */
     public function clearOnClose()
     {
@@ -226,7 +226,7 @@ class SlackView implements JsonSerializable, Jsonable
     /**
      * Make view notify on close.
      *
-     * @return \Slack\Objects\SlackView
+     * @return SlackView
      */
     public function notifyOnClose()
     {
@@ -238,7 +238,7 @@ class SlackView implements JsonSerializable, Jsonable
      * Set the external ID.
      *
      * @param  string $id
-     * @return \Slack\Objects\SlackView
+     * @return SlackView
      */
     public function externalID(string $id)
     {
@@ -273,7 +273,7 @@ class SlackView implements JsonSerializable, Jsonable
     /**
      * Convert to JSON.
      *
-     * @param  int  $options
+     * @param  int $options
      * @return string
      */
     public function toJson($options = 0)

@@ -5,7 +5,9 @@ namespace Slack\Objects\BlockElements;
 use JsonSerializable;
 
 /**
- * https://api.slack.com/reference/block-kit/block-elements
+ * Base class for block Elements.
+ *
+ * @link(https://api.slack.com/reference/block-kit/block-elements, more)
  */
 abstract class BlockElement implements JsonSerializable
 {

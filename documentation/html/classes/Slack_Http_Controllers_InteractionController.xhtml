@@ -65,14 +65,15 @@
             <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="../source/Http/Controllers/InteractionController.php.xhtml#line12">Source</a>
+            <a href="../source/Http/Controllers/InteractionController.php.xhtml#line16">Source</a>
           </li>
         </ul>
       </nav>
       <section>
         <h1 id="introduction"><small>Slack\Http\Controllers\</small>InteractionController</h1>
-        <h4/>
+        <h4>Abstract class as a base to handle slack interactions incoming requests.</h4>
         <p/>
+        <ul/>
         <h2 id="synopsis">Synopsis</h2>
         <div class="synopsis">class InteractionController
                 extends Controller
@@ -86,10 +87,10 @@
                         ;
                     </li><li>protected array <a href="#members">$shortcut_callback_actions</a> =
                         ;
-                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Slack\Http\Controllers\InteractionController" href="../classes/Slack_Http_Controllers_InteractionController/index.xhtml">index</a>()
+                    </li></ul><ul class="none"><li>// methods</li><li>public Response <a title="Slack\Http\Controllers\InteractionController" href="../classes/Slack_Http_Controllers_InteractionController/index.xhtml">index</a>()
                     </li><li>private Response <a title="Slack\Http\Controllers\InteractionController" href="../classes/Slack_Http_Controllers_InteractionController/viewAction.xhtml">viewAction</a>()
-                    </li><li>private array <a title="Slack\Http\Controllers\InteractionController" href="../classes/Slack_Http_Controllers_InteractionController/blockActions.xhtml">blockActions</a>()
-                    </li><li>private array <a title="Slack\Http\Controllers\InteractionController" href="../classes/Slack_Http_Controllers_InteractionController/blockSuggestions.xhtml">blockSuggestions</a>()
+                    </li><li>private Response <a title="Slack\Http\Controllers\InteractionController" href="../classes/Slack_Http_Controllers_InteractionController/blockActions.xhtml">blockActions</a>()
+                    </li><li>private JsonResponse <a title="Slack\Http\Controllers\InteractionController" href="../classes/Slack_Http_Controllers_InteractionController/blockSuggestions.xhtml">blockSuggestions</a>()
                     </li><li>private void <a title="Slack\Http\Controllers\InteractionController" href="../classes/Slack_Http_Controllers_InteractionController/shortcut.xhtml">shortcut</a>()
                     </li></ul>
 
@@ -127,9 +128,9 @@
           <h4>private</h4>
           <ul>
             <li id="blockActions"><a title="Slack\Http\Controllers\InteractionController" href="../classes/Slack_Http_Controllers_InteractionController/blockActions.xhtml">blockActions()</a>
-                — Call method associated with action</li>
+                — Call method associated with action.</li>
             <li id="blockSuggestions"><a title="Slack\Http\Controllers\InteractionController" href="../classes/Slack_Http_Controllers_InteractionController/blockSuggestions.xhtml">blockSuggestions()</a>
-                — Must return an array of options</li>
+                — Return the options suggestion.</li>
             <li id="shortcut">
               <a title="Slack\Http\Controllers\InteractionController" href="../classes/Slack_Http_Controllers_InteractionController/shortcut.xhtml">shortcut()</a>
             </li>
@@ -139,7 +140,7 @@
           <h4>public</h4>
           <ul>
             <li id="index"><a title="Slack\Http\Controllers\InteractionController" href="../classes/Slack_Http_Controllers_InteractionController/index.xhtml">index()</a>
-                — Receiving request from Slack Interactive Component.</li>
+                — Handle the interaction request.</li>
           </ul>
         </div>
       </section>

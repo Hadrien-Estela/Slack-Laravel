@@ -8,7 +8,7 @@ use Slack\Objects\BlockElements\SelectMenu\SelectMenu;
  * This select menu will populate its options with a list of public channels
  * visible to the current user in the active workspace.
  *
- * https://api.slack.com/reference/block-kit/block-elements#channel_select
+ * @link(https://api.slack.com/reference/block-kit/block-elements#channel_select, more)
  */
 class ChannelSelect extends SelectMenu
 {
@@ -52,7 +52,7 @@ class ChannelSelect extends SelectMenu
      * Set the initial channel.
      *
      * @param  string $channelID
-     * @return \Slack\Objects\BlockElements\SelectMenu\ChannelSelect
+     * @return ChannelSelect
      */
     public function initialChannel(string $channelID)
     {
@@ -63,7 +63,7 @@ class ChannelSelect extends SelectMenu
     /**
      * Enables the response URL.
      *
-     * @return \Slack\Objects\BlockElements\SelectMenu\ChannelSelect
+     * @return ChannelSelect
      */
     public function enableResponseUrl()
     {
@@ -72,7 +72,6 @@ class ChannelSelect extends SelectMenu
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

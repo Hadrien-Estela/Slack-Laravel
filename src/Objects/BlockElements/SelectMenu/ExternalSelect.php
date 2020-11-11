@@ -10,7 +10,7 @@ use Slack\Objects\CompositionObjects\Option;
  * This select menu will load its options from an external data source,
  * allowing for a dynamic list of options.
  *
- * https://api.slack.com/reference/block-kit/block-elements#external_select
+ * @link(https://api.slack.com/reference/block-kit/block-elements#external_select, more)
  */
 class ExternalSelect extends SelectMenu
 {
@@ -54,7 +54,6 @@ class ExternalSelect extends SelectMenu
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

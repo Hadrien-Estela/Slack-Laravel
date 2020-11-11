@@ -6,6 +6,9 @@ use Slack\Objects\BlockElements\InteractiveBlockElement;
 use Slack\Objects\BlockElements\Concerns;
 use Slack\Objects\CompositionObjects\Text;
 
+/**
+ * Base class for menu elements.
+ */
 abstract class Menu extends InteractiveBlockElement
 {
 
@@ -28,7 +31,6 @@ abstract class Menu extends InteractiveBlockElement
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

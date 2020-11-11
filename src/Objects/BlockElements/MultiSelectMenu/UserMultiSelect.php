@@ -8,7 +8,7 @@ use Slack\Objects\BlockElements\MultiSelectMenu\MultiSelectMenu;
  * This multi-select menu will populate its options with a list of
  * Slack users visible to the current user in the active workspace.
  *
- * https://api.slack.com/reference/block-kit/block-elements#users_multi_select
+ * @link(https://api.slack.com/reference/block-kit/block-elements#users_multi_select, more)
  */
 class UserMultiSelect extends MultiSelectMenu
 {
@@ -16,7 +16,7 @@ class UserMultiSelect extends MultiSelectMenu
     /**
      * An array of user IDs of any valid users to be pre-selected when the menu loads.
      *
-     * @var array
+     * @var string[]
      */
     private $initial_users = [];
 
@@ -39,7 +39,7 @@ class UserMultiSelect extends MultiSelectMenu
      * Add an initial user.
      *
      * @param  string $userID$
-     * @return Slack\Objects\BlockElements\SelectMenu\UserSelect
+     * @return UserSelect
      */
     public function initialUser(string $userID)
     {
@@ -48,7 +48,6 @@ class UserMultiSelect extends MultiSelectMenu
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

@@ -14,9 +14,9 @@ class SlackWebhookChannel
     /**
      * Send the given notification.
      *
-     * @param  mixed  $notifiable
-     * @param  \Illuminate\Notifications\Notification  $notification
-     * @return Illuminate\Http\Client\Response|null
+     * @param  mixed $notifiable
+     * @param  \Illuminate\Notifications\Notification $notification
+     * @return \Illuminate\Http\Client\Response
      */
     public function send($notifiable, Notification $notification)
     {

@@ -6,7 +6,8 @@ use Slack\Objects\BlockElements\BlockElement;
 
 /**
  * An element to insert an image as part of a larger block of content.
- * https://api.slack.com/reference/block-kit/block-elements#image
+ *
+ * @link(https://api.slack.com/reference/block-kit/block-elements#image, more)
  */
 class Image extends BlockElement
 {
@@ -21,7 +22,7 @@ class Image extends BlockElement
     /**
      * A plain-text summary of the image. This should not contain any markup.
      *
-     * @var [type]
+     * @var string
      */
     private $alt_text = '';
 
@@ -42,7 +43,7 @@ class Image extends BlockElement
      * Set image URL.
      *
      * @param  string $url
-     * @return \Slack\Objects\BlockElements\Image
+     * @return Image
      */
     public function url(string $url)
     {
@@ -54,7 +55,7 @@ class Image extends BlockElement
      * Set alternative text.
      *
      * @param  string $text
-     * @return \Slack\Objects\BlockElements\Image
+     * @return Image
      */
     public function alt(string $text)
     {
@@ -63,7 +64,6 @@ class Image extends BlockElement
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

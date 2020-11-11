@@ -9,7 +9,7 @@ use Slack\Objects\BlockElements\Menu;
  * Just like regular select menus, multi-select menus also include type-ahead functionality,
  * where a user can type a part or all of an option string to filter the list.
  *
- * https://api.slack.com/reference/block-kit/block-elements#multi_select
+ * @link(https://api.slack.com/reference/block-kit/block-elements#multi_select, more)
  */
 abstract class MultiSelectMenu extends Menu
 {
@@ -45,7 +45,6 @@ abstract class MultiSelectMenu extends Menu
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

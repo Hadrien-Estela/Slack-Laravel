@@ -10,7 +10,7 @@ use Slack\Objects\BlockElements\Menu;
  * The select menu also includes type-ahead functionality,
  * where a user can type a part or all of an option string to filter the list.
  *
- * https://api.slack.com/reference/block-kit/block-elements#select
+ * @link(https://api.slack.com/reference/block-kit/block-elements#select, more)
  */
 abstract class SelectMenu extends Menu
 {

@@ -10,7 +10,7 @@ use Slack\Objects\CompositionObjects\Option;
  * This menu will load its options from an external data source,
  * allowing for a dynamic list of options.
  *
- * https://api.slack.com/reference/block-kit/block-elements#external_multi_select
+ * @link(https://api.slack.com/reference/block-kit/block-elements#external_multi_select, more)
  */
 class ExternalMultiSelect extends MultiSelectMenu
 {
@@ -45,7 +45,7 @@ class ExternalMultiSelect extends MultiSelectMenu
      * Set the minimum query length.
      *
      * @param  integer $length
-     * @return Slack\Objects\BlockElements\SelectMenu\ExternalSelect
+     * @return ExternalSelect
      */
     public function minQueryLength(int $length)
     {
@@ -54,7 +54,6 @@ class ExternalMultiSelect extends MultiSelectMenu
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

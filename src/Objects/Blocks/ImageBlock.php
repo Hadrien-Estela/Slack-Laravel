@@ -7,7 +7,7 @@ use Slack\Objects\CompositionObjects\Text;
 /**
  * A simple image block, designed to make those cat photos really pop.
  *
- * https://api.slack.com/reference/block-kit/blocks#image
+ * @link(https://api.slack.com/reference/block-kit/blocks#image, more)
  */
 class ImageBlock extends Block
 {
@@ -29,7 +29,7 @@ class ImageBlock extends Block
     /**
      * An optional title for the image.
      *
-     * @var Slack\Objects\CompositionObjects\Text
+     * @var Text
      */
     private $title;
 
@@ -52,7 +52,7 @@ class ImageBlock extends Block
      * Set image URL
      *
      * @param  string $url
-     * @return \Slack\Objects\Blocks\ImageBlock
+     * @return ImageBlock
      */
     public function url(string $url)
     {
@@ -64,7 +64,7 @@ class ImageBlock extends Block
      * Set alt text.
      *
      * @param  string $text
-     * @return \Slack\Objects\Blocks\ImageBlock
+     * @return ImageBlock
      */
     public function alt(string $text)
     {
@@ -76,7 +76,7 @@ class ImageBlock extends Block
      * Set title.
      *
      * @param  string $title
-     * @return \Slack\Objects\Blocks\ImageBlock
+     * @return ImageBlock
      */
     public function title(string $title)
     {
@@ -85,7 +85,6 @@ class ImageBlock extends Block
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

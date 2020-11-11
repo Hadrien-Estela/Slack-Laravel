@@ -76,13 +76,13 @@
                         ;
                     </li><li>private array <a href="#members">$channels</a> =
                         ;
-                    </li><li>private <span title="Slack\Services\Slack\Api">Api</span> <a href="#members">$app</a>;
-                    </li><li>private <span title="Slack\Services\Slack\Api">Api</span> <a href="#members">$bot</a>;
+                    </li><li>private <span title="Slack\Api">Api</span> <a href="#members">$app</a>;
+                    </li><li>private <span title="Slack\Api">Api</span> <a href="#members">$bot</a>;
                     </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/__construct.xhtml">__construct</a>()
                     </li><li>public string <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/getWebhookUrl.xhtml">getWebhookUrl</a>()
-                    </li><li>public void <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/getChannelID.xhtml">getChannelID</a>()
-                    </li><li>public https://api.slack.com/types/user <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/findUserByEmail.xhtml">findUserByEmail</a>()
-                    </li><li>public profile <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/getUserProfile.xhtml">getUserProfile</a>()
+                    </li><li>public string <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/getChannelID.xhtml">getChannelID</a>()
+                    </li><li>public Object <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/findUserByEmail.xhtml">findUserByEmail</a>()
+                    </li><li>public Object <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/getUserProfile.xhtml">getUserProfile</a>()
                     </li><li>public Response <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/sendMessageUsingWebhook.xhtml">sendMessageUsingWebhook</a>()
                     </li><li>public Response <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/sendMessage.xhtml">sendMessage</a>()
                     </li><li>public Response <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/openView.xhtml">openView</a>()
@@ -98,33 +98,33 @@
           <ul class="members">
             <li id="app"><strong>$app</strong>
                 —
-                <a title="Slack\Services\Slack\Api" href="../classes/Slack_Services_Slack_Api.xhtml">Slack\Services\Slack\Api</a><br/><span class="indent">App API client</span></li>
+                <a title="Slack\Api" href="../classes/Slack_Api.xhtml">Slack\Api</a><br/><span class="indent">App scoped API client.</span></li>
             <li id="bot"><strong>$bot</strong>
                 —
-                <a title="Slack\Services\Slack\Api" href="../classes/Slack_Services_Slack_Api.xhtml">Slack\Services\Slack\Api</a><br/><span class="indent">Bot API client</span></li>
+                <a title="Slack\Api" href="../classes/Slack_Api.xhtml">Slack\Api</a><br/><span class="indent">Bot scoped API client</span></li>
             <li id="channels"><strong>$channels</strong>
                 —
-                string<br/><span class="indent">Slack channels.</span></li>
+                array<br/><span class="indent">Slack channels.</span></li>
             <li id="webhooks"><strong>$webhooks</strong>
                 —
-                string<br/><span class="indent">Slack webhooks.</span></li>
+                array<br/><span class="indent">Slack webhooks.</span></li>
           </ul>
         </div>
         <h2 id="methods">Methods</h2>
         <div class="styled">
           <h4>public</h4>
           <ul>
-            <li id="__construct"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/__construct.xhtml">__construct()</a>
-                — Create a new Ovh instance.</li>
-            <li id="findUserByEmail"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/findUserByEmail.xhtml">findUserByEmail()</a>
-                — Find a user with an email address.</li>
-            <li id="getChannelID">
-              <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/getChannelID.xhtml">getChannelID()</a>
+            <li id="__construct">
+              <a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/__construct.xhtml">__construct()</a>
             </li>
+            <li id="findUserByEmail"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/findUserByEmail.xhtml">findUserByEmail()</a>
+                — Find a user by its email address.</li>
+            <li id="getChannelID"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/getChannelID.xhtml">getChannelID()</a>
+                — Get a channel id.</li>
             <li id="getUserProfile"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/getUserProfile.xhtml">getUserProfile()</a>
-                — Retrieves a user's profile information.</li>
+                — Get a user's profile.</li>
             <li id="getWebhookUrl"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/getWebhookUrl.xhtml">getWebhookUrl()</a>
-                — Gets a webhook url.</li>
+                — Get a webhook url.</li>
             <li id="openView"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/openView.xhtml">openView()</a>
                 — Open a view for a user.</li>
             <li id="publishView"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/publishView.xhtml">publishView()</a>
@@ -132,9 +132,9 @@
             <li id="pushView"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/pushView.xhtml">pushView()</a>
                 — Push a view onto the stack of a root view.</li>
             <li id="sendMessage"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/sendMessage.xhtml">sendMessage()</a>
-                — Sends a message to a channel.</li>
+                — Send a message on a channel.</li>
             <li id="sendMessageUsingWebhook"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/sendMessageUsingWebhook.xhtml">sendMessageUsingWebhook()</a>
-                — Sends a message on a webhook.</li>
+                — Send a message on a webhook.</li>
             <li id="updateView"><a title="Slack\Services\Slack" href="../classes/Slack_Services_Slack/updateView.xhtml">updateView()</a>
                 — Update an existing view.</li>
           </ul>

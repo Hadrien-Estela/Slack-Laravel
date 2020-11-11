@@ -7,7 +7,7 @@ use JsonSerializable;
 /**
  * An object containing some text, formatted either as plain_text or using mrkdwn.
  *
- * https://api.slack.com/reference/block-kit/composition-objects#option
+ * @link(https://api.slack.com/reference/block-kit/composition-objects#option, more)
  */
 class Option implements JsonSerializable
 {
@@ -15,7 +15,7 @@ class Option implements JsonSerializable
     /**
      * A text object that defines the text shown in the option on the menu.
      *
-     * @var Slack\Objects\CompositionObjects\Text
+     * @var Text
      */
     private $text;
 
@@ -30,12 +30,12 @@ class Option implements JsonSerializable
      * A plain_text only text object that defines a line of descriptive text
      * shown below the text field beside the radio button.
      *
-     * @var Slack\Objects\CompositionObjects\Text
+     * @var Text
      */
     private $description;
 
     /**
-     * A URL to load in the user's browser when the option is clicked
+     * A URL to load in the user's browser when the option is clicked.
      *
      * @var string
      */
@@ -67,7 +67,7 @@ class Option implements JsonSerializable
      *
      * @param  string       $text
      * @param  bool|boolean $markdown
-     * @return \Slack\Objects\CompositionObjects\Option
+     * @return Option
      */
     public function text(string $text, bool $markdown = false)
     {
@@ -76,10 +76,10 @@ class Option implements JsonSerializable
     }
 
     /**
-     * Set the value
+     * Set the value.
      *
      * @param  string $value
-     * @return \Slack\Objects\CompositionObjects\Option
+     * @return Option
      */
     public function value(string $value)
     {
@@ -91,7 +91,7 @@ class Option implements JsonSerializable
      * Set the description.
      *
      * @param  string $description
-     * @return \Slack\Objects\CompositionObjects\Option
+     * @return Option
      */
     public function description(string $description)
     {
@@ -100,10 +100,10 @@ class Option implements JsonSerializable
     }
 
     /**
-     * Set the url
+     * Set the url.
      *
      * @param  string $url
-     * @return \Slack\Objects\CompositionObjects\Option
+     * @return Option
      */
     public function url(string $url)
     {

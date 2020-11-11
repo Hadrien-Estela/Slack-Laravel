@@ -9,7 +9,7 @@ use Slack\Objects\BlockElements\SelectMenu\SelectMenu;
  * This is the simplest form of select menu, with a static list
  * of options passed in when defining the element.
  *
- * https://api.slack.com/reference/block-kit/block-elements#static_select
+ * @link(https://api.slack.com/reference/block-kit/block-elements#static_select, more)
  */
 class StaticSelect extends SelectMenu
 {
@@ -38,7 +38,6 @@ class StaticSelect extends SelectMenu
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

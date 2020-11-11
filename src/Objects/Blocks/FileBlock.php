@@ -6,7 +6,7 @@ namespace Slack\Objects\Blocks;
  * Displays a remote file. You can't add this block to app surfaces directly,
  * but it will show up when retrieving messages that contain remote files.
  *
- * https://api.slack.com/reference/block-kit/blocks#file
+ * @link(https://api.slack.com/reference/block-kit/blocks#file, more)
  */
 class FileBlock extends Block
 {
@@ -37,7 +37,6 @@ class FileBlock extends Block
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

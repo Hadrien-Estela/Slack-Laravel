@@ -6,7 +6,9 @@
             <include mask="*.php"/>
             <exclude mask=""/>
 
-            <inheritance resolve="true"/>
+            <inheritance resolve="true">
+                <dependency  path="https://laravel.com/api/8.x/index.html" />
+            </inheritance>
 
         </collector>
 

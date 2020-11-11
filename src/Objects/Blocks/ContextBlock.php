@@ -5,7 +5,7 @@ namespace Slack\Objects\Blocks;
 /**
  * Displays message context, which can include both images and text.
  *
- * https://api.slack.com/reference/block-kit/blocks#context
+ * @link(https://api.slack.com/reference/block-kit/blocks#context, more)
  */
 class ContextBlock extends Block
 {
@@ -20,7 +20,7 @@ class ContextBlock extends Block
     /**
      * Build a new block instance.
      *
-     * @param Slack\Objects\CompositionObjects\Text|Slack\Objects\BlockElements\Image $element The elements of the block.
+     * @param $mixed] $element The elements of the block.
      */
     public function __construct(array $elements = [])
     {
@@ -31,8 +31,8 @@ class ContextBlock extends Block
     /**
      * Add an element.
      *
-     * @param  Slack\Objects\CompositionObjects\Text|Slack\Objects\BlockElements\Image $element
-     * @return \Slack\Objects\Blocks\ContextBlock
+     * @param  Text|Image $element
+     * @return ContextBlock
      */
     public function element($element)
     {

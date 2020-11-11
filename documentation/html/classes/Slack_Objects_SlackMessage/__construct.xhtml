@@ -62,13 +62,13 @@
             <a href="#parameter">Parameter</a>
           </li>
           <li>
-            <a href="../../source/Objects/SlackMessage.php.xhtml#line79">Source</a>
+            <a href="../../source/Objects/SlackMessage.php.xhtml#line83">Source</a>
           </li>
         </ul>
       </nav>
       <section>
         <h1><small>Slack\Objects\SlackMessage::</small>__construct</h1>
-        <h4>Build a new Instance</h4>
+        <h4>Build a new SlackMessage Instance.</h4>
         <p/>
         <ul/>
         <h2 id="signature">Signature</h2>
@@ -78,7 +78,9 @@
             [bool
         $markdown = NULL,
             [string
-        $channel = NULL]]] )
+        $channel_id = NULL,
+            [array
+        $blocks = ]]]] )
             </code>
         </div>
         <h2 id="parameterlist">Parameters</h2>
@@ -86,15 +88,19 @@
           <dt><code>$text</code>
                 —
                 string</dt>
-          <dd>The Text content</dd>
+          <dd>The Text content.</dd>
           <dt><code>$markdown</code>
                 —
                 bool</dt>
-          <dd>Use markdown.</dd>
-          <dt><code>$channel</code>
+          <dd>Use markdown.<br/><br/><br/>      </dd>
+          <dt><code>$channel_id</code>
                 —
                 string</dt>
-          <dd/>
+          <dd>The reciptent.<br/><br/><br/>      </dd>
+          <dt><code>$blocks</code>
+                —
+                array</dt>
+          <dd><br/><br/><br/>      </dd>
         </dl>
       </section>
     </div>

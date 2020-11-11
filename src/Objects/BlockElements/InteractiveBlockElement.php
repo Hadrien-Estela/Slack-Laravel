@@ -4,6 +4,9 @@ namespace Slack\Objects\BlockElements;
 
 use Slack\Objects\BlockElements\BlockElement;
 
+/**
+ * Base class for interactive elements.
+ */
 abstract class InteractiveBlockElement extends BlockElement
 {
 
@@ -35,7 +38,6 @@ abstract class InteractiveBlockElement extends BlockElement
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

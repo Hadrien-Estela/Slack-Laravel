@@ -11,7 +11,7 @@ use Slack\Objects\CompositionObjects\ConfirmationDialog;
  * An interactive component that inserts a button. The button can be a trigger
  * for anything from opening a simple link to starting a complex workflow.
  *
- * https://api.slack.com/reference/block-kit/block-elements#button
+ * @link(https://api.slack.com/reference/block-kit/block-elements#button, more)
  */
 class Button extends InteractiveBlockElement
 {
@@ -21,7 +21,7 @@ class Button extends InteractiveBlockElement
     /**
      * A text object that defines the button's text.
      *
-     * @var Slack\Objects\CompositionObjects\Text
+     * @var Text
      */
     private $text;
 
@@ -72,7 +72,7 @@ class Button extends InteractiveBlockElement
      * Set the button's text.
      *
      * @param  string $text
-     * @return \Slack\Objects\BlockElements\Button
+     * @return Button
      */
     public function text(string $text)
     {
@@ -84,7 +84,7 @@ class Button extends InteractiveBlockElement
      * Set the Url to open on click.
      *
      * @param  string $url
-     * @return \Slack\Objects\BlockElements\Button
+     * @return Button
      */
     public function url(string $url)
     {
@@ -96,7 +96,7 @@ class Button extends InteractiveBlockElement
      * Set the value of the Button.
      *
      * @param  string $value
-     * @return \Slack\Objects\BlockElements\Button
+     * @return Button
      */
     public function value(string $value)
     {
@@ -107,7 +107,7 @@ class Button extends InteractiveBlockElement
     /**
      * Set button style to `primary`
      *
-     * @return \Slack\Objects\BlockElements\Button
+     * @return Button
      */
     public function primary()
     {
@@ -118,7 +118,7 @@ class Button extends InteractiveBlockElement
     /**
      * Set button style to `danger`
      *
-     * @return \Slack\Objects\BlockElements\Button
+     * @return Button
      */
     public function danger()
     {
@@ -127,7 +127,6 @@ class Button extends InteractiveBlockElement
     }
 
     /**
-     * @override
      * Convert the object into something JSON serializable.
      *
      * @return array

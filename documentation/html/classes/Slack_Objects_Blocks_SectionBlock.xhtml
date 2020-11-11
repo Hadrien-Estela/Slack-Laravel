@@ -75,15 +75,15 @@
       <section>
         <h1 id="introduction"><small>Slack\Objects\Blocks\</small>SectionBlock</h1>
         <h4>A section is one of the most flexible blocks available.</h4>
-        <p>it can be used as a simple text block, in combination with text fields,<br/>or side-by-side with any of the available block elements.<br/><br/>https://api.slack.com/reference/block-kit/blocks#section</p>
+        <p>it can be used as a simple text block, in combination with text fields,<br/>or side-by-side with any of the available block elements.</p>
         <ul/>
         <h2 id="synopsis">Synopsis</h2>
         <div class="synopsis">class SectionBlock
                 extends <a title="Slack\Objects\Blocks\Block" href="../classes/Slack_Objects_Blocks_Block.xhtml">Block</a>
-            {<br/><ul class="none"><li>// Inherited constants from <a title="Slack\Objects\Blocks\Block" href="../classes/Slack_Objects_Blocks_Block.xhtml">Block</a></li><li>const <a href="#Actions">Actions</a> = 'actions';</li><li>const <a href="#Context">Context</a> = 'context';</li><li>const <a href="#Divider">Divider</a> = 'divider';</li><li>const <a href="#File">File</a> = 'file';</li><li>const <a href="#Header">Header</a> = 'header';</li><li>const <a href="#Image">Image</a> = 'image';</li><li>const <a href="#Input">Input</a> = 'input';</li><li>const <a href="#Section">Section</a> = 'section';</li></ul><ul class="none"><li>// members</li><li>private <span title="Slack\Objects\Blocks\Slack\Objects\CompositionObjects\Text">Text</span> <a href="#members">$text</a>;
+            {<br/><ul class="none"><li>// Inherited constants from <a title="Slack\Objects\Blocks\Block" href="../classes/Slack_Objects_Blocks_Block.xhtml">Block</a></li><li>const <a href="#Actions">Actions</a> = 'actions';</li><li>const <a href="#Context">Context</a> = 'context';</li><li>const <a href="#Divider">Divider</a> = 'divider';</li><li>const <a href="#File">File</a> = 'file';</li><li>const <a href="#Header">Header</a> = 'header';</li><li>const <a href="#Image">Image</a> = 'image';</li><li>const <a href="#Input">Input</a> = 'input';</li><li>const <a href="#Section">Section</a> = 'section';</li></ul><ul class="none"><li>// members</li><li>private <span title="Slack\Objects\CompositionObjects\Text">Text</span> <a href="#members">$text</a>;
                     </li><li>private array <a href="#members">$fields</a> =
                         ;
-                    </li><li>private <span title="Slack\Objects\Blocks\Slack\Objects\BlockElements\BlockElement;">BlockElement;</span> <a href="#members">$accessory</a>;
+                    </li><li>private <span title="Slack\Objects\Blocks\BlockElement;">BlockElement;</span> <a href="#members">$accessory</a>;
                     </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Slack\Objects\Blocks\SectionBlock" href="../classes/Slack_Objects_Blocks_SectionBlock/__construct.xhtml">__construct</a>()
                     </li><li>public SectionBlock <a title="Slack\Objects\Blocks\SectionBlock" href="../classes/Slack_Objects_Blocks_SectionBlock/text.xhtml">text</a>()
                     </li><li>public SectionBlock <a title="Slack\Objects\Blocks\SectionBlock" href="../classes/Slack_Objects_Blocks_SectionBlock/field.xhtml">field</a>()
@@ -154,13 +154,13 @@
           <ul class="members">
             <li id="accessory"><strong>$accessory</strong>
                 —
-                <a title="Slack\Objects\Blocks\Slack\Objects\BlockElements\BlockElement;" href="../classes/Slack_Objects_Blocks_Slack_Objects_BlockElements_BlockElement;.xhtml">Slack\Objects\Blocks\Slack\Objects\BlockElements\BlockElement;</a><br/><span class="indent">One of the available Block elements.</span></li>
+                <a title="Slack\Objects\Blocks\BlockElement;" href="../classes/Slack_Objects_Blocks_BlockElement;.xhtml">Slack\Objects\Blocks\BlockElement;</a><br/><span class="indent">One of the available Block elements.</span></li>
             <li id="fields"><strong>$fields</strong>
                 —
                 array<br/><span class="indent">An array of text objects.</span></li>
             <li id="text"><strong>$text</strong>
                 —
-                <a title="Slack\Objects\Blocks\Slack\Objects\CompositionObjects\Text" href="../classes/Slack_Objects_Blocks_Slack_Objects_CompositionObjects_Text.xhtml">Slack\Objects\Blocks\Slack\Objects\CompositionObjects\Text</a><br/><span class="indent">The text for the block, in the form of a text object.</span></li>
+                <a title="Slack\Objects\CompositionObjects\Text" href="../classes/Slack_Objects_CompositionObjects_Text.xhtml">Slack\Objects\CompositionObjects\Text</a><br/><span class="indent">The text for the block, in the form of a text object.</span></li>
           </ul>
         </div>
         <h2 id="methods">Methods</h2>
@@ -178,9 +178,8 @@
                 — Set Accessory.</li>
             <li id="field"><a title="Slack\Objects\Blocks\SectionBlock" href="../classes/Slack_Objects_Blocks_SectionBlock/field.xhtml">field()</a>
                 — Add additionnal text.</li>
-            <li id="jsonSerialize">
-              <a title="Slack\Objects\Blocks\SectionBlock" href="../classes/Slack_Objects_Blocks_SectionBlock/jsonSerialize.xhtml">jsonSerialize()</a>
-            </li>
+            <li id="jsonSerialize"><a title="Slack\Objects\Blocks\SectionBlock" href="../classes/Slack_Objects_Blocks_SectionBlock/jsonSerialize.xhtml">jsonSerialize()</a>
+                — Convert the object into something JSON serializable.</li>
             <li id="text"><a title="Slack\Objects\Blocks\SectionBlock" href="../classes/Slack_Objects_Blocks_SectionBlock/text.xhtml">text()</a>
                 — Set the main text.</li>
           </ul>

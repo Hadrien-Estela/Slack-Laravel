@@ -5,6 +5,9 @@ namespace Slack\Console\Commands;
 use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Input\InputOption;
 
+/**
+ * Generate a SlackView class
+ */
 class SlackViewMakeCommand extends GeneratorCommand
 {
     /**
@@ -28,7 +31,13 @@ class SlackViewMakeCommand extends GeneratorCommand
      */
     protected $type = 'SlackView';
 
-
+    /**
+     * Execute the console command.
+     *
+     * @return bool|null
+     *
+     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+     */
     public function handle()
     {
         if (!$this->option('modal') && !$this->option('home-tab'))
