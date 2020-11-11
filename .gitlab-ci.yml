@@ -18,7 +18,7 @@ deploy composer package:
 
 generate documentation:
   stage: deploy
-  image: php:7.3-cli
+  image: php:7.3
   when: manual
   artifacts:
     paths:
@@ -26,7 +26,6 @@ generate documentation:
     expire_in: 10 years
   before_script:
     - apt update -y
-    - apt install -y php7.3-xml
     - apt install -y wget
     - wget http://phpdox.de/releases/phpdox.phar
     - chmod +x phpdox.phar
