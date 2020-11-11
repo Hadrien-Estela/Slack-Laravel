@@ -26,6 +26,7 @@ generate documentation:
     expire_in: 10 years
   before_script:
     - apt update -y
+    - apt install -y php-xml
     - apt install -y wget
     - wget http://phpdox.de/releases/phpdox.phar
     - chmod +x phpdox.phar
