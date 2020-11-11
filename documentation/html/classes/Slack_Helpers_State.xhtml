@@ -2,7 +2,7 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <title>phpDox - Slack\Helpers\View</title>
+    <title>phpDox - Slack\Helpers\State</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
@@ -44,7 +44,7 @@
           <li class="separator">
             <a href="../classes.xhtml#Slack_Helpers">Slack\Helpers</a>
           </li>
-          <li class="separator">View</li>
+          <li class="separator">State</li>
         </ul>
       </div>
       <nav class="box">
@@ -62,18 +62,21 @@
             <a href="#methods">Methods</a>
           </li>
           <li>
-            <a href="../source/Helpers/View.php.xhtml#line8">Source</a>
+            <a href="../source/Helpers/State.php.xhtml#line11">Source</a>
           </li>
         </ul>
       </nav>
       <section>
-        <h1 id="introduction"><small>Slack\Helpers\</small>View</h1>
-        <h4/>
+        <h1 id="introduction"><small>Slack\Helpers\</small>State</h1>
+        <h4>Helper for `state` object interaction payload.</h4>
         <p/>
+        <ul/>
         <h2 id="synopsis">Synopsis</h2>
-        <div class="synopsis">class View
-            {<br/><ul class="none"><li>// methods</li><li>public static array <a title="Slack\Helpers\View" href="../classes/Slack_Helpers_View/metadata.xhtml">metadata</a>()
-                    </li><li>public static array <a title="Slack\Helpers\View" href="../classes/Slack_Helpers_View/copy_metadata.xhtml">copy_metadata</a>()
+        <div class="synopsis">class State
+            {<br/><ul class="none"><li>// methods</li><li>public static Object|null <a title="Slack\Helpers\State" href="../classes/Slack_Helpers_State/block.xhtml">block</a>()
+                    </li><li>public static Object|null <a title="Slack\Helpers\State" href="../classes/Slack_Helpers_State/action.xhtml">action</a>()
+                    </li><li>public static array <a title="Slack\Helpers\State" href="../classes/Slack_Helpers_State/actions.xhtml">actions</a>()
+                    </li><li>public static Object|null <a title="Slack\Helpers\State" href="../classes/Slack_Helpers_State/defaultAction.xhtml">defaultAction</a>()
                     </li></ul>
 
             }<br/></div>
@@ -88,10 +91,14 @@
         <div class="styled">
           <h4>public</h4>
           <ul>
-            <li id="copy_metadata"><a title="Slack\Helpers\View" href="../classes/Slack_Helpers_View/copy_metadata.xhtml">copy_metadata()</a>
-                — Copy the metadata of a submitted view to a new View.</li>
-            <li id="metadata"><a title="Slack\Helpers\View" href="../classes/Slack_Helpers_View/metadata.xhtml">metadata()</a>
-                — Get the data contained in a submitted view.</li>
+            <li id="action"><a title="Slack\Helpers\State" href="../classes/Slack_Helpers_State/action.xhtml">action()</a>
+                — Find an action by ID in the state payload.</li>
+            <li id="actions"><a title="Slack\Helpers\State" href="../classes/Slack_Helpers_State/actions.xhtml">actions()</a>
+                — Get the array of actions in the state payload</li>
+            <li id="block"><a title="Slack\Helpers\State" href="../classes/Slack_Helpers_State/block.xhtml">block()</a>
+                — Find a block by ID in the state payload.</li>
+            <li id="defaultAction"><a title="Slack\Helpers\State" href="../classes/Slack_Helpers_State/defaultAction.xhtml">defaultAction()</a>
+                — Get the default (first) action of a block.</li>
           </ul>
         </div>
       </section>

@@ -63,6 +63,19 @@ class Option implements JsonSerializable
     }
 
     /**
+     * Build an instance from Object.
+     *
+     * @param  Object $option_object
+     * @return Option
+     */
+    public static function formObject(Object $option_object)
+    {
+        return new Option($option_object->text,
+                            $option_object->value,
+                            $option_object->text->type = 'plain_text');
+    }
+
+    /**
      * Set the text.
      *
      * @param  string       $text

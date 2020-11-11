@@ -26,6 +26,7 @@ generate documentation:
   artifacts:
     paths:
       - doc
+    expire_in: 10 years
   before_script:
     - apt update -y
     - apt install -y wget

@@ -120,7 +120,7 @@ abstract class InteractionController extends Controller
      * @param  array $callback_actions_arr
      * @return \Illuminate\Http\Response
      */
-    private function viewAction(Request $request, $view, array $callback_actions_arr)
+    private function viewAction(Request $request, Object $view, array $callback_actions_arr)
     {
         if (array_key_exists($view->callback_id, $callback_actions_arr))
         {

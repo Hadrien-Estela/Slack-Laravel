@@ -2,7 +2,7 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <title>phpDox - Slack\Helpers\View::values</title>
+    <title>phpDox - Slack\Helpers\State::action</title>
     <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   </head>
@@ -45,9 +45,9 @@
             <a href="../../classes.xhtml#Slack_Helpers">Slack\Helpers</a>
           </li>
           <li class="separator">
-            <a title="Slack\Helpers\View" href="../../classes/Slack_Helpers_View.xhtml">View</a>
+            <a title="Slack\Helpers\State" href="../../classes/Slack_Helpers_State.xhtml">State</a>
           </li>
-          <li class="separator">values</li>
+          <li class="separator">action</li>
         </ul>
       </div>
       <nav class="box">
@@ -65,32 +65,39 @@
             <a href="#return">Return</a>
           </li>
           <li>
-            <a href="../../source/Helpers/View.php.xhtml#line38">Source</a>
+            <a href="../../source/Helpers/State.php.xhtml#line42">Source</a>
           </li>
         </ul>
       </nav>
       <section>
-        <h1><small>Slack\Helpers\View::</small>values</h1>
-        <h4>Get all values of inputs contained in a submitted view.</h4>
+        <h1><small>Slack\Helpers\State::</small>action</h1>
+        <h4>Find an action by ID in the state payload.</h4>
         <p/>
         <ul/>
         <h2 id="signature">Signature</h2>
         <div class="styled synopsis">
-          <code>public function values(<a title="Slack\Helpers\Object" href="../../classes/Slack_Helpers_Object.xhtml">Object</a>
-        $view )
+          <code>public function action(<a title="" href="../../classes/.xhtml"/>
+        $state,
+            string
+        $action_id )
             </code>
         </div>
         <h2 id="parameterlist">Parameters</h2>
         <dl class="styled">
-          <dt><code>$view</code>
+          <dt><code>$state</code>
                 —
-                object</dt>
+                <a title="Slack\Helpers\Object" href="../../classes/Slack_Helpers_Object.xhtml">Slack\Helpers\Object</a></dt>
           <dd><br/><br/><br/>      </dd>
+          <dt><code>$action_id</code>
+                —
+                string</dt>
+          <dd/>
         </dl>
         <h2 id="return">Returns</h2>
         <dl class="styled">
-          <dt>array</dt>
-          <dd/>
+          <dt>Object|null</dt>
+          <dd><br/>
+        </dd>
         </dl>
       </section>
     </div>

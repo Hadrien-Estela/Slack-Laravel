@@ -1,6 +1,6 @@
 # Changelog
 
-[UNRELEASED]
+## [1.1.1] - 2020-11-11
 
 * Fix `Slack\Objects\BlockElements\SelectMenu\StaticSelect`
   Contruct now takes a single option as `initial_option`.
@@ -8,6 +8,7 @@
 * Fix `Slack\Http\Controllers\InteractionController` block_suggestions.
 * Fix missing user authentication in `Slack\Http\Middleware\SlackCommand`.
 * Improve `Slack\Helpers\View`.
+* Generate documentation.
 
 ## [1.1.0] - 2020-11-10
 
