@@ -2,7 +2,7 @@
 
 <phpdox xmlns="http://xml.phpdox.net/config" silent="false">
     <project name="slack-laravel" source="${basedir}/src" workdir="${basedir}/documentation/xml">
-        <collector publiconly="false" backend="parser" encoding="auto">
+        <collector publiconly="true" backend="parser" encoding="auto">
             <include mask="*.php"/>
             <exclude mask=""/>
 

@@ -7,7 +7,7 @@ use Slack\Objects\SlackView;
 
 class View
 {
-    use Macroable;
+    //use Macroable;
 
     /**
      * Get the data contained in a submitted view.

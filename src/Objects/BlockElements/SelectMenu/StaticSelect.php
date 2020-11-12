@@ -4,6 +4,7 @@ namespace Slack\Objects\BlockElements\SelectMenu;
 
 use Slack\Objects\BlockElements\Concerns;
 use Slack\Objects\BlockElements\SelectMenu\SelectMenu;
+use Slack\Objects\CompositionObjects\Option;
 
 /**
  * This is the simplest form of select menu, with a static list
@@ -32,8 +33,13 @@ class StaticSelect extends SelectMenu
                                 Option $initialOption = null)
     {
         parent::__construct(SelectMenu::Static, $action_id, $placeholder);
-        $this->options = $options;
-        $this->groups = $groups;
+
+        if ($options)
+            $this->options = $options;
+
+        if ($groups)
+            $this->groups = $groups;
+
         $this->initial_option = $initialOption;
     }
 

@@ -4,7 +4,6 @@ namespace Slack\Objects\BlockElements\MultiSelectMenu;
 
 use Slack\Objects\BlockElements\Concerns;
 use Slack\Objects\BlockElements\MultiSelectMenu\MultiSelectMenu;
-use Slack\Objects\CompositionObjects\Option;
 
 /**
  * This menu will load its options from an external data source,
