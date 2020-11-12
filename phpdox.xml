@@ -7,13 +7,15 @@
             <exclude mask=""/>
 
             <inheritance resolve="true">
-                <dependency  path="https://laravel.com/api/8.x/index.html" />
+
             </inheritance>
 
         </collector>
 
         <generator output="${basedir}/documentation">
-            <build engine="html" enabled="true" output="html" />
+            <build engine="html" enabled="true" output="html">
+                <!-- <file extension="html"/> -->
+            </build>
         </generator>
     </project>
 

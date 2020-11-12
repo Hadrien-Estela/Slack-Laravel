@@ -18,7 +18,11 @@ deploy composer package:
 
 pages:
   stage: deploy
-  when: manual
+  when: on_success
+  only:
+    - tags
+  except:
+    - branches
   artifacts:
     paths:
       - public
@@ -35,5 +39,5 @@ pages:
   script:
     - ./phpdox.phar
     - mkdir .public
-    - cp -r documentation/html/* .public
+    - cp -r documentation/html/* .public/api
     - mv .public public
