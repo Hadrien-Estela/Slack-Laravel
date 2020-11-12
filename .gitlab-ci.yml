@@ -38,6 +38,6 @@ pages:
     - chmod +x phpdox.phar
   script:
     - ./phpdox.phar
-    - mkdir .public
+    - mkdir -p .public/api
     - cp -r documentation/html/* .public/api
     - mv .public public
