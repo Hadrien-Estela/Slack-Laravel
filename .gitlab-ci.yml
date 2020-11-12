@@ -16,22 +16,28 @@ deploy composer package:
   script:
     - 'curl --header "Job-Token: $CI_JOB_TOKEN" --data tag=$CI_COMMIT_TAG "https://gitlab.virtuosereality.com/api/v4/projects/$CI_PROJECT_ID/packages/composer"'
 
-generate documentation:
+pages:
   stage: deploy
-  when: always
+  when: on_success
   only:
     - tags
   except:
     - branches
   artifacts:
     paths:
-      - doc
-    expire_in: 10 years
+      - public
   before_script:
     - apt update -y
+    - apt-get -y install apt-transport-https lsb-release ca-certificates curl
+    - curl -sSL -o /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+    - sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
+    - apt update -y
+    - apt install -y php7.3 php7.3-xml php7.3-mbstring php7.3-json php7.3-common
     - apt install -y wget
     - wget http://phpdox.de/releases/phpdox.phar
     - chmod +x phpdox.phar
   script:
     - ./phpdox.phar
-    - mv documentation/html/ doc/
+    - mkdir .public
+    - cp -r documentation/html/* .public/api
+    - mv .public public
