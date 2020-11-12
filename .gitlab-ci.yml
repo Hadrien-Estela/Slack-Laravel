@@ -34,4 +34,6 @@ pages:
     - chmod +x phpdox.phar
   script:
     - ./phpdox.phar
-    - mv documentation/html/ public/
+    - mkdir .public
+    - cp -r documentation/html/* .public
+    - mv .public public
