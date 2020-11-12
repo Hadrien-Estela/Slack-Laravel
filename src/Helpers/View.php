@@ -28,10 +28,20 @@ class View
      *
      * @param  Object    $src_view
      * @param  SlackView $dst_view
-     * @return array
      */
     public static function copy_metadata(Object $src_view, SlackView &$dst_view)
     {
         $dst_view->metadata($src_view->private_metadata);
+    }
+
+    /**
+     * Encode the metadata payload for a view.
+     *
+     * @param  SlackView &$view
+     * @param  array     $data
+     */
+    public static function encode_metadata(SlackView &$view, array $data)
+    {
+        $view->metadata(json_encode($data));
     }
 }

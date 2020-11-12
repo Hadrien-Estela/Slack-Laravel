@@ -1,5 +1,9 @@
 # Changelog
 
+[UNRELEASED]
+
+* `Slack\Helpers\View::encode_metadata()` helper method.
+
 ## [1.1.1] - 2020-11-11
 
 * Fix `Slack\Objects\BlockElements\SelectMenu\StaticSelect`
