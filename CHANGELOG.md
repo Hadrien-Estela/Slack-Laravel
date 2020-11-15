@@ -1,6 +1,6 @@
 # Changelog
 
-[UNRELEASED]
+## [1.2.0] - 2020-11-15
 
 * `Slack\Helpers\View::encode_metadata()` helper method.
 
