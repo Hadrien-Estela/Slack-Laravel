@@ -15,6 +15,7 @@ class InputBlock extends Block
 
     /**
      * A label that appears above an input element in the form.
+     * Max length of 2000 characters.
      *
      * @var Text
      */
@@ -38,6 +39,7 @@ class InputBlock extends Block
 
     /**
      * An optional hint that appears below an input element in a lighter grey.
+     * Max length of 2000 characters.
      *
      * @var Text
      */
@@ -64,22 +66,23 @@ class InputBlock extends Block
                                 string $hint = null)
     {
         parent::__construct(Block::Input);
-        $this->label = new Text(Text::Plain, $label);
+        $this->label = new Text(Text::Plain, substr($label,0,2000));
         $this->element = $element;
         $this->optional = $optional;
         if ($hint)
-            $this->hint = new Text(Text::Plain, $hint);
+            $this->hint = new Text(Text::Plain, substr($hint,0,2000));
     }
 
     /**
      * Set the label.
+     * Max length of 2000 characters.
      *
      * @param  string $label
      * @return InputBlock
      */
     public function label(string $label)
     {
-        $this->label->text($label);
+        $this->label->text(substr($label,0,2000));
         return $this;
     }
 
@@ -109,13 +112,14 @@ class InputBlock extends Block
 
     /**
      * Set input Hint.
+     * Max length of 2000 characters.
      *
      * @param  string $hint
      * @return InputBlock
      */
     public function hint(string $hint)
     {
-        $this->hint = new Text(Text::Plain, $hint);
+        $this->hint = new Text(Text::Plain, substr($hint,0,2000));
         return $this;
     }
 

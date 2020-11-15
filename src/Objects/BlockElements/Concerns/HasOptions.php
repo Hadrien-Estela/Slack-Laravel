@@ -5,6 +5,9 @@ namespace Slack\Objects\BlockElements\Concerns;
 use Slack\Objects\CompositionObjects\Option;
 use Slack\Objects\CompositionObjects\OptionGroup;
 
+/**
+ * Trait for Block elements with `options` attribute.
+ */
 trait HasOptions
 {
 

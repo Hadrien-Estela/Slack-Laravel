@@ -20,6 +20,7 @@ class Button extends InteractiveBlockElement
 
     /**
      * A text object that defines the button's text.
+     * Max length of 75 characters.
      *
      * @var Text
      */
@@ -27,6 +28,7 @@ class Button extends InteractiveBlockElement
 
     /**
      * A URL to load in the user's browser when the button is clicked.
+     * Max length of 3000 characters.
      *
      * @var string|null
      */
@@ -34,6 +36,7 @@ class Button extends InteractiveBlockElement
 
     /**
      * The value to send along with the interaction payload.
+     * Max length of 2000 characters.
      *
      * @var string|null
      */
@@ -62,45 +65,48 @@ class Button extends InteractiveBlockElement
                                 ConfirmationDialog $confirm = null)
     {
         parent::__construct(InteractiveBlockElement::Button, $action_id);
-        $this->text = new Text(Text::Plain, $text);
-        $this->value = $value;
-        $this->url = $url;
+        $this->text = new Text(Text::Plain, substr($text,0,75));
+        $this->value = substr($value,0,3000);
+        $this->url = substr($url,0,2000);
         $this->confirm = $confirm;
     }
 
     /**
      * Set the button's text.
+     * Max length of 75 characters.
      *
      * @param  string $text
      * @return Button
      */
     public function text(string $text)
     {
-        $this->text->text($text);
+        $this->text->text(substr($text,0,75));
         return $this;
     }
 
     /**
      * Set the Url to open on click.
+     * Max length of 3000 characters.
      *
      * @param  string $url
      * @return Button
      */
     public function url(string $url)
     {
-        $this->url = $url;
+        $this->url = substr($url,0,3000);
         return $this;
     }
 
     /**
      * Set the value of the Button.
+     * Max length of 2000 characters.
      *
      * @param  string $value
      * @return Button
      */
     public function value(string $value)
     {
-        $this->value = $value;
+        $this->value = substr($value,0,2000);
         return $this;
     }
 

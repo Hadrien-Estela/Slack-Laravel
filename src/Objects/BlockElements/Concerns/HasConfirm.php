@@ -4,6 +4,9 @@ namespace Slack\Objects\BlockElements\Concerns;
 
 use Slack\Objects\CompositionObjects\ConfirmationDialog;
 
+/**
+ * Trait for Block elements with `confirm` attribute.
+ */
 trait HasConfirm
 {
 

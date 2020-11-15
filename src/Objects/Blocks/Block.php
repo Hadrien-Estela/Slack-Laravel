@@ -34,7 +34,8 @@ abstract class Block implements JsonSerializable
 
     /**
      * A string acting as a unique identifier for a block.
-     * If not specified, one will be generated. Maximum length for this field is 255 characters.
+     * If not specified, one will be generated.
+     * Max length of 255 characters.
      *
      * @var string
      */
@@ -51,14 +52,15 @@ abstract class Block implements JsonSerializable
     }
 
     /**
-     * Set the blosk id
+     * Set the blosk id.
+     * Max length of 255 characters.
      *
      * @param  string $id
      * @return Block
      */
     public function id(string $id)
     {
-        $this->id = $id;
+        $this->id = substr($id,0,255);
         return $this;
     }
 

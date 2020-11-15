@@ -20,6 +20,7 @@ abstract class InteractiveBlockElement extends BlockElement
 
     /**
      * An identifier for the action.
+     * Max length of 255 characters.
      *
      * @var string
      */
@@ -34,7 +35,7 @@ abstract class InteractiveBlockElement extends BlockElement
     public function __construct(string $type, string $action_id)
     {
         parent::__construct($type);
-        $this->action_id = $action_id;
+        $this->action_id = substr($action_id,0,255);
     }
 
     /**
