@@ -3,8 +3,9 @@
 namespace Slack\Objects;
 
 use JsonSerializable;
+
 use Illuminate\Contracts\Support\Jsonable;
-use App\Exceptions\NotImplementedException;
+
 use Slack\Objects\CompositionObjects\Text;
 use Slack\Objects\Blocks\Block;
 
@@ -28,7 +29,7 @@ class SlackView implements JsonSerializable, Jsonable
 
     /**
      * The title that appears in the top-left of the modal.
-     * Must be a plain_text text element with a max length of 24 characters.
+     * Max length of 24 characters.
      *
      * @var Text
      */
@@ -43,7 +44,8 @@ class SlackView implements JsonSerializable, Jsonable
 
     /**
      * An optional plain_text element that defines the text displayed in the
-     * close button at the bottom-right of the view. Max length of 24 characters.
+     * close button at the bottom-right of the view.
+     * Max length of 24 characters.
      *
      * @var Text|null
      */
@@ -52,7 +54,8 @@ class SlackView implements JsonSerializable, Jsonable
     /**
      * An optional plain_text element that defines the text displayed in the
      * submit button at the bottom-right of the view. submit is required when
-     * an input block is within the blocks array. Max length of 24 characters.
+     * an input block is within the blocks array.
+     * Max length of 24 characters.
      *
      * @var Text|null
      */
@@ -60,7 +63,8 @@ class SlackView implements JsonSerializable, Jsonable
 
     /**
      * An optional string that will be sent to your app in view_submission
-     * and block_actions events. Max length of 3000 characters.
+     * and block_actions events.
+     * Max length of 3000 characters.
      *
      * @var string|null
      */
@@ -125,11 +129,11 @@ class SlackView implements JsonSerializable, Jsonable
                                 string $externalID = null)
     {
         $this->type = $type;
-        $this->title = new Text(Text::Plain, $title);
+        $this->title = new Text(Text::Plain, substr($title,0,24));
         if ($blocks)
             $this->blocks = $blocks;
-        $this->close = isset($close) ? new Text(Text::Plain, $close) : null;
-        $this->submit = isset($submit) ? new Text(Text::Plain, $submit) : null;
+        $this->close = isset($close) ? new Text(Text::Plain, substr($close,0,24)) : null;
+        $this->submit = isset($submit) ? new Text(Text::Plain, substr($submit,0,24)) : null;
         $this->private_metadata = $private_metadata;
         $this->callback_id = $callbackID;
         $this->clear_on_close = $clearOnClose;
@@ -139,13 +143,14 @@ class SlackView implements JsonSerializable, Jsonable
 
     /**
      * Set the title.
+     * Max length of 24 characters.
      *
      * @param  string $title
      * @return SlackView
      */
     public function title (string $title)
     {
-        $this->title->text($title);
+        $this->title->text(Str::limit($title,21));
         return $this;
     }
 
@@ -166,49 +171,53 @@ class SlackView implements JsonSerializable, Jsonable
 
     /**
      * Set the close button text.
+     * Max length of 24 characters.
      *
      * @param  string $label
      * @return SlackView
      */
     public function closeLabel(string $label)
     {
-        $this->close = new Text(Text::Plain, $label);
+        $this->close = new Text(Text::Plain, substr($label,0,24));
         return $this;
     }
 
     /**
      * Set the submit button text.
+     * Max length of 24 characters.
      *
      * @param  string $label
      * @return SlackView
      */
     public function submitLabel(string $label)
     {
-        $this->submit = new Text(Text::Plain, $label);
+        $this->submit = new Text(Text::Plain, substr($label,0,24));
         return $this;
     }
 
     /**
      * Set the metadata.
+     * Max length of 3000 characters.
      *
      * @param  string $data
      * @return SlackView
      */
     public function metadata(string $data)
     {
-        $this->private_metadata = $data;
+        $this->private_metadata = substr($data,0,3000);
         return $this;
     }
 
     /**
      * Set the callback ID.
+     * Max length of 255 characters.
      *
      * @param  string $callbackID
      * @return SlackView
      */
     public function callback(string $callbackID)
     {
-        $this->callback_id = $callbackID;
+        $this->callback_id = substr($callbackID,0,255);
         return $this;
     }
 

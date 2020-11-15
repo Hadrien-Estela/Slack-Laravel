@@ -14,6 +14,7 @@ class ImageBlock extends Block
 
     /**
      * The URL of the image to be displayed.
+     * Max length of 3000 characters.
      *
      * @var string
      */
@@ -21,6 +22,7 @@ class ImageBlock extends Block
 
     /**
      * A plain-text summary of the image.
+     * Max length of 2000 characters.
      *
      * @var string
      */
@@ -28,6 +30,7 @@ class ImageBlock extends Block
 
     /**
      * An optional title for the image.
+     * Max length of 2000 characters.
      *
      * @var Text
      */
@@ -43,44 +46,47 @@ class ImageBlock extends Block
     public function __construct(string $url = '', string $alt = '', Text $title = null)
     {
         parent::__construct(Block::Image);
-        $this->image_url = $url;
-        $this->alt_text = $alt;
-        $this->title = $title;
+        $this->image_url = substr($url,0,3000);
+        $this->alt_text = substr($alt,0,2000);
+        $this->title = substr($title,0,2000);
     }
 
     /**
-     * Set image URL
+     * Set image URL.
+     * Max length of 3000 characters.
      *
      * @param  string $url
      * @return ImageBlock
      */
     public function url(string $url)
     {
-        $this->image_url = $url;
+        $this->image_url = substr($url,3000);
         return $this;
     }
 
     /**
      * Set alt text.
+     * Max length of 2000 characters.
      *
      * @param  string $text
      * @return ImageBlock
      */
     public function alt(string $text)
     {
-        $this->alt_text =$text;
+        $this->alt_text = substr($text,0,2000);
         return $this;
     }
 
     /**
      * Set title.
+     * Max length of 2000 characters.
      *
      * @param  string $title
      * @return ImageBlock
      */
     public function title(string $title)
     {
-        $this->title = new Text(Text::Plain, $title);
+        $this->title = new Text(Text::Plain, substr($title,0,2000));
         return $this;
     }
 

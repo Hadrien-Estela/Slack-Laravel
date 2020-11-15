@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.1] - 2020-11-15
+
+* Add max string parameter lenght checks.
+
 ## [1.2.0] - 2020-11-15
 
 * `Slack\Helpers\View::encode_metadata()` helper method.

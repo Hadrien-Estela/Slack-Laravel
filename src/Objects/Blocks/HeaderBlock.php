@@ -16,6 +16,7 @@ class HeaderBlock extends Block
     /**
      * The text for the block, in the form of a plain_text text object.
      * Maximum length for the text in this field is 150 characters.
+     * Max length of 150 characters.
      *
      * @var Text
      */
@@ -29,18 +30,19 @@ class HeaderBlock extends Block
     public function __construct(string $text = '')
     {
         parent::__construct(Block::Header);
-        $this->text = new Text(Text::Plain, $text);
+        $this->text = new Text(Text::Plain, substr($text,0,150));
     }
 
     /**
-     * Set header block's text
+     * Set header block's text.
+     * Max length of 150 characters.
      *
      * @param  string $text
      * @return HeaderBlock
      */
     public function text(string $text)
     {
-        $this->text->text($text);
+        $this->text->text(substr($text,0,150));
         return $this;
     }
 

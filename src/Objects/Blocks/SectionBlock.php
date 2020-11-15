@@ -17,6 +17,7 @@ class SectionBlock extends Block
 
     /**
      * The text for the block, in the form of a text object.
+     * Max length of 3000 characters.
      *
      * @var Text
      */
@@ -24,6 +25,7 @@ class SectionBlock extends Block
 
     /**
      * An array of text objects.
+     * Max length of 2000 characters.
      *
      * @var Text[]
      */
@@ -45,11 +47,12 @@ class SectionBlock extends Block
     public function __construct(string $text = '', bool $markdown = false)
     {
         parent::__construct(Block::Section);
-        $this->text = new Text($markdown ? Text::Markdown : Text::Plain, $text);
+        $this->text = new Text($markdown ? Text::Markdown : Text::Plain, substr($text,0,3000));
     }
 
     /**
      * Set the main text.
+     * Max length of 3000 characters.
      *
      * @param  string   $text
      * @param  boolean  $markdown
@@ -57,7 +60,7 @@ class SectionBlock extends Block
      */
     public function text(string $text, bool $markdown = false)
     {
-        $this->text = new Text($markdown ? Text::Markdown : Text::Plain, $text);
+        $this->text = new Text($markdown ? Text::Markdown : Text::Plain, substr($text,0,3000));
         return $this;
     }
 
