@@ -6,8 +6,7 @@ use BadFunctionCallException;
 use Exception;
 
 use Illuminate\Http\Request;
-
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller;
 
 /**
  * Abstract class as a base to handle slack interactions incoming requests.

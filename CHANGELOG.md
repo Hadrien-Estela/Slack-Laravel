@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.2] - 2020-11-17
+
+* Modify `use \App\Http\Controller` to `use \Illuminate\Routing\Controller`
+
 ## [1.2.1] - 2020-11-15
 
 * Add max string parameter lenght checks.
