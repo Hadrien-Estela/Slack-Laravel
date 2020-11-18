@@ -58,18 +58,18 @@ class SlackServiceProvider extends ServiceProvider implements DeferrableProvider
      */
     public function register()
     {
-        $this->app->singleton('Slack\Services\Slack', function ($app) {
+        $this->app->singleton('Slack\Services\Slack', function () {
             return new Slack();
         });
 
         Notification::resolved(function (ChannelManager $service) {
-            $service->extend('slack-bot', function ($app) {
+            $service->extend('slack-bot', function () {
                 return new Channels\SlackBotChannel();
             });
         });
 
         Notification::resolved(function (ChannelManager $service) {
-            $service->extend('slack-webhook', function ($app) {
+            $service->extend('slack-webhook', function () {
                 return new Channels\SlackWebhookChannel();
             });
         });

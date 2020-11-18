@@ -3,7 +3,6 @@
 namespace Slack\Http\Middleware;
 
 use Closure;
-use Exception;
 
 use GetOpt\GetOpt;
 use GetOpt\Option;

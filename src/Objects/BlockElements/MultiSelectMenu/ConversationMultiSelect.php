@@ -2,7 +2,6 @@
 
 namespace Slack\Objects\BlockElements\MultiSelectMenu;
 
-use Slack\Objects\BlockElements\MultiSelectMenu\MultiSelectMenu;
 use Slack\Objects\CompositionObjects\ConversationFilter;
 
 /**
@@ -53,7 +52,7 @@ class ConversationMultiSelect extends MultiSelectMenu
     public function __construct(string $action_id,
                                 string $placeholder = 'Select a conversation',
                                 ConversationFilter $filter = null,
-                                string $initialConversations = [],
+                                array $initialConversations = [],
                                 bool $currentByDefault = null)
     {
         parent::__construct(MultiSelectMenu::Conversation, $action_id, $placeholder);

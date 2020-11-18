@@ -2,7 +2,6 @@
 
 namespace Slack\Exceptions;
 
-use Slack\Exceptions\ApiException;
 use Slack\Objects\SlackMessage;
 
 class MessageException extends ApiException

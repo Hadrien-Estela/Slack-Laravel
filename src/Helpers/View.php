@@ -2,7 +2,6 @@
 
 namespace Slack\Helpers;
 
-use Illuminate\Support\Traits\Macroable;
 use Slack\Objects\SlackView;
 
 class View

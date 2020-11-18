@@ -54,7 +54,7 @@ abstract class MultiSelectMenu extends Menu
         return array_merge(parent::jsonSerialize(), [
 
         ], array_filter([
-            'max_selected_items' => $this->max_selected_items;
+            'max_selected_items' => $this->max_selected_items
         ], function($val) {
             return !empty($val);
         }));

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
+<!--suppress XmlHighlighting -->
 <phpdox xmlns="http://xml.phpdox.net/config" silent="false">
     <project name="slack-laravel" source="${basedir}/src" workdir="${basedir}/documentation/xml">
         <collector publiconly="true" backend="parser" encoding="auto">

@@ -3,8 +3,6 @@
 namespace Slack\Objects\CompositionObjects;
 
 use JsonSerializable;
-use Slack\Objects\CompositionObjects\Text;
-use Slack\Objects\CompositionObjects\Option;
 
 /**
  * An object containing some text, formatted either as plain_text or using mrkdwn.

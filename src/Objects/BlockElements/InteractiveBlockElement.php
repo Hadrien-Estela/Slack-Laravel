@@ -2,8 +2,6 @@
 
 namespace Slack\Objects\BlockElements;
 
-use Slack\Objects\BlockElements\BlockElement;
-
 /**
  * Base class for interactive elements.
  */
