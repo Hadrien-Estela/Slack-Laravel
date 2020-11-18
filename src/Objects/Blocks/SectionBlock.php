@@ -105,17 +105,4 @@ class SectionBlock extends Block
         }));
     }
 
-    /**
-     * Get fields as serializable array.
-     *
-     * @return array
-     */
-    private function fields()
-    {
-        $fields = array();
-        foreach ($this->fields as $field)
-            array_push($fields, $field->jsonSerialize());
-        return $fields;
-    }
-
 }

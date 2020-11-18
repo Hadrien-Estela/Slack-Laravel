@@ -53,7 +53,7 @@ class SlackViewMakeCommand extends GeneratorCommand
             return false;
         }
 
-        parent::handle();
+        return parent::handle();
     }
 
     /**
@@ -108,6 +108,8 @@ class SlackViewMakeCommand extends GeneratorCommand
                 parent::buildClass($name)
             );
         }
+
+        return 0;
     }
 
     /**

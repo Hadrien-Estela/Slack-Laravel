@@ -2,7 +2,6 @@
 
 namespace Slack\Objects\BlockElements\SelectMenu;
 
-use Slack\Objects\BlockElements\SelectMenu\SelectMenu;
 use Slack\Objects\CompositionObjects\ConversationFilter;
 
 /**

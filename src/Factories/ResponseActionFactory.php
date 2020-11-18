@@ -61,7 +61,7 @@ class ResponseActionFactory
     {
         return response()->json([
             'response_action' => 'errors',
-            'errors' => $view
+            'errors' => $errors
         ]);
     }
 

@@ -1,11 +1,8 @@
-<?php
+<?php /** @noinspection ALL */
 
 namespace Slack\Notifications\Channels;
 
-use Illuminate\Notifications\Messages\SlackAttachment;
-use Illuminate\Notifications\Messages\SlackAttachmentField;
 use Illuminate\Notifications\Notification;
-use Slack\Objects\SlackMessage;
 use Slack\Facades\Slack;
 
 class SlackBotChannel

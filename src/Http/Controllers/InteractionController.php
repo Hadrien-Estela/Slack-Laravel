@@ -1,4 +1,7 @@
-<?php
+<?php /** @noinspection ALL */
+/** @noinspection ALL */
+
+/** @noinspection ALL */
 
 namespace Slack\Http\Controllers;
 
@@ -135,7 +138,7 @@ abstract class InteractionController extends Controller
                 throw new BadFunctionCallException('Non callable `view` callback.');
         }
         else
-            throw new Exception("Not implemented `view` callback: $callback_id");
+            throw new Exception("Not implemented `view` callback: $view->callback_id");
     }
 
     /**

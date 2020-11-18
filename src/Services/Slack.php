@@ -2,7 +2,6 @@
 
 namespace Slack\Services;
 
-use Illuminate\Support\Facades\Log;
 use Slack\Api;
 use Slack\Objects\SlackMessage;
 use Slack\Objects\SlackView;

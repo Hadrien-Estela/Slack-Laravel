@@ -2,7 +2,7 @@
 
 namespace Slack\Objects\BlockElements;
 
-use Slack\Objects\BlockElements\InteractiveBlockElement;
+use DateTime;
 use Slack\Objects\BlockElements\Concerns;
 use Slack\Objects\CompositionObjects\ConfirmationDialog;
 use Slack\Objects\CompositionObjects\Text;
@@ -38,12 +38,12 @@ class Timepicker extends InteractiveBlockElement
      */
     public function __construct(string $action_id,
                                 string $placeholder = null,
-                                \DateTime $initial_time = null,
+                                DateTime $initial_time = null,
                                 ConfirmationDialog $confirm = null)
     {
         parent::__construct(InteractiveBlockElement::Timepicker, $action_id);
         $this->placeholder = isset($placeholder) ? new Text(Text::Plain, $placeholder) : null;
-        $this->initial_time = isset($initial_date) ? $initial_date->format('H:i') : null;
+        $this->initial_time = isset($initial_time) ? $initial_time->format('H:i') : null;
         $this->confirm = $confirm;
     }
 
@@ -53,7 +53,7 @@ class Timepicker extends InteractiveBlockElement
      * @param  DateTime $date
      * @return Timepicker
      */
-    public function initialTime(\DateTime $date)
+    public function initialTime(DateTime $date)
     {
         $this->initial_time = $date->format('Y-m-d');
         return $this;

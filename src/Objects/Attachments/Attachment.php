@@ -4,7 +4,6 @@ namespace Slack\Objects\Attachments;
 
 use JsonSerializable;
 use Slack\Objects\Blocks\Block;
-use Slack\Objects\Attachments\AttachmentField;
 
 /**
  * Secondary content can be attached to messages

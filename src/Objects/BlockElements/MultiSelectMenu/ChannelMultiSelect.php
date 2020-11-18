@@ -2,8 +2,6 @@
 
 namespace Slack\Objects\BlockElements\MultiSelectMenu;
 
-use Slack\Objects\BlockElements\MultiSelectMenu\MultiSelectMenu;
-
 /**
  * This multi-select menu will populate its options with a list of public channels
  * visible to the current user in the active workspace.

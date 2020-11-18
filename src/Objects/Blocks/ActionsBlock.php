@@ -2,7 +2,6 @@
 
 namespace Slack\Objects\Blocks;
 
-use Slack\Objects\CompositionObjects\Text;
 use Slack\Objects\BlockElements\InteractiveBlockElement;
 
 /**

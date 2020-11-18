@@ -28,7 +28,8 @@
         "illuminate/notifications": "^8.0",
         "illuminate/http": "^8.0",
         "nesbot/carbon": "^2.41",
-        "ulrichsg/getopt-php": "^3.4"
+        "ulrichsg/getopt-php": "^3.4",
+        "ext-json": "*"
     },
     "autoload": {
         "psr-4": {

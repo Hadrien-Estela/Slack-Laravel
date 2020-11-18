@@ -2,7 +2,6 @@
 
 namespace Slack\Objects\BlockElements;
 
-use Slack\Objects\BlockElements\InteractiveBlockElement;
 use Slack\Objects\BlockElements\Concerns;
 use Slack\Objects\CompositionObjects\Text;
 

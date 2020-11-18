@@ -2,8 +2,6 @@
 
 namespace Slack\Objects\BlockElements;
 
-use Slack\Objects\BlockElements\BlockElement;
-
 /**
  * An element to insert an image as part of a larger block of content.
  *

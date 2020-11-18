@@ -3,7 +3,6 @@
 namespace Slack\Objects\CompositionObjects;
 
 use JsonSerializable;
-use Slack\Objects\CompositionObjects\Text;
 
 /**
  * An object that defines a dialog that provides a confirmation step to any interactive element.

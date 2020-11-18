@@ -2,7 +2,6 @@
 
 namespace Slack\Exceptions;
 
-use Slack\Exceptions\ApiException;
 use Slack\Objects\SlackView;
 
 class ViewException extends ApiException
