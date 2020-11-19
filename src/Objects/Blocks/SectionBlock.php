@@ -65,7 +65,7 @@ class SectionBlock extends Block
     }
 
     /**
-     * Add additionnal text.
+     * Add additional text.
      *
      * @param  Text   $field
      * @return SectionBlock

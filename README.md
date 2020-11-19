@@ -30,7 +30,7 @@
 
 * Use the full slack API methods
 * Create messages and views serializable objects
-* Two new Notification channels for bot and webhooks
+* Two new Notification channels for bots and webhooks
 * Handling interactions and respond to them
 
 ## How to use

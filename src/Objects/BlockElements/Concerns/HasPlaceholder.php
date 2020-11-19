@@ -1,4 +1,4 @@
-<?php /** @noinspection PhpPrivateFieldCanBeLocalVariableInspection */
+<?php
 
 namespace Slack\Objects\BlockElements\Concerns;
 

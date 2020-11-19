@@ -52,7 +52,7 @@ abstract class Block implements JsonSerializable
     }
 
     /**
-     * Set the blosk id.
+     * Set the block id.
      * Max length of 255 characters.
      *
      * @param  string $id

@@ -71,7 +71,7 @@ class SlackView implements JsonSerializable, Jsonable
     private $private_metadata;
 
     /**
-     * An identifier to recognize interactions and submissions of this particularview.
+     * An identifier to recognize interactions and submissions of this particular view.
      * Don't use this to store sensitive information (use private_metadata instead).
      * Max length of 255 characters.
      *
@@ -89,7 +89,7 @@ class SlackView implements JsonSerializable, Jsonable
     private $clear_on_close;
 
     /**
-     * ndicates whether Slack will send your request URL a view_closed event
+     * Indicates whether Slack will send your request URL a view_closed event
      * when a user clicks the close button. Defaults to false.
      *
      * @var boolean|null

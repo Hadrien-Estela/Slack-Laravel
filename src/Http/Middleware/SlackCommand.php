@@ -43,7 +43,7 @@ abstract class SlackCommand
         // Get command options if available.
         if (method_exists(Route::current()->getController(),$method = 'commandOptionsFor'.Str::studly(Route::current()->getActionMethod())))
         {
-            // Retreive options.
+            // Retrieve options.
             Route::current()->getController()->{$method}($opt);
 
             // Add help option by default

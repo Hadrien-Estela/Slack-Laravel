@@ -36,7 +36,7 @@ class VerifySlackRequest
         // the gap should under 5 minutes
         $timestamp = $request->header('X-Slack-Request-Timestamp');
         if (Carbon::now()->diffInMinutes(Carbon::createFromTimestamp($timestamp)) > 5) {
-            throw new Exception("Invalid timstamp, too much gap");
+            throw new Exception("Invalid timestamp, too much gap");
         }
 
         // generate the string base

@@ -14,7 +14,7 @@ class ConversationFilter implements JsonSerializable
 {
 
     const Individual = 'im';
-    const Multipart = 'pmim';
+    const Multipart = 'mpim';
     const Public = 'public';
     const Private = 'private';
 

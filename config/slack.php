@@ -31,7 +31,7 @@ return [
     | Tokens
     |--------------------------------------------------------------------------
     |
-    | The Ttokens used by your app to authenticate through the slack API.
+    | The tokens used by your app to authenticate through the slack API.
     |
     */
 

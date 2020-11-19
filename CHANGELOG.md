@@ -1,17 +1,12 @@
 # Changelog
 
-## [1.2.3] - 2020-11-18
-
-* Clean unused imports
-* Various Fixes
-
 ## [1.2.2] - 2020-11-17
 
 * Modify `use \App\Http\Controller` to `use \Illuminate\Routing\Controller`
 
 ## [1.2.1] - 2020-11-15
 
-* Add max string parameter lenght checks.
+* Add max string parameter length checks.
 
 ## [1.2.0] - 2020-11-15
 
@@ -20,8 +15,8 @@
 ## [1.1.1] - 2020-11-11
 
 * Fix `Slack\Objects\BlockElements\SelectMenu\StaticSelect`
-  Contruct now takes a single option as `initial_option`.
-* `Slack\Objects\Blocks\ActionBlock` can now take an array of elements in contructor.
+  Construct now takes a single option as `initial_option`.
+* `Slack\Objects\Blocks\ActionBlock` constructor can now take an array of elements.
 * Fix `Slack\Http\Controllers\InteractionController` block_suggestions.
 * Fix missing user authentication in `Slack\Http\Middleware\SlackCommand`.
 * Improve `Slack\Helpers\View`.

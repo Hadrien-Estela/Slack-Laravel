@@ -48,7 +48,7 @@ class Timepicker extends InteractiveBlockElement
     }
 
     /**
-     * Set the initiale picker time.
+     * Set the initial picker time.
      *
      * @param  DateTime $date
      * @return Timepicker

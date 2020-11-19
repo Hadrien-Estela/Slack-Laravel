@@ -1,7 +1,4 @@
-<?php /** @noinspection ALL */
-/** @noinspection ALL */
-
-/** @noinspection ALL */
+<?php
 
 namespace Slack\Http\Controllers;
 
@@ -77,7 +74,7 @@ abstract class InteractionController extends Controller
      */
     public function index(Request $request)
     {
-        // Incase the SlackInteraction middleware has already replaced the input string by an object.
+        // In case the SlackInteraction middleware has already replaced the input string by an object.
         if (is_object($request->input('payload')))
             $payload = $request->input('payload');
         else
@@ -94,15 +91,12 @@ abstract class InteractionController extends Controller
 
             case 'view_submission':
                 return $this->viewAction($request, $payload->view, $this->view_submission_callback_actions);
-                break;
 
             case 'view_closed':
                 return $this->viewAction($request, $payload->view, $this->view_closed_callback_actions);
-                break;
 
             case 'shortcut':
                 return $this->shortcut($request, $payload->callback_id);
-                break;
 
             // case 'message_action':
 
@@ -110,7 +104,6 @@ abstract class InteractionController extends Controller
 
             default:
                 throw new Exception("Not implemented action type: $payload->type");
-                break;
         }
     }
 
@@ -127,7 +120,6 @@ abstract class InteractionController extends Controller
         if (array_key_exists($view->callback_id, $callback_actions_arr))
         {
             $callable = $callback_actions_arr[$view->callback_id];
-            if (is_callable($callable))
             if (is_callable($callable))
             {
                 $controller = new $callable[0];

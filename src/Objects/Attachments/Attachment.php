@@ -349,7 +349,7 @@ class Attachment implements JsonSerializable
      * @param  string $url
      * @return Attachment
      */
-    public function thummb(string $url)
+    public function thumb(string $url)
     {
         $this->thumb_url = $url;
         return $this;

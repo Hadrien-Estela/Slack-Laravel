@@ -6,7 +6,7 @@ use JsonSerializable;
 
 /**
  * Determines when a plain-text input element will return
- * a block_actionsinteraction payload.
+ * a block_actions interaction payload.
  *
  * @link(https://api.slack.com/reference/block-kit/composition-objects#dispatch_action_config, more)
  */

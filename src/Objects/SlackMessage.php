@@ -1,6 +1,4 @@
-<?php /** @noinspection ALL */
-
-/** @noinspection ALL */
+<?php
 
 namespace Slack\Objects;
 
@@ -67,7 +65,7 @@ class SlackMessage implements JsonSerializable, Jsonable
     private $thread_ts;
 
     /**
-     * Set your bot's user name.
+     * Set your bot user name.
      * @link(https://api.slack.com/methods/chat.postMessage#arg_username, more)
      *
      * @var string|null
@@ -79,7 +77,7 @@ class SlackMessage implements JsonSerializable, Jsonable
      *
      * @param string $text The Text content.
      * @param boolean|null $markdown Use markdown.
-     * @param string|null $channel_id The reciptent.
+     * @param string|null $channel_id The recipient.
      * @param Block[] $blocks
      */
     public function __construct(string $text = 'Empty message.',
@@ -95,7 +93,7 @@ class SlackMessage implements JsonSerializable, Jsonable
     }
 
     /**
-     * Set text content ofthe message.
+     * Set text content of the message.
      *
      * @param  string $text
      * @return SlackMessage

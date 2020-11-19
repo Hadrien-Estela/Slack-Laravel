@@ -28,7 +28,7 @@ abstract class SlackInteraction
             'payload' => $payload
         ]);
 
-        // Try to anthenticate the slack user as an App user.
+        // Try to authenticate the slack user as an App user.
         $this->authenticateUser($payload->user->id);
 
         return $next($request);

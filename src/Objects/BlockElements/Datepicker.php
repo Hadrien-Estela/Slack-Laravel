@@ -2,6 +2,7 @@
 
 namespace Slack\Objects\BlockElements;
 
+use DateTime;
 use Slack\Objects\BlockElements\Concerns;
 use Slack\Objects\CompositionObjects\ConfirmationDialog;
 use Slack\Objects\CompositionObjects\Text;
@@ -35,7 +36,7 @@ class Datepicker extends InteractiveBlockElement
      */
     public function __construct(string $action_id,
                                 string $placeholder = null,
-                                \DateTime $initial_date = null,
+                                DateTime $initial_date = null,
                                 ConfirmationDialog $confirm = null)
     {
         parent::__construct(InteractiveBlockElement::Datepicker, $action_id);
@@ -45,12 +46,12 @@ class Datepicker extends InteractiveBlockElement
     }
 
     /**
-     * Set the initiale picker date.
+     * Set the initial picker date.
      *
      * @param  DateTime $date
      * @return Datepicker
      */
-    public function initialDate(\DateTime $date)
+    public function initialDate(DateTime $date)
     {
         $this->initial_date = $date->format('Y-m-d');
         return $this;
