@@ -4,14 +4,15 @@ namespace Slack\Objects\BlockElements;
 
 use Slack\Objects\BlockElements\Concerns;
 use Slack\Objects\CompositionObjects\Text;
-use Slack\Objects\CompositionObjects\DispatchActionConfig;
+use Slack\Objects\CompositionObjects\DispatchActionConfig as DispatchActionConfigAlias;
 
 /**
  * A plain-text input, similar to the HTML <input> tag,
  * creates a field where a user can enter freeform data.
  * It can appear as a single-line field or a larger textarea using the multiline flag.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements#input, more)
+ *
+ * @package Slack\Objects\BlockElements
  */
 class TextInput extends InteractiveBlockElement
 {
@@ -29,7 +30,7 @@ class TextInput extends InteractiveBlockElement
      * Indicates whether the input will be a single line (false) or a larger textarea (true).
      * Defaults to false.
      *
-     * @var boolean|null
+     * @var bool|null
      */
     private $multiline;
 
@@ -37,7 +38,7 @@ class TextInput extends InteractiveBlockElement
      * The minimum length of input that the user must provide.
      * If the user provides less, they will receive an error.
      *
-     * @var integer|null
+     * @var int|null
      */
     private $min_length;
 
@@ -46,7 +47,7 @@ class TextInput extends InteractiveBlockElement
      * If the user provides more, they will receive an error.
      * Default is 3000
      *
-     * @var integer|null
+     * @var int|null
      */
     private $max_length;
 
@@ -54,20 +55,20 @@ class TextInput extends InteractiveBlockElement
      * A dispatch configuration object that determines when during
      * text input the element returns a block_actions payload.
      *
-     * @var DispatchActionConfig|null
+     * @var DispatchActionConfigAlias|null
      */
     private $dispatch_action_config;
 
     /**
-     * Build a new instance.
+     * TextInput constructor.
      *
-     * @param string                    $action_id      [description]
-     * @param string|null               $placeholder    [description]
-     * @param string|null               $initialValue   [description]
-     * @param boolean|null              $multiline      [description]
-     * @param integer|null              $minLength      [description]
-     * @param integer|null              $maxLength      [description]
-     * @param DispatchActionConfig|null $dispatchConfig [description]
+     * @param string $action_id
+     * @param string|null $placeholder
+     * @param string|null $initialValue
+     * @param bool|null $multiline
+     * @param int|null $minLength
+     * @param int|null $maxLength
+     * @param \Slack\Objects\CompositionObjects\DispatchActionConfig|null $dispatchConfig
      */
     public function __construct(string $action_id,
                                 string $placeholder = null,
@@ -75,24 +76,24 @@ class TextInput extends InteractiveBlockElement
                                 bool $multiline = null,
                                 int $minLength = null,
                                 int $maxLength = null,
-                                DispatchActionConfig $dispatchConfig = null)
+                                DispatchActionConfigAlias $dispatchConfig = null)
     {
         parent::__construct(InteractiveBlockElement::TextInput, $action_id);
         $this->placeholder = isset($placeholder) ? new Text(Text::Plain, $placeholder) : null;
         $this->initial_value = $initialValue;
         $this->multiline = $multiline;
         $this->min_length = $minLength;
-        $this->maxLength = $maxLength;
-        $this->dispatchConfig = $dispatchConfig;
+        $this->max_length = $maxLength;
+        $this->dispatch_action_config = $dispatchConfig;
     }
 
     /**
      * Set the initial value.
      *
-     * @param  string $initialValue
-     * @return TextInput
+     * @param string $initialValue
+     * @return $this
      */
-    public function initialValue($initialValue)
+    public function initialValue(string $initialValue)
     {
         $this->initial_value = $initialValue;
         return $this;
@@ -101,7 +102,7 @@ class TextInput extends InteractiveBlockElement
     /**
      * make the input multiline.
      *
-     * @return TextInput
+     * @return $this
      */
     public function multiline()
     {
@@ -112,8 +113,8 @@ class TextInput extends InteractiveBlockElement
     /**
      * Set the min length.
      *
-     * @param  integer $min
-     * @return TextInput
+     * @param int $min
+     * @return $this
      */
     public function minLength(int $min)
     {
@@ -124,8 +125,8 @@ class TextInput extends InteractiveBlockElement
     /**
      * Set the max length.
      *
-     * @param  integer $max
-     * @return TextInput
+     * @param int $max
+     * @return $this
      */
     public function maxLength(int $max)
     {
@@ -136,10 +137,10 @@ class TextInput extends InteractiveBlockElement
     /**
      * Set the dispatch config.
      *
-     * @param  DispatchActionConfig $config
-     * @return TextInput
+     * @param \Slack\Objects\CompositionObjects\DispatchActionConfig $config
+     * @return $this
      */
-    public function dispatchConfig(DispatchActionConfig $config)
+    public function dispatchConfig(DispatchActionConfigAlias $config)
     {
         $this->dispatch_action_config = $config;
         return $this;

@@ -6,16 +6,14 @@ use JsonSerializable;
 
 /**
  * Base class for block Elements.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements, more)
+ *
+ * @package Slack\Objects\BlockElements
  */
 abstract class BlockElement implements JsonSerializable
 {
 
-    /**
-     * Types of available elements
-     */
-    const Image = 'image';
+    protected const Image = 'image';
 
     /**
      * The type of element.
@@ -25,9 +23,9 @@ abstract class BlockElement implements JsonSerializable
     private $type;
 
     /**
-     * Build a new instance.
+     * BlockElement constructor.
      *
-     * @param string $type The element's type.
+     * @param string $type
      */
     public function __construct(string $type)
     {

@@ -6,7 +6,9 @@ use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Input\InputOption;
 
 /**
- * Generate a SlackView class
+ * Class SlackViewMakeCommand
+ *
+ * @package Slack\Console\Commands
  */
 class SlackViewMakeCommand extends GeneratorCommand
 {
@@ -69,7 +71,7 @@ class SlackViewMakeCommand extends GeneratorCommand
     /**
      * Get the default namespace for the class.
      *
-     * @param  string  $rootNamespace
+     * @param string $rootNamespace
      * @return string
      */
     protected function getDefaultNamespace($rootNamespace)
@@ -84,11 +86,11 @@ class SlackViewMakeCommand extends GeneratorCommand
 
     /**
      * Build the class with the given name.
-     *
      * Remove the base controller import if we are already in base namespace.
      *
-     * @param  string  $name
+     * @param string $name
      * @return string
+     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
     protected function buildClass($name)
     {

@@ -7,7 +7,7 @@ if (! function_exists('slack_response_action'))
     /**
      * Return a new ResponseAction.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Slack\Factories\ResponseActionFactory
      */
     function slack_response_action()
     {

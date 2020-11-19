@@ -8,8 +8,9 @@ use Slack\Objects\CompositionObjects\Option;
 /**
  * This select menu will load its options from an external data source,
  * allowing for a dynamic list of options.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements#external_select, more)
+ *
+ * @package Slack\Objects\BlockElements\SelectMenu
  */
 class ExternalSelect extends SelectMenu
 {
@@ -19,16 +20,17 @@ class ExternalSelect extends SelectMenu
     /**
      * When the typeahead field is used, a request will be sent on every character change.
      *
-     * @var integer|null
+     * @var int|null
      */
     private $min_query_length;
 
     /**
-     * Build a new instance.
+     * ExternalSelect constructor.
      *
      * @param string $action_id
      * @param string $placeholder
-     * @param integer $minQueryLength
+     * @param int|null $minQueryLength
+     * @param \Slack\Objects\CompositionObjects\Option|null $initialOption
      */
     public function __construct(string $action_id,
                                 string $placeholder = 'Select an option',
@@ -43,8 +45,8 @@ class ExternalSelect extends SelectMenu
     /**
      * Set the minimum query length.
      *
-     * @param  integer $length
-     * @return Slack\Objects\BlockElements\SelectMenu\ExternalSelect
+     * @param int $length
+     * @return $this
      */
     public function minQueryLength(int $length)
     {

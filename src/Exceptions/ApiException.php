@@ -4,6 +4,11 @@ namespace Slack\Exceptions;
 
 use Exception;
 
+/**
+ * Class ApiException
+ *
+ * @package Slack\Exceptions
+ */
 class ApiException extends Exception
 {
 
@@ -14,6 +19,11 @@ class ApiException extends Exception
      */
     private $error;
 
+    /**
+     * ApiException constructor.
+     *
+     * @param array $response
+     */
     public function __construct(array $response)
     {
         if (!array_key_exists('response_metadata', $response))
@@ -23,6 +33,9 @@ class ApiException extends Exception
         $this->error = $response['error'];
     }
 
+    /**
+     * @return mixed|string
+     */
     final public function getError()
     {
         return $this->error;

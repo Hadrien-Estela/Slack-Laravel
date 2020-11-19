@@ -4,6 +4,11 @@ namespace Slack\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * Class Slack
+ *
+ * @package Slack\Facades
+ */
 class Slack extends Facade
 {
     /**

@@ -5,8 +5,9 @@ namespace Slack\Objects\BlockElements\SelectMenu;
 /**
  * This select menu will populate its options with a list of Slack users
  * visible to the current user in the active workspace.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements#users_select, more)
+ *
+ * @package Slack\Objects\BlockElements\SelectMenu
  */
 class UserSelect extends SelectMenu
 {
@@ -19,10 +20,10 @@ class UserSelect extends SelectMenu
     private $initial_user;
 
     /**
-     * Build a new instance.
+     * UserSelect constructor.
      *
-     * @param string      $action_id
-     * @param string      $placeholder
+     * @param string $action_id
+     * @param string $placeholder
      * @param string|null $initialUser
      */
     public function __construct(string $action_id,
@@ -36,8 +37,8 @@ class UserSelect extends SelectMenu
     /**
      * Set the initial user ID.
      *
-     * @param  string $userID$
-     * @return UserSelect
+     * @param string $userID$
+     * @return $this
      */
     public function initialUser(string $userID)
     {

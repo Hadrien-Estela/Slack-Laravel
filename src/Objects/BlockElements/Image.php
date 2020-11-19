@@ -4,8 +4,9 @@ namespace Slack\Objects\BlockElements;
 
 /**
  * An element to insert an image as part of a larger block of content.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements#image, more)
+ *
+ * @package Slack\Objects\BlockElements
  */
 class Image extends BlockElement
 {
@@ -15,33 +16,33 @@ class Image extends BlockElement
      *
      * @var string
      */
-    private $image_url = '';
+    private $image_url;
 
     /**
      * A plain-text summary of the image. This should not contain any markup.
      *
      * @var string
      */
-    private $alt_text = '';
+    private $alt_text;
 
     /**
-     * Build new Instance.
+     * Image constructor.
      *
-     * @param string $url The url of the image.
-     * @param string $alt The alternative text of the image.
+     * @param string $url
+     * @param string $alt
      */
     public function __construct(string $url = '', string $alt = '')
     {
         parent::__construct(BlockElement::Image);
-        $this->url = $url;
-        $this->alt = $alt;
+        $this->image_url = $url;
+        $this->alt_text = $alt;
     }
 
     /**
      * Set image URL.
      *
-     * @param  string $url
-     * @return Image
+     * @param string $url
+     * @return $this
      */
     public function url(string $url)
     {
@@ -52,8 +53,8 @@ class Image extends BlockElement
     /**
      * Set alternative text.
      *
-     * @param  string $text
-     * @return Image
+     * @param string $text
+     * @return $this
      */
     public function alt(string $text)
     {

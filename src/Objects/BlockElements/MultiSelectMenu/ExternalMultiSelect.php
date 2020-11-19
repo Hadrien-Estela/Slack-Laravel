@@ -7,8 +7,9 @@ use Slack\Objects\BlockElements\Concerns;
 /**
  * This menu will load its options from an external data source,
  * allowing for a dynamic list of options.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements#external_multi_select, more)
+ *
+ * @package Slack\Objects\BlockElements\MultiSelectMenu
  */
 class ExternalMultiSelect extends MultiSelectMenu
 {
@@ -18,16 +19,17 @@ class ExternalMultiSelect extends MultiSelectMenu
     /**
      * When the typeahead field is used, a request will be sent on every character change.
      *
-     * @var integer|null
+     * @var int|null
      */
     private $min_query_length;
 
     /**
-     * Build a new instance.
+     * ExternalMultiSelect constructor.
      *
      * @param string $action_id
      * @param string $placeholder
-     * @param integer $minQueryLength
+     * @param int|null $minQueryLength
+     * @param array $initialOptions
      */
     public function __construct(string $action_id,
                                 string $placeholder = 'Select an option',
@@ -42,8 +44,8 @@ class ExternalMultiSelect extends MultiSelectMenu
     /**
      * Set the minimum query length.
      *
-     * @param  integer $length
-     * @return ExternalSelect
+     * @param int $length
+     * @return $this
      */
     public function minQueryLength(int $length)
     {

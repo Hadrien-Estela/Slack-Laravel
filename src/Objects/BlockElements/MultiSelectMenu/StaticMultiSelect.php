@@ -3,29 +3,28 @@
 namespace Slack\Objects\BlockElements\MultiSelectMenu;
 
 use Slack\Objects\BlockElements\Concerns;
-use Slack\Objects\BlockElements\MutliSelectMenu\MutliSelectMenu;
 
 /**
  * This is the simplest form of select menu, with a static list of options
  * passed in when defining the element.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements#static_multi_select, more)
+ *
+ * @package Slack\Objects\BlockElements\MultiSelectMenu
  */
-class StaticMultiSelect extends MutliSelectMenu
+class StaticMultiSelect extends MultiSelectMenu
 {
 
     use Concerns\HasOptions;
 
     /**
-     * Build a new instance.
+     * StaticMultiSelect constructor.
      *
-     * @param string       $type               [description]
-     * @param string       $action_id          [description]
-     * @param string       $placeholder        [description]
-     * @param integer|null $max_selected_items [description]
-     * @param array        $options            [description]
-     * @param array        $groups             [description]
-     * @param array        $initialOptions     [description]
+     * @param string $action_id
+     * @param string $placeholder
+     * @param int|null $max_selected_items
+     * @param array $options
+     * @param array $groups
+     * @param array $initialOptions
      */
     public function __construct(string $action_id,
                                 string $placeholder = 'Select an option',
@@ -34,9 +33,9 @@ class StaticMultiSelect extends MutliSelectMenu
                                 array $groups = [],
                                 array $initialOptions = [])
     {
-        parent::__construct(MutliSelectMenu::Static, $action_id, $placeholder, $max_selected_items);
+        parent::__construct(MultiSelectMenu::Static, $action_id, $placeholder, $max_selected_items);
         $this->options = $options;
-        $this->groups = $groups;
+        $this->option_groups = $groups;
         $this->initial_options = $initialOptions;
     }
 

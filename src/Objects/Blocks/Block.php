@@ -7,8 +7,9 @@ use JsonSerializable;
 /**
  * Blocks are a series of components that can be combined to create
  * visually rich and compellingly interactive messages.
- *
  * @link(https://api.slack.com/reference/block-kit/blocks, more)
+ *
+ * @package Slack\Objects\Blocks
  */
 abstract class Block implements JsonSerializable
 {
@@ -16,14 +17,14 @@ abstract class Block implements JsonSerializable
     /**
      * Types of block.
      */
-    const Actions = 'actions';
-    const Context = 'context';
-    const Divider = 'divider';
-    const File = 'file';
-    const Header = 'header';
-    const Image = 'image';
-    const Input = 'input';
-    const Section = 'section';
+    protected const Actions = 'actions';
+    protected const Context = 'context';
+    protected const Divider = 'divider';
+    protected const File = 'file';
+    protected const Header = 'header';
+    protected const Image = 'image';
+    protected const Input = 'input';
+    protected const Section = 'section';
 
     /**
      * The type of block.
@@ -42,21 +43,21 @@ abstract class Block implements JsonSerializable
     private $id;
 
     /**
-     * Build a new block instance.
+     * Block constructor.
      *
-     * @param string $type The type of block.
+     * @param string $type
      */
-    public function __construct(string $type)
+    protected function __construct(string $type)
     {
         $this->type = $type;
     }
 
     /**
-     * Set the blosk id.
+     * Set the block id.
      * Max length of 255 characters.
      *
-     * @param  string $id
-     * @return Block
+     * @param string $id
+     * @return $this
      */
     public function id(string $id)
     {

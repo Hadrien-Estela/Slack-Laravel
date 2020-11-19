@@ -1,6 +1,4 @@
-<?php /** @noinspection ALL */
-
-/** @noinspection ALL */
+<?php
 
 namespace Slack\Objects;
 
@@ -11,8 +9,9 @@ use Slack\Objects\Attachments\Attachment;
 
 /**
  * Build a serializable message.
- *
  * @link(https://api.slack.com/reference/messaging/payload, more)
+ *
+ * @package Slack\Objects
  */
 class SlackMessage implements JsonSerializable, Jsonable
 {
@@ -27,14 +26,14 @@ class SlackMessage implements JsonSerializable, Jsonable
      *
      * @var string
      */
-    private $text = '';
+    private $text;
 
     /**
      * Determines whether the text field is rendered according
      * to mrkdwn formatting or not.
      * Defaults to true.
      *
-     * @var boolean|null
+     * @var bool|null
      */
     private $mrkdwn;
 
@@ -48,14 +47,14 @@ class SlackMessage implements JsonSerializable, Jsonable
     /**
      * An array of layout blocks
      *
-     * @var Block[]
+     * @var \Slack\Objects\Blocks\Block[]
      */
     private $blocks = [];
 
     /**
      * An array of legacy secondary attachments.
      *
-     * @var Attachment[]
+     * @var \Slack\Objects\Attachments\Attachment[]
      */
     private $attachments = [];
 
@@ -67,7 +66,7 @@ class SlackMessage implements JsonSerializable, Jsonable
     private $thread_ts;
 
     /**
-     * Set your bot's user name.
+     * Set your bot user name.
      * @link(https://api.slack.com/methods/chat.postMessage#arg_username, more)
      *
      * @var string|null
@@ -75,12 +74,12 @@ class SlackMessage implements JsonSerializable, Jsonable
     private $username;
 
     /**
-     * Build a new SlackMessage Instance.
+     * SlackMessage constructor.
      *
-     * @param string $text The Text content.
-     * @param boolean|null $markdown Use markdown.
-     * @param string|null $channel_id The reciptent.
-     * @param Block[] $blocks
+     * @param string $text
+     * @param bool|null $markdown
+     * @param string|null $channel_id
+     * @param \Slack\Objects\Blocks\Block[] $blocks
      */
     public function __construct(string $text = 'Empty message.',
                                 bool $markdown = null,
@@ -95,10 +94,10 @@ class SlackMessage implements JsonSerializable, Jsonable
     }
 
     /**
-     * Set text content ofthe message.
+     * Set text content of the message.
      *
-     * @param  string $text
-     * @return SlackMessage
+     * @param string $text
+     * @return $this
      */
     public function text(string $text)
     {
@@ -109,8 +108,8 @@ class SlackMessage implements JsonSerializable, Jsonable
     /**
      * Set the channel ID.
      *
-     * @param  string $channel
-     * @return SlackMessage
+     * @param string $channel
+     * @return $this
      */
     public function to(string $channel)
     {
@@ -121,8 +120,8 @@ class SlackMessage implements JsonSerializable, Jsonable
     /**
      * Enabling content markdown.
      *
-     * @param  boolean $markdown
-     * @return SlackMessage
+     * @param bool $markdown
+     * @return $this
      */
     public function markdown(bool $markdown)
     {
@@ -133,8 +132,8 @@ class SlackMessage implements JsonSerializable, Jsonable
     /**
      * Add blocks to message.
      *
-     * @param  Block $block
-     * @return SlackMessage
+     * @param Block $block
+     * @return $this
      */
     public function block(Block $block)
     {
@@ -145,8 +144,8 @@ class SlackMessage implements JsonSerializable, Jsonable
     /**
      * Add attachment.
      *
-     * @param  Attachment $attachment
-     * @return SlackMessage
+     * @param Attachment $attachment
+     * @return $this
      */
     public function attachment(Attachment $attachment)
     {
@@ -157,8 +156,8 @@ class SlackMessage implements JsonSerializable, Jsonable
     /**
      * Set thread parent.
      *
-     * @param  string $thread_ts
-     * @return SlackMessage
+     * @param string $thread_ts
+     * @return $this
      */
     public function thread(string $thread_ts)
     {
@@ -169,8 +168,8 @@ class SlackMessage implements JsonSerializable, Jsonable
     /**
      * Set bot username.
      *
-     * @param  string $username
-     * @return SlackMessage
+     * @param string $username
+     * @return $this
      */
     public function username(string $username)
     {

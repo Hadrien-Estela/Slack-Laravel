@@ -9,8 +9,9 @@ use Slack\Objects\BlockElements\BlockElement;
  * A section is one of the most flexible blocks available.
  * it can be used as a simple text block, in combination with text fields,
  * or side-by-side with any of the available block elements.
- *
  * @link(https://api.slack.com/reference/block-kit/blocks#section, more)
+ *
+ * @package Slack\Objects\Blocks
  */
 class SectionBlock extends Block
 {
@@ -19,7 +20,7 @@ class SectionBlock extends Block
      * The text for the block, in the form of a text object.
      * Max length of 3000 characters.
      *
-     * @var Text
+     * @var \Slack\Objects\CompositionObjects\Text
      */
     private $text;
 
@@ -27,22 +28,22 @@ class SectionBlock extends Block
      * An array of text objects.
      * Max length of 2000 characters.
      *
-     * @var Text[]
+     * @var \Slack\Objects\CompositionObjects\Text[]
      */
     private $fields = [];
 
     /**
      * One of the available Block elements.
      *
-     * @var BlockElement;
+     * @var \Slack\Objects\BlockElements\BlockElement;
      */
     private $accessory;
 
     /**
-     * Build a new block instance.
+     * SectionBlock constructor.
      *
-     * @param string       $text
-     * @param bool|boolean $markdown
+     * @param string $text
+     * @param bool $markdown
      */
     public function __construct(string $text = '', bool $markdown = false)
     {
@@ -54,9 +55,9 @@ class SectionBlock extends Block
      * Set the main text.
      * Max length of 3000 characters.
      *
-     * @param  string   $text
-     * @param  boolean  $markdown
-     * @return SectionBlock
+     * @param string $text
+     * @param bool $markdown
+     * @return $this
      */
     public function text(string $text, bool $markdown = false)
     {
@@ -65,10 +66,10 @@ class SectionBlock extends Block
     }
 
     /**
-     * Add additionnal text.
+     * Add additional text.
      *
-     * @param  Text   $field
-     * @return SectionBlock
+     * @param \Slack\Objects\CompositionObjects\Text $field
+     * @return $this
      */
     public function field(Text $field)
     {
@@ -79,8 +80,8 @@ class SectionBlock extends Block
     /**
      * Set Accessory.
      *
-     * @param  BlockElement $element
-     * @return SectionBlock
+     * @param \Slack\Objects\BlockElements\BlockElement $element
+     * @return $this
      */
     public function accessory(BlockElement $element)
     {

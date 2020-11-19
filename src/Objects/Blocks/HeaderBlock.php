@@ -7,8 +7,9 @@ use Slack\Objects\CompositionObjects\Text;
 /**
  * A header is a plain-text block that displays in a larger, bold font.
  * Use it to delineate between different groups of content in your app's surfaces.
- *
  * @link(https://api.slack.com/reference/block-kit/blocks#header, more)
+ *
+ * @packages Slack\Objects\Blocks
  */
 class HeaderBlock extends Block
 {
@@ -18,14 +19,14 @@ class HeaderBlock extends Block
      * Maximum length for the text in this field is 150 characters.
      * Max length of 150 characters.
      *
-     * @var Text
+     * @var \Slack\Objects\CompositionObjects\Text
      */
-    private $text = '';
+    private $text;
 
     /**
-     * Build a new block instance.
+     * HeaderBlock constructor.
      *
-     * @param string $text The text content.
+     * @param string $text
      */
     public function __construct(string $text = '')
     {
@@ -37,8 +38,8 @@ class HeaderBlock extends Block
      * Set header block's text.
      * Max length of 150 characters.
      *
-     * @param  string $text
-     * @return HeaderBlock
+     * @param string $text
+     * @return $this
      */
     public function text(string $text)
     {

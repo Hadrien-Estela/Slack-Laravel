@@ -7,8 +7,9 @@ use Slack\Objects\BlockElements\InteractiveBlockElement;
 
 /**
  * A block that collects information from users.
- *
  * @link(https://api.slack.com/reference/block-kit/blocks#input, more)
+ *
+ * @package Slack\Objects\Blocks
  */
 class InputBlock extends Block
 {
@@ -17,14 +18,14 @@ class InputBlock extends Block
      * A label that appears above an input element in the form.
      * Max length of 2000 characters.
      *
-     * @var Text
+     * @var \Slack\Objects\CompositionObjects\Text
      */
     private $label;
 
     /**
      * The input element.
      *
-     * @var InteractiveBlockElement
+     * @var \Slack\Objects\BlockElements\InteractiveBlockElement
      */
     private $element;
 
@@ -33,7 +34,7 @@ class InputBlock extends Block
      * in this block should dispatch a block_actions payload.
      * Defaults to false.
      *
-     * @var boolean
+     * @var bool
      */
     private $dispatch_action;
 
@@ -41,7 +42,7 @@ class InputBlock extends Block
      * An optional hint that appears below an input element in a lighter grey.
      * Max length of 2000 characters.
      *
-     * @var Text
+     * @var \Slack\Objects\CompositionObjects\Text
      */
     private $hint;
 
@@ -50,15 +51,17 @@ class InputBlock extends Block
      * a user submits the modal.
      * Defaults to false.
      *
-     * @var boolean
+     * @var bool
      */
     private $optional;
 
     /**
-     * Build a new block instance.
+     * InputBlock constructor.
      *
-     * @param string                       $label   The input label
-     * @param InteractiveBlockElement|null $element The input element.
+     * @param string $label
+     * @param \Slack\Objects\BlockElements\InteractiveBlockElement|null $element
+     * @param bool|null $optional
+     * @param string|null $hint
      */
     public function __construct(string $label = 'Label',
                                 InteractiveBlockElement $element = null,
@@ -77,8 +80,8 @@ class InputBlock extends Block
      * Set the label.
      * Max length of 2000 characters.
      *
-     * @param  string $label
-     * @return InputBlock
+     * @param string $label
+     * @return $this
      */
     public function label(string $label)
     {
@@ -89,8 +92,8 @@ class InputBlock extends Block
     /**
      * Set the input element.
      *
-     * @param  InteractiveBlockElement $element
-     * @return InputBlock
+     * @param \Slack\Objects\BlockElements\InteractiveBlockElement $element
+     * @return $this
      */
     public function element(InteractiveBlockElement $element)
     {
@@ -101,12 +104,12 @@ class InputBlock extends Block
     /**
      * Should dispatch the action.
      *
-     * @param  boolean $dispatch
-     * @return InputBlock
+     * @param bool $dispatch
+     * @return $this
      */
     public function dispatch(bool $dispatch)
     {
-        $this->dispatch = $dispatch;
+        $this->dispatch_action = $dispatch;
         return $this;
     }
 
@@ -114,8 +117,8 @@ class InputBlock extends Block
      * Set input Hint.
      * Max length of 2000 characters.
      *
-     * @param  string $hint
-     * @return InputBlock
+     * @param string $hint
+     * @return $this
      */
     public function hint(string $hint)
     {
@@ -126,8 +129,8 @@ class InputBlock extends Block
     /**
      * Set Input as optional.
      *
-     * @param  boolean $optional
-     * @return InputBlock
+     * @param bool $optional
+     * @return $this
      */
    public function optional(bool $optional)
     {

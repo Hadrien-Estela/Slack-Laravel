@@ -9,8 +9,9 @@ use Slack\Objects\CompositionObjects\ConfirmationDialog;
  *This is like a cross between a button and a select menu
  * when a user clicks on this overflow button, they will
  * be presented with a list of options to choose from.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements#overflow, more)
+ *
+ * @package Slack\Objects\BlockElements
  */
 class OverflowMenu extends InteractiveBlockElement
 {
@@ -19,11 +20,11 @@ class OverflowMenu extends InteractiveBlockElement
         Concerns\HasOptions;
 
     /**
-     * Build a new Instance.
+     * OverflowMenu constructor.
      *
-     * @param string                  $action_id [description]
-     * @param array                   $options   [description]
-     * @param ConfirmationDialog|null $confirm   [description]
+     * @param string $action_id
+     * @param array $options
+     * @param \Slack\Objects\CompositionObjects\ConfirmationDialog|null $confirm
      */
     public function __construct(string $action_id,
                                 array $options = [],

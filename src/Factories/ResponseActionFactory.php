@@ -14,7 +14,7 @@ class ResponseActionFactory
     /**
      * Update view action.
      *
-     * @param  SlackView $view The content view to send as update.
+     * @param \Slack\Objects\SlackView $view The content view to send as update.
      * @return \Illuminate\Http\JsonResponse
      */
     public function update(SlackView $view)
@@ -28,7 +28,7 @@ class ResponseActionFactory
     /**
      * Push view action.
      *
-     * @param  SlackView $view The content to push
+     * @param \Slack\Objects\SlackView $view The content to push
      * @return \Illuminate\Http\JsonResponse
      */
     public function push(SlackView $view)
@@ -54,7 +54,7 @@ class ResponseActionFactory
     /**
      * Errors action.
      *
-     * @param  array $errors The key value pair of errors to return.
+     * @param array $errors The key value pair of errors to return.
      * @return \Illuminate\Http\JsonResponse
      */
     public function errors(array $errors)
@@ -68,7 +68,7 @@ class ResponseActionFactory
     /**
      * Suggestion options response.
      *
-     * @param  Option[] $options The suggestions to return.
+     * @param \Slack\Objects\CompositionObjects\Option[] $options The suggestions to return.
      * @return \Illuminate\Http\JsonResponse
      */
     public function options(array $options)

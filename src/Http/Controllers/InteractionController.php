@@ -1,7 +1,4 @@
-<?php /** @noinspection ALL */
-/** @noinspection ALL */
-
-/** @noinspection ALL */
+<?php
 
 namespace Slack\Http\Controllers;
 
@@ -70,14 +67,15 @@ abstract class InteractionController extends Controller
 
     /**
      * Handle the interaction request.
-     * @link(https://api.slack.com/reference/interaction-payloads/block-actions, more)
      *
-     * @param  \Illuminate\Http\Request $request
+     * @link(https://api.slack.com/reference/interaction-payloads/block-actions, more)
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function index(Request $request)
     {
-        // Incase the SlackInteraction middleware has already replaced the input string by an object.
+        // In case the SlackInteraction middleware has already replaced the input string by an object.
         if (is_object($request->input('payload')))
             $payload = $request->input('payload');
         else
@@ -94,15 +92,12 @@ abstract class InteractionController extends Controller
 
             case 'view_submission':
                 return $this->viewAction($request, $payload->view, $this->view_submission_callback_actions);
-                break;
 
             case 'view_closed':
                 return $this->viewAction($request, $payload->view, $this->view_closed_callback_actions);
-                break;
 
             case 'shortcut':
                 return $this->shortcut($request, $payload->callback_id);
-                break;
 
             // case 'message_action':
 
@@ -110,24 +105,23 @@ abstract class InteractionController extends Controller
 
             default:
                 throw new Exception("Not implemented action type: $payload->type");
-                break;
         }
     }
 
     /**
      * Call the associated view callback action.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  Object $view
-     * @param  array $callback_actions_arr
+     * @param \Illuminate\Http\Request $request
+     * @param Object $view
+     * @param array $callback_actions_arr
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     private function viewAction(Request $request, Object $view, array $callback_actions_arr)
     {
         if (array_key_exists($view->callback_id, $callback_actions_arr))
         {
             $callable = $callback_actions_arr[$view->callback_id];
-            if (is_callable($callable))
             if (is_callable($callable))
             {
                 $controller = new $callable[0];
@@ -144,9 +138,8 @@ abstract class InteractionController extends Controller
     /**
      * Call method associated with action.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      * @param  array $actions
-     * @return \Illuminate\Http\Response
      */
     private function blockActions(Request $request, array $actions)
     {
@@ -172,8 +165,10 @@ abstract class InteractionController extends Controller
     /**
      * Return the options suggestion.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
+     * @param string $action_id
      * @return \Illuminate\Http\JsonResponse
+     * @throws \Exception
      */
     private function blockSuggestions(Request $request, string $action_id)
     {

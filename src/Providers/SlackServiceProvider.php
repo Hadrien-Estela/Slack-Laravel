@@ -7,16 +7,21 @@ use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Notifications\ChannelManager;
 
+use Slack\Console\Commands\SlackMessageMakeCommand;
+use Slack\Console\Commands\SlackViewMakeCommand;
 use Slack\Services\Slack;
 use Slack\Notifications\Channels;
 
+/**
+ * Class SlackServiceProvider
+ *
+ * @package Slack\Providers
+ */
 class SlackServiceProvider extends ServiceProvider implements DeferrableProvider
 {
 
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
     public function boot()
     {
@@ -45,16 +50,14 @@ class SlackServiceProvider extends ServiceProvider implements DeferrableProvider
         if ($this->app->runningInConsole())
         {
             $this->commands([
-                \Slack\Console\Commands\SlackMessageMakeCommand::class,
-                \Slack\Console\Commands\SlackViewMakeCommand::class
+                SlackMessageMakeCommand::class,
+                SlackViewMakeCommand::class
             ]);
         }
     }
 
     /**
      * Register services.
-     *
-     * @return void
      */
     public function register()
     {

@@ -7,6 +7,8 @@ use Slack\Objects\CompositionObjects\Text;
 
 /**
  * Base class for menu elements.
+ *
+ * @package Slack\Objects\BlockElements
  */
 abstract class Menu extends InteractiveBlockElement
 {
@@ -15,11 +17,11 @@ abstract class Menu extends InteractiveBlockElement
         Concerns\HasPlaceholder;
 
     /**
-     * Build a new instance.
+     * Menu constructor.
      *
-     * @param string $type          the type of BlockElement
-     * @param string $action_id     the action id
-     * @param string $placeholder   the placeholder
+     * @param string $type
+     * @param string $action_id
+     * @param string $placeholder
      */
     public function __construct(string $type,
                                 string $action_id,

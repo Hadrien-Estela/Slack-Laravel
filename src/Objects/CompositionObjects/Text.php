@@ -6,14 +6,15 @@ use JsonSerializable;
 
 /**
  * An object containing some text, formatted either as plain_text or using mrkdwn.
- *
  * @link(https://api.slack.com/reference/block-kit/composition-objects#text, more)
+ *
+ * @package Slack\Objects\CompositionObjects
  */
 class Text implements JsonSerializable
 {
 
-    const Plain = 'plain_text';
-    const Markdown = 'mrkdwn';
+    public const Plain = 'plain_text';
+    public const Markdown = 'mrkdwn';
 
     /**
      * The formatting to use for this text object.
@@ -27,29 +28,29 @@ class Text implements JsonSerializable
      *
      * @var string
      */
-    private $text = "";
+    private $text;
 
     /**
      * Indicates whether emojis in a text field should be escaped into the colon emoji format.
      *
-     * @var boolean|null
+     * @var bool|null
      */
     private $emoji;
 
     /**
      * When set to false (as is default) URLs will be auto-converted into links.
      *
-     * @var boolean|null
+     * @var bool|null
      */
     private $verbatim;
 
     /**
-     * Build a new Text instance.
+     * Text constructor.
      *
-     * @param string    $type       The format type.
-     * @param string    $text       The text content.
-     * @param boolean   $emoji      Should escape emojis.
-     * @param boolean   $verbatim   Is it verbatim.
+     * @param string $type
+     * @param string $text
+     * @param bool|null $emoji
+     * @param bool|null $verbatim
      */
     public function __construct(string $type,
                         string $text = 'Empty Text',
@@ -65,8 +66,8 @@ class Text implements JsonSerializable
     /**
      * Set text.
      *
-     * @param  string $text
-     * @return Text
+     * @param string $text
+     * @return $this
      */
     public function text(string $text)
     {
@@ -75,9 +76,9 @@ class Text implements JsonSerializable
     }
 
     /**
-     * Escape emojis
+     * Escape emojis.
      *
-     * @return Text
+     * @return $this
      */
     public function escapeEmoji()
     {
@@ -88,7 +89,7 @@ class Text implements JsonSerializable
     /**
      * Force verbatim text.
      *
-     * @return Text
+     * @return $this
      */
     public function verbatim()
     {

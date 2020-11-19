@@ -7,6 +7,8 @@ use Slack\Objects\CompositionObjects\OptionGroup;
 
 /**
  * Trait for Block elements with `options` attribute.
+ *
+ * @package Slack\Objects\BlockElements\Concerns
  */
 trait HasOptions
 {
@@ -14,14 +16,14 @@ trait HasOptions
     /**
      * An array of option.
      *
-     * @var Option[]
+     * @var \Slack\Objects\CompositionObjects\Option[]
      */
     private $options = [];
 
     /**
      * An option object that exactly matches one of the options within options.
      *
-     * @var array Option|null
+     * @var \Slack\Objects\CompositionObjects\Option
      */
     private $initial_option;
 
@@ -29,23 +31,21 @@ trait HasOptions
      * An array of option objects that exactly matches one or more of
      * the options within options.
      *
-     * @var Option[]
+     * @var \Slack\Objects\CompositionObjects\Option[]
      */
     private $initial_options = [];
 
     /**
      * An array of option group objects.
      *
-     * @var OptionGroup[]
+     * @var \Slack\Objects\CompositionObjects\OptionGroup[]
      */
     private $option_groups = [];
 
     /**
-     * Add an option.
-     *
-     * @param  Option $option
-     * @param  bool|boolean $initial
-     * @return BlockElement
+     * @param \Slack\Objects\CompositionObjects\Option $option
+     * @param bool $initial
+     * @return $this
      */
     public function option(Option $option, bool $initial = false)
     {
@@ -61,9 +61,9 @@ trait HasOptions
     /**
      * Add an options group
      *
-     * @param  OptionGroup      $group
-     * @param  bool|boolean     $initial
-     * @return BlockElement
+     * @param \Slack\Objects\CompositionObjects\OptionGroup $group
+     * @param bool $initial
+     * @return $this
      */
     public function group(OptionGroup $group, bool $initial = false)
     {
@@ -76,8 +76,8 @@ trait HasOptions
     /**
      * Set the initial option.
      *
-     * @param  Option $option
-     * @return BlockElement
+     * @param Option $option
+     * @return $this
      */
     public function initialOption(Option $option)
     {

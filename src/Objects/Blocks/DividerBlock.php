@@ -4,14 +4,15 @@ namespace Slack\Objects\Blocks;
 
 /**
  * A content divider, like an <hr>, to split up different blocks inside of a message.
- *
  * @link(https://api.slack.com/reference/block-kit/blocks#divider, more)
+ *
+ * @package Slack\Objects\Blocks
  */
 class DividerBlock extends Block
 {
 
     /**
-     * Build a new instance.
+     * DividerBlock constructor.
      */
     public function __construct()
     {

@@ -8,8 +8,9 @@ use Slack\Objects\CompositionObjects\ConversationFilter;
  * This select menu will populate its options with a list of public
  * and private channels, DMs, and MPIMs visible to the current user
  * in the active workspace.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements#conversation_select, more)
+ *
+ * @package Slack\Objects\BlockElements\SelectMenu
  */
 class ConversationSelect extends SelectMenu
 {
@@ -27,7 +28,7 @@ class ConversationSelect extends SelectMenu
      * Pre-populates the select menu with the conversation that the user was
      * viewing when they opened the modal, if available. Default is false.
      *
-     * @var boolean|null
+     * @var bool|null
      */
     private $default_to_current_conversation;
 
@@ -37,7 +38,7 @@ class ConversationSelect extends SelectMenu
      * message responses. The target conversation for the message will be
      * determined by the value of this select menu.
      *
-     * @var boolean|null
+     * @var bool|null
      */
     private $response_url_enabled;
 
@@ -45,19 +46,19 @@ class ConversationSelect extends SelectMenu
      * A filter object that reduces the list of available conversations
      * using the specified criteria.
      *
-     * @var -ConversationFilter|null
+     * @var \Slack\Objects\CompositionObjects\ConversationFilter|null
      */
     private $filter;
 
     /**
-     * Build a new instance.
+     * ConversationSelect constructor.
      *
-     * @param string                  $action_id
-     * @param string                  $placeholder
-     * @param ConversationFilter|null $filter
-     * @param string|null             $initialConversationID
-     * @param boolean|null            $currentByDefault
-     * @param boolean|null            $responseUrl
+     * @param string $action_id
+     * @param string $placeholder
+     * @param \Slack\Objects\CompositionObjects\ConversationFilter|null $filter
+     * @param string|null $initialConversationID
+     * @param bool|null $currentByDefault
+     * @param bool|null $responseUrl
      */
     public function __construct(string $action_id,
                                 string $placeholder = 'Select a conversation',
@@ -76,8 +77,8 @@ class ConversationSelect extends SelectMenu
     /**
      * Set the initial conversation.
      *
-     * @param  string $conversationID [description]
-     * @return -ConversationSelect
+     * @param string $conversationID [description]
+     * @return $this
      */
     public function initialConversation(string $conversationID)
     {
@@ -88,8 +89,8 @@ class ConversationSelect extends SelectMenu
     /**
      * Set the conversation filter
      *
-     * @param  ConversationFilter $filter [description]
-     * @return -ConversationSelect
+     * @param \Slack\Objects\CompositionObjects\ConversationFilter $filter [description]
+     * @return $this
      */
     public function filter(ConversationFilter $filter)
     {
@@ -100,7 +101,7 @@ class ConversationSelect extends SelectMenu
     /**
      * Set current conversation to initial by default.
      *
-     * @return -ConversationSelect
+     * @return $this
      */
     public function currentConversationByDefault()
     {
@@ -111,7 +112,7 @@ class ConversationSelect extends SelectMenu
     /**
      * Enables the response URL.
      *
-     * @return ConversationSelect
+     * @return $this
      */
     public function enableResponseUrl()
     {

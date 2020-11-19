@@ -6,7 +6,15 @@ use Slack\Api;
 use Slack\Objects\SlackMessage;
 use Slack\Objects\SlackView;
 use Slack\Exceptions;
+use Slack\Exceptions\ApiException;
+use Slack\Exceptions\MessageException;
+use Slack\Exceptions\ViewException;
 
+/**
+ * Class Slack
+ *
+ * @package Slack\Services
+ */
 class Slack
 {
 
@@ -15,14 +23,14 @@ class Slack
      *
      * @var string[]
      */
-    private $webhooks = [];
+    private $webhooks;
 
     /**
      * Slack channels.
      *
      * @var string[]
      */
-    private $channels = [];
+    private $channels;
 
     /**
      * App scoped API client.
@@ -60,7 +68,7 @@ class Slack
     /**
      * Get a channel id.
      *
-     * @param  string $channel_name The channel name.
+     * @param string $channel_name The channel name.
      * @return string The channel ID.
      */
     public function getChannelID(string $channel_name)
@@ -72,8 +80,9 @@ class Slack
      * Find a user by its email address.
      * @link(https://api.slack.com/methods/users.lookupByEmail#arg_email,more)
      *
-     * @param  string The email to find.
+     * @param string The email to find.
      * @return Object The user object.
+     * @throws \Illuminate\Http\Client\RequestException
      */
     public function findUserByEmail(string $email)
     {
@@ -91,8 +100,9 @@ class Slack
      * Get a user's profile.
      * @link(https://api.slack.com/methods/users.profile.get, more)
      *
-     * @param  string $user_id The id of the user to find profile for.
+     * @param string $user_id The id of the user to find profile for.
      * @return Object The profile object.
+     * @throws \Illuminate\Http\Client\RequestException
      */
     public function getUserProfile(string $user_id)
     {
@@ -101,39 +111,40 @@ class Slack
         ]);
 
         if (!$response->json()['ok'])
-            return Exceptions\ApiException($response->json());
+            return new ApiException($response->json());
 
         return json_decode(json_encode($response->json()['profile']));
     }
 
     /**
-     *  Send a message on a webhook.
+     * Send a message on a webhook.
      * @link(https://api.slack.com/messaging/webhooks, more)
      *
-     * @param  SlackMessage $message The message to send.
-     * @param  string $webhookUrl The webhook url.
+     * @param \Slack\Objects\SlackMessage $message The message to send.
+     * @param string $webhookUrl The webhook url.
      * @return \Illuminate\Http\Client\Response
+     * @throws \Illuminate\Http\Client\RequestException
      */
     public function sendMessageUsingWebhook(SlackMessage $message, string $webhookUrl)
     {
-        $response = Api::webhook($webhookUrl, $message->jsonSerialize());
-
-        return $response;
+        return Api::webhook($webhookUrl, $message->jsonSerialize());
     }
 
     /**
      * Send a message on a channel.
      * @link(https://api.slack.com/methods/chat.postMessage, more)
      *
-     * @param SlackMessage message The message to send.
+     * @param \Slack\Objects\SlackMessage message The message to send.
      * @return \Illuminate\Http\Client\Response
+     * @throws \Illuminate\Http\Client\RequestException
+     * @throws \Slack\Exceptions\MessageException
      */
     public function sendMessage(SlackMessage $message)
     {
         $response = $this->bot->post('chat.postMessage', $message->jsonSerialize());
 
         if (!$response->json()['ok'])
-            throw new Exceptions\MessageException($response->json(), $message);
+            throw new MessageException($response->json(), $message);
 
         return $response;
     }
@@ -142,9 +153,11 @@ class Slack
      * Open a view for a user.
      * @link(https://api.slack.com/methods/views.open, more)
      *
-     * @param  SlackView $view The view to open.
-     * @param  string $trigger_id The trigger ID.
+     * @param \Slack\Objects\SlackView $view The view to open.
+     * @param string $trigger_id The trigger ID.
      * @return \Illuminate\Http\Client\Response
+     * @throws \Illuminate\Http\Client\RequestException
+     * @throws \Slack\Exceptions\ViewException
      */
     public function openView(SlackView $view, string $trigger_id)
     {
@@ -154,7 +167,7 @@ class Slack
         ]);
 
         if (!$response->json()['ok'])
-            throw new Exceptions\ViewException($response->json(), $view);
+            throw new ViewException($response->json(), $view);
 
         return $response;
     }
@@ -163,11 +176,13 @@ class Slack
      * Update an existing view.
      * @link(https://api.slack.com/methods/views.update, more)
      *
-     * @param  SlackView $view The content to send as update.
-     * @param  string|null $view_id The ID of the view to update.
-     * @param  string|null $external_id The eternal ID of the view to update.
-     * @param  string|null $hash A string that represents view state.
+     * @param \Slack\Objects\SlackView $view The content to send as update.
+     * @param string|null $view_id The ID of the view to update.
+     * @param string|null $external_id The eternal ID of the view to update.
+     * @param string|null $hash A string that represents view state.
      * @return \Illuminate\Http\Client\Response
+     * @throws \Illuminate\Http\Client\RequestException
+     * @throws \Slack\Exceptions\ViewException
      */
     public function updateView(SlackView $view,
                                 string $view_id = null,
@@ -194,9 +209,11 @@ class Slack
      * Push a view onto the stack of a root view.
      * @link(https://api.slack.com/methods/views.push, more)
      *
-     * @param  SlackView $view The view to push.
-     * @param  string $trigger_id The trigger ID.
+     * @param \Slack\Objects\SlackView $view The view to push.
+     * @param string $trigger_id The trigger ID.
      * @return \Illuminate\Http\Client\Response
+     * @throws \Illuminate\Http\Client\RequestException
+     * @throws \Slack\Exceptions\ViewException
      */
     public function pushView(SlackView $view, string $trigger_id)
     {
@@ -215,14 +232,16 @@ class Slack
      * Publish a static view for a User.
      * @link(https://api.slack.com/methods/views.publish, more)
      *
-     * @param  lackView $view The view to publish.
-     * @param  string $user_id The ID of the user you want to push the view for.
-     * @param  string|null $hash A string that represents view state.
+     * @param \Slack\Objects\SlackView $view The view to publish.
+     * @param string $user_id The ID of the user you want to push the view for.
+     * @param string|null $hash A string that represents view state.
      * @return \Illuminate\Http\Client\Response
+     * @throws \Illuminate\Http\Client\RequestException
+     * @throws \Slack\Exceptions\ViewException
      */
     public function publishView(SlackView $view, string $user_id, string $hash = null)
     {
-       $response = $this->bot->post('views.publish', array_merge([
+        $response = $this->bot->post('views.publish', array_merge([
            'view' => $view->toJson(),
            'user_id' => $user_id
         ],array_filter([

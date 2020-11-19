@@ -5,8 +5,9 @@ namespace Slack\Objects\BlockElements\MultiSelectMenu;
 /**
  * This multi-select menu will populate its options with a list of public channels
  * visible to the current user in the active workspace.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements#channel_multi_select, more)
+ *
+ * @package Slack\Objects\BlockElements\MultiSelectMenu
  */
 class ChannelMultiSelect extends MultiSelectMenu
 {
@@ -15,16 +16,16 @@ class ChannelMultiSelect extends MultiSelectMenu
      * An array of one or more IDs of any valid public channel to be pre-selected
      * when the menu loads.
      *
-     * @var array
+     * @var string[]
      */
-    private $initial_channels = [];
+    private $initial_channels;
 
     /**
-     * Build a new instance.
+     * ChannelMultiSelect constructor.
      *
-     * @param string $action_id       [description]
-     * @param string $placeholder     [description]
-     * @param array  $initialChannels [description]
+     * @param string $action_id
+     * @param string $placeholder
+     * @param array $initialChannels
      */
     public function __construct(string $action_id,
                                 string $placeholder = 'Select a channel',
@@ -38,11 +39,11 @@ class ChannelMultiSelect extends MultiSelectMenu
      * Set the initial channel.
      *
      * @param  string $channelID
-     * @return ChannelSelect
+     * @return $this
      */
     public function initialChannel(string $channelID)
     {
-        array_push($this->initial_channel, $channelID);
+        array_push($this->initial_channels, $channelID);
         return $this;
     }
 

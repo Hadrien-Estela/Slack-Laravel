@@ -12,13 +12,13 @@ class VerifySlackRequest
 {
     /**
      * verify an incoming slack request.
-     *
      * @link(https://api.slack.com/authentication/verifying-requests-from-slack, more)
      * @link(https://gist.github.com/pingcheng/f7500adf1b1009df3ed341f511305b0d, source)
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \Closure $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
      * @return mixed
+     * @throws \Exception
      */
     public function handle(Request $request, Closure $next)
     {
@@ -36,7 +36,7 @@ class VerifySlackRequest
         // the gap should under 5 minutes
         $timestamp = $request->header('X-Slack-Request-Timestamp');
         if (Carbon::now()->diffInMinutes(Carbon::createFromTimestamp($timestamp)) > 5) {
-            throw new Exception("Invalid timstamp, too much gap");
+            throw new Exception("Invalid timestamp, too much gap");
         }
 
         // generate the string base

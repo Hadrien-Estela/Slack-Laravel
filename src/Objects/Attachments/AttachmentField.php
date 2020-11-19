@@ -5,7 +5,10 @@ namespace Slack\Objects\Attachments;
 use JsonSerializable;
 
 /**
+ * Class AttachmentField
  * @link(https://api.slack.com/reference/messaging/attachments#field_objects)
+ *
+ * @package Slack\Objects\Attachments
  */
 class AttachmentField implements JsonSerializable
 {
@@ -31,16 +34,16 @@ class AttachmentField implements JsonSerializable
      * to be displayed side-by-side with other field objects.
      * Default `false`
      *
-     * @var boolean|null
+     * @var bool|null
      */
     private $short;
 
     /**
-     * Build a new Instance.
+     * AttachmentField constructor.
      *
-     * @param string|null  $title
-     * @param string|null  $value
-     * @param boolean|null $short
+     * @param string|null $title
+     * @param string|null $value
+     * @param bool|null $short
      */
     public function __construct(string $title = null, string $value = null, bool $short = null)
     {
@@ -52,8 +55,8 @@ class AttachmentField implements JsonSerializable
     /**
      * Set field's title.
      *
-     * @param  string $title
-     * @return AttachmentField
+     * @param string $title
+     * @return $this
      */
     public function title(string $title)
     {
@@ -64,8 +67,8 @@ class AttachmentField implements JsonSerializable
     /**
      * Set field's value.
      *
-     * @param  string $value
-     * @return AttachmentField
+     * @param string $value
+     * @return $this
      */
     public function value(string $value)
     {
@@ -77,8 +80,8 @@ class AttachmentField implements JsonSerializable
      * Set field's size.
      * Default false
      *
-     * @param  boolean $short
-     * @return AttachmentField
+     * @param bool $short
+     * @return $this
      */
     public function short(bool $short)
     {
