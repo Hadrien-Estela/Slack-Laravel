@@ -7,16 +7,17 @@ use JsonSerializable;
 /**
  * Provides a way to filter the list of options in a conversations
  * select menu or conversations multi-select menu.
- *
  * @link(https://api.slack.com/reference/block-kit/composition-objects#filter_conversations, more)
+ *
+ * @package Slack\Objects\CompositionObjects
  */
 class ConversationFilter implements JsonSerializable
 {
 
-    const Individual = 'im';
-    const Multipart = 'mpim';
-    const Public = 'public';
-    const Private = 'private';
+    public const Individual = 'im';
+    public const Multipart = 'mpim';
+    public const Public = 'public';
+    public const Private = 'private';
 
     /**
      * Indicates which type of conversations should be included in the list.
@@ -25,13 +26,13 @@ class ConversationFilter implements JsonSerializable
      *
      * @var string[]
      */
-    private $include = [];
+    private $include;
 
     /**
      * Indicates whether to exclude external shared channels from conversation lists.
      * Defaults to `false`.
      *
-     * @var boolean
+     * @var bool
      */
     private $exclude_external_shared_channels;
 
@@ -39,16 +40,16 @@ class ConversationFilter implements JsonSerializable
      * Indicates whether to exclude bot users from conversation lists.
      * Defaults to `false`.
      *
-     * @var boolean
+     * @var bool
      */
     private $exclude_bot_users;
 
     /**
-     * Build a new instance.
+     * ConversationFilter constructor.
      *
-     * @param boolean|null $excludeExternal
-     * @param boolean|null $excludeBots
-     * @param string[]
+     * @param bool|null $excludeExternal
+     * @param bool|null $excludeBots
+     * @param string[] $include
      */
     public function __construct(bool $excludeExternal = null,
                                 bool $excludeBots = null,
@@ -62,7 +63,7 @@ class ConversationFilter implements JsonSerializable
     /**
      * Exclude External channels.
      *
-     * @return ConversationFilter
+     * @return $this
      */
     public function excludeExternal()
     {
@@ -73,7 +74,7 @@ class ConversationFilter implements JsonSerializable
     /**
      * Exclude Bots.
      *
-     * @return ConversationFilter
+     * @return $this
      */
     public function excludeBots()
     {
@@ -84,8 +85,8 @@ class ConversationFilter implements JsonSerializable
     /**
      * Include type of conversation.
      *
-     * @param  string $type
-     * @return ConversationFilter
+     * @param string $type
+     * @return $this
      */
     public function include(string $type)
     {

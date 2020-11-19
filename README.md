@@ -9,7 +9,7 @@
 
 <p>
     <a href="https://gitlab.virtuosereality.com/virtuose-reality/slack-laravel/-/packages">
-        <img alt="badge-version" src="https://img.shields.io/badge/version-1.1.2-b51993">
+        <img alt="badge-version" src="https://img.shields.io/badge/version-1.2.4-b51993">
     </a>
     <a href="https://www.php.net/releases/7_3_0.php">
         <img alt="badge-php" src="https://img.shields.io/badge/php->= 7.3-informational">

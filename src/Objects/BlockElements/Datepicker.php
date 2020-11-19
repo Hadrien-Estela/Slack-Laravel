@@ -9,8 +9,9 @@ use Slack\Objects\CompositionObjects\Text;
 
 /**
  * An element which lets users easily select a date from a calendar style UI.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements#datepicker, more)
+ *
+ * @package Slack\Objects\BlockElements
  */
 class Datepicker extends InteractiveBlockElement
 {
@@ -27,12 +28,12 @@ class Datepicker extends InteractiveBlockElement
     private $initial_date;
 
     /**
-     * Build a new instance.
+     * Datepicker constructor.
      *
-     * @param string                  $action_id    [description]
-     * @param string|null             $placeholder  [description]
-     * @param \DateTime|null          $initial_date [description]
-     * @param ConfirmationDialog|null $confirm      [description]
+     * @param string $action_id
+     * @param string|null $placeholder
+     * @param \DateTime|null $initial_date
+     * @param \Slack\Objects\CompositionObjects\ConfirmationDialog|null $confirm
      */
     public function __construct(string $action_id,
                                 string $placeholder = null,
@@ -48,8 +49,8 @@ class Datepicker extends InteractiveBlockElement
     /**
      * Set the initial picker date.
      *
-     * @param  DateTime $date
-     * @return Datepicker
+     * @param DateTime $date
+     * @return $this
      */
     public function initialDate(DateTime $date)
     {

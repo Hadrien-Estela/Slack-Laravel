@@ -6,49 +6,54 @@ use JsonSerializable;
 
 /**
  * An object containing some text, formatted either as plain_text or using mrkdwn.
- *
  * @link(https://api.slack.com/reference/block-kit/composition-objects#option, more)
+ *
+ * @package Slack\Objects\CompositionObjects
  */
 class Option implements JsonSerializable
 {
 
     /**
      * A text object that defines the text shown in the option on the menu.
+     * Max length of 75 characters.
      *
-     * @var Text
+     * @var \Slack\Objects\CompositionObjects\Text
      */
     private $text;
 
     /**
      * The string value that will be passed to your app when this option is chosen.
+     * Max length of 74 characters.
      *
      * @var string
      */
-    private $value = '';
+    private $value;
 
     /**
      * A plain_text only text object that defines a line of descriptive text
      * shown below the text field beside the radio button.
+     * Max length of 75 characters.
      *
-     * @var Text
+     * @var \Slack\Objects\CompositionObjects\Text
      */
     private $description;
 
     /**
      * A URL to load in the user's browser when the option is clicked.
+     * Max length of 3000 characters.
      *
      * @var string
      */
     private $url;
 
     /**
-     * Build a new instance.
+     * Option constructor.
      *
-     * @param string       $text        option text
-     * @param string       $value       option value
-     * @param bool|boolean $markdown    is markdown
-     * @param string|null  $description description
-     * @param string|null  $url         url
+     * @param string $text
+     * @param string $value
+     * @param bool $markdown
+     * @param string|null $description
+     * @param string|null $url
      */
     public function __construct(string $text,
                         string $value = 'null',
@@ -56,17 +61,17 @@ class Option implements JsonSerializable
                         string $description = null,
                         string $url = null)
     {
-        $this->text = new Text($markdown ? Text::Markdown : Text::Plain, $text);
-        $this->value = $value;
-        $this->description = isset($description) ? new Text(Text::Plain, $description) : null;
-        $this->url = $url;
+        $this->text = new Text($markdown ? Text::Markdown : Text::Plain, substr($text,0,75));
+        $this->value = substr($value,0,75);
+        $this->description = isset($description) ? new Text(Text::Plain, substr($description,0,75)) : null;
+        $this->url = substr($url,0,3000);
     }
 
     /**
-     * Build an instance from Object.
+     * Create instance from object.
      *
-     * @param  Object $option_object
-     * @return Option
+     * @param Object $option_object
+     * @return $this
      */
     public static function formObject(Object $option_object)
     {
@@ -77,50 +82,54 @@ class Option implements JsonSerializable
 
     /**
      * Set the text.
+     * Max length of 75 characters.
      *
-     * @param  string       $text
-     * @param  bool|boolean $markdown
-     * @return Option
+     * @param string $text
+     * @param bool $markdown
+     * @return $this
      */
     public function text(string $text, bool $markdown = false)
     {
-        $this->text = new Text($markdown ? Text::Markdown : Text::Plain, $text);
+        $this->text = new Text($markdown ? Text::Markdown : Text::Plain, substr($text,0,75));
         return $this;
     }
 
     /**
      * Set the value.
+     * Max length of 75 characters.
      *
-     * @param  string $value
-     * @return Option
+     * @param string $value
+     * @return $this
      */
     public function value(string $value)
     {
-        $this->value = $value;
+        $this->value = substr($value,0,75);
         return $this;
     }
 
     /**
      * Set the description.
+     * Max length of 75 characters.
      *
-     * @param  string $description
-     * @return Option
+     * @param string $description
+     * @return $this
      */
     public function description(string $description)
     {
-        $this->description = new Text(Text::Plain, $description);
+        $this->description = new Text(Text::Plain, substr($description,0,75));
         return $this;
     }
 
     /**
      * Set the url.
+     * Max length of 3000 characters.
      *
-     * @param  string $url
-     * @return Option
+     * @param string $url
+     * @return $this
      */
     public function url(string $url)
     {
-        $this->url = $url;
+        $this->url = substr($url,0,3000);
         return $this;
     }
 

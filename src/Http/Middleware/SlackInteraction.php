@@ -5,14 +5,18 @@ namespace Slack\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-
+/**
+ * Class SlackInteraction
+ *
+ * @package Slack\Http\Middleware
+ */
 abstract class SlackInteraction
 {
     /**
      * Handle slack interaction incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
@@ -37,7 +41,7 @@ abstract class SlackInteraction
     /**
      * Authenticate the user to your app using its slack ID.
      *
-     * @param  string $slack_user_id
+     * @param string $slack_user_id
      */
     abstract protected function authenticateUser(string $slack_user_id);
 }

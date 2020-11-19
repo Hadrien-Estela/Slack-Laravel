@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.4] - 2020-11-19
+
+* Bunch of Fixes
+* Bunch of Doc Improvements
+
+## [1.2.3] - 2020-11-18
+
+* Clean unused imports
+* Various Fixes
+
 ## [1.2.2] - 2020-11-17
 
 * Modify `use \App\Http\Controller` to `use \Illuminate\Routing\Controller`

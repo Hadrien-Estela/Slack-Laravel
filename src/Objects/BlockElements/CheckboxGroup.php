@@ -8,8 +8,9 @@ use Slack\Objects\CompositionObjects\ConfirmationDialog;
 /**
  * A checkbox group that allows a user to choose multiple items from a
  * list of possible options.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements#checkboxes, more)
+ *
+ * @package Slack\Objects\BlockElements
  */
 class CheckboxGroup extends InteractiveBlockElement
 {
@@ -18,12 +19,12 @@ class CheckboxGroup extends InteractiveBlockElement
         Concerns\HasOptions;
 
     /**
-     * Build a new instance.
+     * CheckboxGroup constructor.
      *
-     * @param string                  $action_id      [description]
-     * @param array                   $options        [description]
-     * @param array                   $initialOptions [description]
-     * @param ConfirmationDialog|null $confirm        [description]
+     * @param string $action_id
+     * @param array $options
+     * @param array $initialOptions
+     * @param \Slack\Objects\CompositionObjects\ConfirmationDialog|null $confirm
      */
     public function __construct(string $action_id,
                                 array $options = [],

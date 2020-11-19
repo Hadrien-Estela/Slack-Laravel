@@ -67,10 +67,11 @@ abstract class InteractionController extends Controller
 
     /**
      * Handle the interaction request.
-     * @link(https://api.slack.com/reference/interaction-payloads/block-actions, more)
      *
-     * @param  \Illuminate\Http\Request $request
+     * @link(https://api.slack.com/reference/interaction-payloads/block-actions, more)
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function index(Request $request)
     {
@@ -110,10 +111,11 @@ abstract class InteractionController extends Controller
     /**
      * Call the associated view callback action.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  Object $view
-     * @param  array $callback_actions_arr
+     * @param \Illuminate\Http\Request $request
+     * @param Object $view
+     * @param array $callback_actions_arr
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     private function viewAction(Request $request, Object $view, array $callback_actions_arr)
     {
@@ -136,9 +138,8 @@ abstract class InteractionController extends Controller
     /**
      * Call method associated with action.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      * @param  array $actions
-     * @return \Illuminate\Http\Response
      */
     private function blockActions(Request $request, array $actions)
     {
@@ -164,8 +165,10 @@ abstract class InteractionController extends Controller
     /**
      * Return the options suggestion.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
+     * @param string $action_id
      * @return \Illuminate\Http\JsonResponse
+     * @throws \Exception
      */
     private function blockSuggestions(Request $request, string $action_id)
     {

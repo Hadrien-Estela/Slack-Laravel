@@ -5,7 +5,9 @@ namespace Slack\Console\Commands;
 use Illuminate\Console\GeneratorCommand;
 
 /**
- * Generate a SlackMessage class.
+ * Class SlackMessageMakeCommand
+ *
+ * @package Slack\Console\Commands
  */
 class SlackMessageMakeCommand extends GeneratorCommand
 {
@@ -43,7 +45,7 @@ class SlackMessageMakeCommand extends GeneratorCommand
     /**
      * Get the default namespace for the class.
      *
-     * @param  string  $rootNamespace
+     * @param string $rootNamespace
      * @return string
      */
     protected function getDefaultNamespace($rootNamespace)

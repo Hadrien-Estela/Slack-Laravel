@@ -5,8 +5,9 @@ namespace Slack\Objects\BlockElements\SelectMenu;
 /**
  * This select menu will populate its options with a list of public channels
  * visible to the current user in the active workspace.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements#channel_select, more)
+ *
+ * @package Slack\Objects\BlockElements\SelectMenu
  */
 class ChannelSelect extends SelectMenu
 {
@@ -24,17 +25,17 @@ class ChannelSelect extends SelectMenu
      * message responses. The target channel for the message will be determined
      * by the value of this select menu.
      *
-     * @var boolean
+     * @var bool
      */
     private $response_url_enabled;
 
     /**
-     * Build a new instance.
+     * ChannelSelect constructor.
      *
-     * @param string       $action_id
-     * @param string       $placeholder
-     * @param string|null  $initialChannelID
-     * @param boolean|null $responseUrl
+     * @param string $action_id
+     * @param string $placeholder
+     * @param string|null $initialChannelID
+     * @param bool|null $responseUrl
      */
     public function __construct(string $action_id,
                                 string $placeholder = 'Select a channel',
@@ -49,8 +50,8 @@ class ChannelSelect extends SelectMenu
     /**
      * Set the initial channel.
      *
-     * @param  string $channelID
-     * @return ChannelSelect
+     * @param string $channelID
+     * @return $this
      */
     public function initialChannel(string $channelID)
     {
@@ -61,7 +62,7 @@ class ChannelSelect extends SelectMenu
     /**
      * Enables the response URL.
      *
-     * @return ChannelSelect
+     * @return $this
      */
     public function enableResponseUrl()
     {

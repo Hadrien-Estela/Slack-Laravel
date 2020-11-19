@@ -8,8 +8,9 @@ use Slack\Objects\CompositionObjects\Option;
 /**
  * This is the simplest form of select menu, with a static list
  * of options passed in when defining the element.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements#static_select, more)
+ *
+ * @package Slack\Objects\BlockElements\SelectMenu
  */
 class StaticSelect extends SelectMenu
 {
@@ -17,13 +18,13 @@ class StaticSelect extends SelectMenu
     use Concerns\HasOptions;
 
     /**
-     * Build a new instance.
+     * StaticSelect constructor.
      *
-     * @param string $action_id      [description]
-     * @param string $placeholder    [description]
-     * @param array  $options        [description]
-     * @param array  $groups         [description]
-     * @param Option  $initialOptions [description]
+     * @param string $action_id
+     * @param string $placeholder
+     * @param array $options
+     * @param array $groups
+     * @param \Slack\Objects\CompositionObjects\Option|null $initialOption
      */
     public function __construct(string $action_id,
                                 string $placeholder = 'Select an option',
@@ -37,7 +38,7 @@ class StaticSelect extends SelectMenu
             $this->options = $options;
 
         if ($groups)
-            $this->groups = $groups;
+            $this->option_groups = $groups;
 
         $this->initial_option = $initialOption;
     }

@@ -12,13 +12,16 @@ use Slack\Console\Commands\SlackViewMakeCommand;
 use Slack\Services\Slack;
 use Slack\Notifications\Channels;
 
+/**
+ * Class SlackServiceProvider
+ *
+ * @package Slack\Providers
+ */
 class SlackServiceProvider extends ServiceProvider implements DeferrableProvider
 {
 
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
     public function boot()
     {
@@ -55,8 +58,6 @@ class SlackServiceProvider extends ServiceProvider implements DeferrableProvider
 
     /**
      * Register services.
-     *
-     * @return void
      */
     public function register()
     {

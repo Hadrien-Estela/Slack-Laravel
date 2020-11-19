@@ -9,8 +9,9 @@ use Slack\Objects\CompositionObjects\ConfirmationDialog;
 /**
  * An interactive component that inserts a button. The button can be a trigger
  * for anything from opening a simple link to starting a complex workflow.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements#button, more)
+ *
+ * @package Slack\Objects\BlockElements
  */
 class Button extends InteractiveBlockElement
 {
@@ -21,7 +22,7 @@ class Button extends InteractiveBlockElement
      * A text object that defines the button's text.
      * Max length of 75 characters.
      *
-     * @var Text
+     * @var \Slack\Objects\CompositionObjects\Text
      */
     private $text;
 
@@ -49,13 +50,13 @@ class Button extends InteractiveBlockElement
     private $style;
 
     /**
-     * Build a new instance.
+     * Button constructor.
      *
-     * @param string                  $action_id [description]
-     * @param string                  $text      [description]
-     * @param string|null             $value     [description]
-     * @param string|null             $url       [description]
-     * @param ConfirmationDialog|null $confirm   [description]
+     * @param string $action_id
+     * @param string $text
+     * @param string|null $value
+     * @param string|null $url
+     * @param \Slack\Objects\CompositionObjects\ConfirmationDialog|null $confirm
      */
     public function __construct(string $action_id,
                                 string $text = 'Button',
@@ -74,8 +75,8 @@ class Button extends InteractiveBlockElement
      * Set the button's text.
      * Max length of 75 characters.
      *
-     * @param  string $text
-     * @return Button
+     * @param string $text
+     * @return $this
      */
     public function text(string $text)
     {
@@ -87,8 +88,8 @@ class Button extends InteractiveBlockElement
      * Set the Url to open on click.
      * Max length of 3000 characters.
      *
-     * @param  string $url
-     * @return Button
+     * @param string $url
+     * @return $this
      */
     public function url(string $url)
     {
@@ -100,8 +101,8 @@ class Button extends InteractiveBlockElement
      * Set the value of the Button.
      * Max length of 2000 characters.
      *
-     * @param  string $value
-     * @return Button
+     * @param string $value
+     * @return $this
      */
     public function value(string $value)
     {
@@ -112,7 +113,7 @@ class Button extends InteractiveBlockElement
     /**
      * Set button style to `primary`
      *
-     * @return Button
+     * @return $this
      */
     public function primary()
     {
@@ -123,7 +124,7 @@ class Button extends InteractiveBlockElement
     /**
      * Set button style to `danger`
      *
-     * @return Button
+     * @return $this
      */
     public function danger()
     {

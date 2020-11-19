@@ -6,6 +6,8 @@ use Slack\Objects\CompositionObjects\Text;
 
 /**
  * Trait for Block elements with `placeholder` attribute.
+ *
+ * @package Slack\Objects\BlockElements\Concerns
  */
 trait HasPlaceholder
 {
@@ -14,15 +16,15 @@ trait HasPlaceholder
      * A plain_text only text object that defines the placeholder text.
      * Max length of 150 characters.
      *
-     * @varText|null
+     * @var \Slack\Objects\CompositionObjects\Text|null
      */
     private $placeholder;
 
     /**
      * Set the placeholder.
      *
-     * @param  string $text
-     * @return BlockElement
+     * @param string $placeholder
+     * @return $this
      */
     public function placeholder(string $placeholder)
     {

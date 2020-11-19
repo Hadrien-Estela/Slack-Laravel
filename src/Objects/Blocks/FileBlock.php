@@ -5,8 +5,9 @@ namespace Slack\Objects\Blocks;
 /**
  * Displays a remote file. You can't add this block to app surfaces directly,
  * but it will show up when retrieving messages that contain remote files.
- *
  * @link(https://api.slack.com/reference/block-kit/blocks#file, more)
+ *
+ * @package Slack\Objects\Blocks
  */
 class FileBlock extends Block
 {
@@ -16,7 +17,7 @@ class FileBlock extends Block
      *
      * @var string
      */
-    private $external_id = '';
+    private $external_id;
 
     /**
      * At the moment, source will always be remote for a remote file.
@@ -26,14 +27,14 @@ class FileBlock extends Block
     private $source = 'remote';
 
     /**
-     * Build a new block instance.
+     * FileBlock constructor.
      *
-     * @param string $text The file ID
+     * @param string $file_id
      */
     public function __construct(string $file_id)
     {
         parent::__construct(Block::Header);
-        $this->eternal_id = $file_id;
+        $this->external_id = $file_id;
     }
 
     /**

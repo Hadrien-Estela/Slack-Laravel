@@ -4,17 +4,19 @@ namespace Slack\Objects\BlockElements;
 
 /**
  * Base class for interactive elements.
+ *
+ * @package Slack\Objects\BlockElements
  */
 abstract class InteractiveBlockElement extends BlockElement
 {
 
-    const Button = 'button';
-    const Checkbox = 'checkboxes';
-    const Datepicker = 'datepicker';
-    const TextInput = 'plain_text_input';
-    const RadioButton = 'radio_buttons';
-    const Timepicker = 'timepicker';
-    const OverflowMenu = 'overflow';
+    protected const Button = 'button';
+    protected const Checkbox = 'checkboxes';
+    protected const Datepicker = 'datepicker';
+    protected const TextInput = 'plain_text_input';
+    protected const RadioButton = 'radio_buttons';
+    protected const Timepicker = 'timepicker';
+    protected const OverflowMenu = 'overflow';
 
     /**
      * An identifier for the action.
@@ -22,13 +24,13 @@ abstract class InteractiveBlockElement extends BlockElement
      *
      * @var string
      */
-    private $action_id = '';
+    private $action_id;
 
     /**
-     * Build new Instance.
+     * InteractiveBlockElement constructor.
      *
-     * @param string $url The url of the image.
-     * @param string $alt The alternative text of the image.
+     * @param string $type
+     * @param string $action_id
      */
     public function __construct(string $type, string $action_id)
     {

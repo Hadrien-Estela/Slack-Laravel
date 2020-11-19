@@ -6,8 +6,9 @@ use Slack\Objects\BlockElements\InteractiveBlockElement;
 
 /**
  * A block that is used to hold interactive elements.
- *
  * @link(https://api.slack.com/reference/block-kit/blocks#actions, more)
+ *
+ * @package Slack\Objects\Blocks
  */
 class ActionsBlock extends Block
 {
@@ -15,14 +16,14 @@ class ActionsBlock extends Block
     /**
      * An array of interactive element.
      *
-     * @var InteractiveBlockElement[]
+     * @var \Slack\Objects\BlockElements\InteractiveBlockElement[]
      */
-    private $elements = [];
+    private $elements;
 
     /**
-     * Build a new block instance.
+     * ActionsBlock constructor.
      *
-     * @param InteractiveBlockElement[] An array of interactive elements
+     * @param \Slack\Objects\BlockElements\InteractiveBlockElement[] $elements
      */
     public function __construct(array $elements = [])
     {
@@ -33,8 +34,8 @@ class ActionsBlock extends Block
     /**
      * Add an interactive element.
      *
-     * @param  InteractiveBlockElement $element
-     * @return ActionsBlock
+     * @param \Slack\Objects\BlockElements\InteractiveBlockElement $element
+     * @return $this
      */
     public function element(InteractiveBlockElement $element)
     {
@@ -70,7 +71,7 @@ class ActionsBlock extends Block
     /**
      * Check if block is empty.
      *
-     * @return boolean
+     * @return bool
      */
     public function isEmpty()
     {

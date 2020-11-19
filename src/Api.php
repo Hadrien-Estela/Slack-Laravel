@@ -4,6 +4,11 @@ namespace Slack;
 
 use Illuminate\Support\Facades\Http;
 
+/**
+ * Class Api
+ *
+ * @package Slack
+ */
 class Api
 {
 
@@ -22,11 +27,11 @@ class Api
     private $token;
 
     /**
-     * Create a new Api client instance.
+     * Api constructor.
      *
-     * @param string $token The token used by this Api client.
+     * @param string $token
      */
-    public function __construct($token)
+    public function __construct(string $token)
     {
         $this->api_url = config('slack.api_url');
         $this->token = $token;
@@ -35,10 +40,10 @@ class Api
     /**
      * Get the Api method Url
      *
-     * @param  string $method The Api method.
+     * @param string $method The Api method.
      * @return string The Url of the method.
      */
-    private function getUrl($method)
+    private function getUrl(string $method)
     {
         return $this->api_url.$method;
     }
@@ -46,11 +51,12 @@ class Api
     /**
      * POST request to the slack Api
      *
-     * @param  string $method  The Api method.
-     * @param  string $content The content of the request
-     * @return Illuminate\Http\Client\Response
+     * @param string $method The Api method.
+     * @param mixed $content The content of the request
+     * @return \Illuminate\Http\Client\Response
+     * @throws \Illuminate\Http\Client\RequestException
      */
-    public function post($method, $content)
+    public function post(string $method, $content)
     {
         $response = Http::withToken($this->token)->asForm()->post($this->getUrl($method), $content);
 
@@ -63,11 +69,12 @@ class Api
     /**
      * GET request to the slack Api
      *
-     * @param  string $method  The Api method.
-     * @param  string|null $content The content of the request.
-     * @return Illuminate\Http\Client\Response
+     * @param string $method The Api method.
+     * @param string|null $content The content of the request.
+     * @return \Illuminate\Http\Client\Response
+     * @throws \Illuminate\Http\Client\RequestException
      */
-    public function get($method, $content = null)
+    public function get(string $method, $content = null)
     {
         $response = Http::withToken($this->token)->asForm()->get($this->getUrl($method), $content);
 
@@ -80,11 +87,12 @@ class Api
     /**
      * POST request to a slack webhook url.
      *
-     * @param  string $url The webhook Url.
-     * @param  string $content The content of the request.
-     * @return Illuminate\Http\Client\Response
+     * @param string $url The webhook Url.
+     * @param mixed $content The content of the request.
+     * @return \Illuminate\Http\Client\Response
+     * @throws \Illuminate\Http\Client\RequestException
      */
-    public static function webhook($url, $content)
+    public static function webhook(string $url, $content)
     {
         $response = Http::post($url, $content);
 

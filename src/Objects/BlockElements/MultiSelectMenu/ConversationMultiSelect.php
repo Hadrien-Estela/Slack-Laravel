@@ -8,8 +8,9 @@ use Slack\Objects\CompositionObjects\ConversationFilter;
  * This multi-select menu will populate its options with a list of
  * public and private channels, DMs, and MPIMs visible to the current
  * user in the active workspace.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements#conversation_multi_select, more)
+ *
+ * @package Slack\Objects\BlockElements\MultiSelectMenu
  */
 class ConversationMultiSelect extends MultiSelectMenu
 {
@@ -22,13 +23,13 @@ class ConversationMultiSelect extends MultiSelectMenu
      *
      * @var string[]
      */
-    private $initial_conversations = [];
+    private $initial_conversations;
 
     /**
      * Pre-populates the select menu with the conversation that the user was
      * viewing when they opened the modal, if available. Default is false.
      *
-     * @var boolean|null
+     * @var bool|null
      */
     private $default_to_current_conversation;
 
@@ -36,18 +37,18 @@ class ConversationMultiSelect extends MultiSelectMenu
      * A filter object that reduces the list of available conversations
      * using the specified criteria.
      *
-     * @var ConversationFilter|null
+     * @var \Slack\Objects\CompositionObjects\ConversationFilter|null
      */
     private $filter;
 
     /**
-     * Build a new Instance.
+     * ConversationMultiSelect constructor.
      *
-     * @param string                  $action_id            [description]
-     * @param string                  $placeholder          [description]
-     * @param ConversationFilter|null $filter               [description]
-     * @param string|array            $initialConversations [description]
-     * @param boolean|null            $currentByDefault     [description]
+     * @param string $action_id
+     * @param string $placeholder
+     * @param \Slack\Objects\CompositionObjects\ConversationFilter|null $filter
+     * @param array $initialConversations
+     * @param bool|null $currentByDefault
      */
     public function __construct(string $action_id,
                                 string $placeholder = 'Select a conversation',
@@ -65,7 +66,7 @@ class ConversationMultiSelect extends MultiSelectMenu
      * Add an initial conversation.
      *
      * @param  string $conversationID [description]
-     * @return ConversationSelect
+     * @return $this
      */
     public function initialConversation(string $conversationID)
     {
@@ -77,7 +78,7 @@ class ConversationMultiSelect extends MultiSelectMenu
      * Set the conversation filter
      *
      * @param  ConversationFilter $filter [description]
-     * @return ConversationSelect
+     * @return $this
      */
     public function filter(ConversationFilter $filter)
     {
@@ -88,7 +89,7 @@ class ConversationMultiSelect extends MultiSelectMenu
     /**
      * Set current conversation to initial by default.
      *
-     * @return ConversationSelect
+     * @return $this
      */
     public function currentConversationByDefault()
     {

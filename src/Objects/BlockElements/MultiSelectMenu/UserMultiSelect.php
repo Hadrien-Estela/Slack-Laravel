@@ -5,8 +5,9 @@ namespace Slack\Objects\BlockElements\MultiSelectMenu;
 /**
  * This multi-select menu will populate its options with a list of
  * Slack users visible to the current user in the active workspace.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements#users_multi_select, more)
+ *
+ * @package Slack\Objects\BlockElements\MultiSelectMenu
  */
 class UserMultiSelect extends MultiSelectMenu
 {
@@ -16,14 +17,14 @@ class UserMultiSelect extends MultiSelectMenu
      *
      * @var string[]
      */
-    private $initial_users = [];
+    private $initial_users;
 
     /**
-     * Build a new instance.
+     * UserMultiSelect constructor.
      *
-     * @param string      $action_id
-     * @param string      $placeholder
-     * @param string|null $initialUsers
+     * @param string $action_id
+     * @param string $placeholder
+     * @param array $initialUsers
      */
     public function __construct(string $action_id,
                                 string $placeholder = 'Select a user',
@@ -36,8 +37,8 @@ class UserMultiSelect extends MultiSelectMenu
     /**
      * Add an initial user.
      *
-     * @param  string $userID$
-     * @return UserSelect
+     * @param string $userID$
+     * @return $this
      */
     public function initialUser(string $userID)
     {

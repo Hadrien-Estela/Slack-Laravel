@@ -16,8 +16,8 @@ class State
     /**
      * Find a block by ID in the state payload.
      *
-     * @param  Object $state
-     * @param  string $block_id
+     * @param Object $state
+     * @param string $block_id
      * @return Object|null
      */
     public static function block(Object $state, string $block_id)
@@ -35,8 +35,8 @@ class State
     /**
      * Find an action by ID in the state payload.
      *
-     * @param  Object $state
-     * @param  string $action_id
+     * @param Object $state
+     * @param string $action_id
      * @return Object|null
      */
     public static function action(Object $state, string $action_id)
@@ -50,8 +50,7 @@ class State
     /**
      * Get the array of actions in the state payload
      *
-     * @param  Object $state
-     * @param  string $block_id
+     * @param Object $state
      * @return array
      */
     public static function actions(Object $state)
@@ -66,8 +65,8 @@ class State
     /**
      * Get the default (first) action of a block.
      *
-     * @param  Object $state
-     * @param  string $block_id
+     * @param Object $state
+     * @param string $block_id
      * @return Object|null
      */
     public static function defaultAction(Object $state, string $block_id)

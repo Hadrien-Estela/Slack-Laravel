@@ -7,14 +7,15 @@ use JsonSerializable;
 /**
  * Determines when a plain-text input element will return
  * a block_actions interaction payload.
- *
  * @link(https://api.slack.com/reference/block-kit/composition-objects#dispatch_action_config, more)
+ *
+ * @package Slack\Objects\CompositionObjects
  */
 class DispatchActionConfig implements JsonSerializable
 {
 
-    const OnSubmit = 'on_enter_pressed';
-    const OnChange = 'on_character_entered';
+    protected const OnSubmit = 'on_enter_pressed';
+    protected const OnChange = 'on_character_entered';
 
     /**
      * An array of interaction types that you would like to receive
@@ -25,10 +26,10 @@ class DispatchActionConfig implements JsonSerializable
     private $trigger_actions_on = [];
 
     /**
-     * Build a new Instance.
+     * DispatchActionConfig constructor.
      *
-     * @param boolean $onSubmit
-     * @param boolean $onChange
+     * @param bool $onSubmit
+     * @param bool $onChange
      */
     public function __construct(bool $onSubmit, bool $onChange)
     {

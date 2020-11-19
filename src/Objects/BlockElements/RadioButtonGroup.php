@@ -9,8 +9,9 @@ use Slack\Objects\CompositionObjects\Option;
 /**
  * A radio button group that allows a user to choose one item from a
  * list of possible options.
- *
  * @link(https://api.slack.com/reference/block-kit/block-elements#radio, more)
+ *
+ * @package Slack\Objects\BlockElements
  */
 class RadioButtonGroup extends InteractiveBlockElement
 {
@@ -19,12 +20,12 @@ class RadioButtonGroup extends InteractiveBlockElement
         Concerns\HasOptions;
 
     /**
-     * Build a new Instance.
+     * RadioButtonGroup constructor.
      *
-     * @param string                  $action_id [description]
-     * @param array                   $options   [description]
-     * @param Option|null             $initial   [description]
-     * @param ConfirmationDialog|null $confirm   [description]
+     * @param string $action_id
+     * @param array $options
+     * @param \Slack\Objects\CompositionObjects\Option|null $initial
+     * @param \Slack\Objects\CompositionObjects\ConfirmationDialog|null $confirm
      */
     public function __construct(string $action_id,
                                 array $options = [],

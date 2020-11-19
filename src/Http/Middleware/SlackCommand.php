@@ -14,14 +14,19 @@ use Illuminate\Support\Facades\Route;
 
 use Slack\Objects\SlackMessage;
 
-
+/**
+ * Class SlackCommand
+ *
+ * @package Slack\Http\Middleware
+ */
 abstract class SlackCommand
 {
+
     /**
      * Handle a slash command from slack.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
@@ -87,13 +92,13 @@ abstract class SlackCommand
     /**
      * Authenticate the user to your app using its slack ID.
      *
-     * @param  string $slack_user_id
+     * @param string $slack_user_id
      */
     abstract protected function authenticateUser(string $slack_user_id);
 
     /**
      * Return the usage template path.
-     * http://getopt-php.github.io/getopt-php/help.html
+     * @link(http://getopt-php.github.io/getopt-php/help.html,more)
      *
      * @return string|null
      */
@@ -104,7 +109,7 @@ abstract class SlackCommand
 
     /**
      * Return the options template path.
-     * http://getopt-php.github.io/getopt-php/help.html
+     * @link(http://getopt-php.github.io/getopt-php/help.html,more)
      *
      * @return string|null
      */
@@ -115,7 +120,7 @@ abstract class SlackCommand
 
     /**
      * Return the commands template path.
-     * http://getopt-php.github.io/getopt-php/help.html
+     * @link(http://getopt-php.github.io/getopt-php/help.html,more)
      *
      * @return string|null
      */

@@ -11,8 +11,9 @@ use Slack\Objects\Blocks\Block;
 
 /**
  * Build a serializable view.
- *
  * @link(https://api.slack.com/reference/surfaces/views, more)
+ *
+ * @package Slack\Objects
  */
 class SlackView implements JsonSerializable, Jsonable
 {
@@ -31,14 +32,14 @@ class SlackView implements JsonSerializable, Jsonable
      * The title that appears in the top-left of the modal.
      * Max length of 24 characters.
      *
-     * @var Text
+     * @var \Slack\Objects\CompositionObjects\Text
      */
     private $title;
 
     /**
      * An array of blocks that defines the content of the view. Max of 100 blocks.
      *
-     * @var Block[]
+     * @var \Slack\Objects\Blocks\Block[]
      */
     private $blocks = [];
 
@@ -47,7 +48,7 @@ class SlackView implements JsonSerializable, Jsonable
      * close button at the bottom-right of the view.
      * Max length of 24 characters.
      *
-     * @var Text|null
+     * @var \Slack\Objects\CompositionObjects\Text|null
      */
     private $close;
 
@@ -57,7 +58,7 @@ class SlackView implements JsonSerializable, Jsonable
      * an input block is within the blocks array.
      * Max length of 24 characters.
      *
-     * @var Text|null
+     * @var \Slack\Objects\CompositionObjects\Text|null
      */
     private $submit;
 
@@ -84,7 +85,7 @@ class SlackView implements JsonSerializable, Jsonable
      * a modal and close it.
      * Defaults to false.
      *
-     * @var boolean|null
+     * @var bool|null
      */
     private $clear_on_close;
 
@@ -92,7 +93,7 @@ class SlackView implements JsonSerializable, Jsonable
      * Indicates whether Slack will send your request URL a view_closed event
      * when a user clicks the close button. Defaults to false.
      *
-     * @var boolean|null
+     * @var bool|null
      */
     private $notify_on_close;
 
@@ -104,18 +105,18 @@ class SlackView implements JsonSerializable, Jsonable
     private $external_id;
 
     /**
-     * Build a new SlackView instance.
+     * SlackView constructor.
      *
-     * @param string       $type
-     * @param string       $title
-     * @param Block[]      $blocks
-     * @param string|null  $close
-     * @param string|null  $submit
-     * @param string|null  $private_metadata
-     * @param string|null  $callbackID
-     * @param boolean|null $clearOnClose
-     * @param boolean|null $notifyOnClose
-     * @param string|null  $externalID
+     * @param string $type
+     * @param string $title
+     * @param \Slack\Objects\Blocks\Block[] $blocks
+     * @param string|null $close
+     * @param string|null $submit
+     * @param string|null $private_metadata
+     * @param string|null $callbackID
+     * @param bool|null $clearOnClose
+     * @param bool|null $notifyOnClose
+     * @param string|null $externalID
      */
     public function __construct(string $type,
                                 string $title = 'New view',
@@ -145,27 +146,24 @@ class SlackView implements JsonSerializable, Jsonable
      * Set the title.
      * Max length of 24 characters.
      *
-     * @param  string $title
-     * @return SlackView
+     * @param string $title
+     * @return $this
      */
     public function title (string $title)
     {
-        $this->title->text(Str::limit($title,21));
+        $this->title->text(substr($title,0,24));
         return $this;
     }
 
     /**
      * Add a block.
      *
-     * @param  Block $block
-     * @return SlackView
+     * @param \Slack\Objects\Blocks\Block $block
+     * @return $this
      */
-    public function block(Block $block, int $insert = null)
+    public function block(Block $block)
     {
-        if (isset($insert))
-            throw new NotImplementedException('$insert parameter not implemented yet');
-        else
-           array_push($this->blocks, $block);
+        array_push($this->blocks, $block);
         return $this;
     }
 
@@ -173,8 +171,8 @@ class SlackView implements JsonSerializable, Jsonable
      * Set the close button text.
      * Max length of 24 characters.
      *
-     * @param  string $label
-     * @return SlackView
+     * @param string $label
+     * @return $this
      */
     public function closeLabel(string $label)
     {
@@ -186,8 +184,8 @@ class SlackView implements JsonSerializable, Jsonable
      * Set the submit button text.
      * Max length of 24 characters.
      *
-     * @param  string $label
-     * @return SlackView
+     * @param string $label
+     * @return $this
      */
     public function submitLabel(string $label)
     {
@@ -199,8 +197,8 @@ class SlackView implements JsonSerializable, Jsonable
      * Set the metadata.
      * Max length of 3000 characters.
      *
-     * @param  string $data
-     * @return SlackView
+     * @param string $data
+     * @return $this
      */
     public function metadata(string $data)
     {
@@ -212,8 +210,8 @@ class SlackView implements JsonSerializable, Jsonable
      * Set the callback ID.
      * Max length of 255 characters.
      *
-     * @param  string $callbackID
-     * @return SlackView
+     * @param string $callbackID
+     * @return $this
      */
     public function callback(string $callbackID)
     {
@@ -224,7 +222,7 @@ class SlackView implements JsonSerializable, Jsonable
     /**
      * Make view clear on close.
      *
-     * @return SlackView
+     * @return $this
      */
     public function clearOnClose()
     {
@@ -235,7 +233,7 @@ class SlackView implements JsonSerializable, Jsonable
     /**
      * Make view notify on close.
      *
-     * @return SlackView
+     * @return $this
      */
     public function notifyOnClose()
     {
@@ -246,8 +244,8 @@ class SlackView implements JsonSerializable, Jsonable
     /**
      * Set the external ID.
      *
-     * @param  string $id
-     * @return SlackView
+     * @param string $id
+     * @return $this
      */
     public function externalID(string $id)
     {
@@ -282,7 +280,7 @@ class SlackView implements JsonSerializable, Jsonable
     /**
      * Convert to JSON.
      *
-     * @param  int $options
+     * @param int $options
      * @return string
      */
     public function toJson($options = 0)

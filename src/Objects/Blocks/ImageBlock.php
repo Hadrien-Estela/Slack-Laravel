@@ -6,8 +6,9 @@ use Slack\Objects\CompositionObjects\Text;
 
 /**
  * A simple image block, designed to make those cat photos really pop.
- *
  * @link(https://api.slack.com/reference/block-kit/blocks#image, more)
+ *
+ * @package Slack\Objects\Blocks
  */
 class ImageBlock extends Block
 {
@@ -18,7 +19,7 @@ class ImageBlock extends Block
      *
      * @var string
      */
-    private $image_url = '';
+    private $image_url;
 
     /**
      * A plain-text summary of the image.
@@ -26,22 +27,22 @@ class ImageBlock extends Block
      *
      * @var string
      */
-    private $alt_text = '';
+    private $alt_text;
 
     /**
      * An optional title for the image.
      * Max length of 2000 characters.
      *
-     * @var Text
+     * @var \Slack\Objects\CompositionObjects\Text
      */
     private $title;
 
     /**
-     * Build a new block instance.
+     * ImageBlock constructor.
      *
-     * @param string $url The url of the image.
-     * @param string $alt The alt text of the image.
-     * @param string $title The optional title of the image.
+     * @param string $url
+     * @param string $alt
+     * @param \Slack\Objects\CompositionObjects\Text|null $title
      */
     public function __construct(string $url = '', string $alt = '', Text $title = null)
     {
@@ -55,8 +56,8 @@ class ImageBlock extends Block
      * Set image URL.
      * Max length of 3000 characters.
      *
-     * @param  string $url
-     * @return ImageBlock
+     * @param string $url
+     * @return $this
      */
     public function url(string $url)
     {
@@ -68,8 +69,8 @@ class ImageBlock extends Block
      * Set alt text.
      * Max length of 2000 characters.
      *
-     * @param  string $text
-     * @return ImageBlock
+     * @param string $text
+     * @return $this
      */
     public function alt(string $text)
     {
@@ -81,8 +82,8 @@ class ImageBlock extends Block
      * Set title.
      * Max length of 2000 characters.
      *
-     * @param  string $title
-     * @return ImageBlock
+     * @param string $title
+     * @return $this
      */
     public function title(string $title)
     {

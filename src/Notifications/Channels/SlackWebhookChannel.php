@@ -5,14 +5,19 @@ namespace Slack\Notifications\Channels;
 use Illuminate\Notifications\Notification;
 use Slack\Facades\Slack;
 
+/**
+ * Class SlackWebhookChannel
+ *
+ * @package Slack\Notifications\Channels
+ */
 class SlackWebhookChannel
 {
 
     /**
      * Send the given notification.
      *
-     * @param  mixed $notifiable
-     * @param  \Illuminate\Notifications\Notification $notification
+     * @param mixed $notifiable
+     * @param \Illuminate\Notifications\Notification $notification
      * @return \Illuminate\Http\Client\Response
      */
     public function send($notifiable, Notification $notification)
