@@ -41,7 +41,10 @@ class State
      */
     public static function action(Object $state, string $action_id)
     {
-       foreach ($state->values as $block_id => $block_value)
+        if (!isset($state->values))
+            return null;
+
+        foreach ($state->values as $block_id => $block_value)
             foreach ($block_value as $id => $value)
                 if ($id == $action_id)
                     return $value;
