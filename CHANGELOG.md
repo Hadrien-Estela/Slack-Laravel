@@ -1,5 +1,9 @@
 # Changelog
 
+## [UNRELEASED]
+
+* Add `deleteMessage` method to Slack service
+
 ## [1.2.4] - 2020-11-19
 
 * Bunch of Fixes
