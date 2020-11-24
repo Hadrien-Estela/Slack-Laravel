@@ -40,10 +40,10 @@ class VerifySlackRequest
         }
 
         // generate the string base
-        $sig_basestring = "{$version}:{$timestamp}:{$body}";
+        $signature_base_string = "{$version}:{$timestamp}:{$body}";
 
         // generate the local sign
-        $hash = hash_hmac('sha256', $sig_basestring, $secret);
+        $hash = hash_hmac('sha256', $signature_base_string, $secret);
         $local_signature = "{$version}={$hash}";
 
         // get the remote sign

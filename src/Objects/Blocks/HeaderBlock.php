@@ -28,7 +28,7 @@ class HeaderBlock extends Block
      *
      * @param string $text
      */
-    public function __construct(string $text = '')
+    public function __construct(string $text)
     {
         parent::__construct(Block::Header);
         $this->text = new Text(Text::Plain, substr($text,0,150));

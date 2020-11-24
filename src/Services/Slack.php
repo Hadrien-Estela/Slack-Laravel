@@ -121,13 +121,13 @@ class Slack
      * @link(https://api.slack.com/messaging/webhooks, more)
      *
      * @param \Slack\Objects\SlackMessage $message The message to send.
-     * @param string $webhookUrl The webhook url.
+     * @param string $webhook_url The webhook url.
      * @return \Illuminate\Http\Client\Response
      * @throws \Illuminate\Http\Client\RequestException
      */
-    public function sendMessageUsingWebhook(SlackMessage $message, string $webhookUrl)
+    public function sendMessageUsingWebhook(SlackMessage $message, string $webhook_url)
     {
-        return Api::webhook($webhookUrl, $message->jsonSerialize());
+        return Api::webhook($webhook_url, $message->jsonSerialize());
     }
 
     /**
@@ -145,6 +145,28 @@ class Slack
 
         if (!$response->json()['ok'])
             throw new MessageException($response->json(), $message);
+
+        return $response;
+    }
+
+    /**
+     * Deletes a message.
+     * @link(https://api.slack.com/methods/chat.delete,more)
+     *
+     * @param string $channel_id Channel containing the message to be deleted.
+     * @param string $message_ts Timestamp of the message to be deleted.
+     * @return \Illuminate\Http\Client\Response
+     * @throws \Illuminate\Http\Client\RequestException|\Slack\Exceptions\ApiException
+     */
+    public function deleteMessage(string $channel_id, string $message_ts)
+    {
+        $response = $this->bot->post('chat.delete', [
+            'channel' => $channel_id,
+            'ts' => $message_ts
+        ]);
+
+        if (!$response->json()['ok'])
+            throw new ApiException($response->json());
 
         return $response;
     }

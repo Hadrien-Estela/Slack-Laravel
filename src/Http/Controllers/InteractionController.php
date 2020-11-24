@@ -70,7 +70,7 @@ abstract class InteractionController extends Controller
      *
      * @link(https://api.slack.com/reference/interaction-payloads/block-actions, more)
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response|null
      * @throws \Exception
      */
     public function index(Request $request)

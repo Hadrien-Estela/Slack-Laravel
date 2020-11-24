@@ -47,7 +47,7 @@ class CheckboxGroup extends InteractiveBlockElement
         return array_merge(parent::jsonSerialize(), [
             'options' => $this->options()
         ], array_filter([
-            'initial_options' => $this->initialOptions(),
+            'initial_options' => $this->initial_options(),
             'confirm' => $this->confirm
         ], function($val) {
             return !empty($val);

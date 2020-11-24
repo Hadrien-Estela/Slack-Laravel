@@ -63,7 +63,7 @@ class ExternalMultiSelect extends MultiSelectMenu
         return array_merge(parent::jsonSerialize(), [
 
         ], array_filter([
-            'initial_options' => $this->initialOptions(),
+            'initial_options' => $this->initial_options(),
             'min_query_length' => $this->min_query_length
         ], function($val) {
             return !empty($val);
