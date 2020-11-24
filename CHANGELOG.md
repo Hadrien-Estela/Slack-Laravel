@@ -1,8 +1,10 @@
 # Changelog
 
-## [UNRELEASED]
+## [1.2.5] - 2020-11-24
 
 * Add `deleteMessage` method to Slack service
+* Fix `initial_options` name collision in `\Slack\Objects\BlockElements\Concerns\HasOptions`
+* Add extra constructor parameters to `\Slack\Objects\Blocks\SectionBlock`
 
 ## [1.2.4] - 2020-11-19
 

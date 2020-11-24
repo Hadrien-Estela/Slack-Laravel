@@ -53,7 +53,7 @@ class Text implements JsonSerializable
      * @param bool|null $verbatim
      */
     public function __construct(string $type,
-                        string $text = 'Empty Text',
+                        string $text,
                         bool $emoji = null,
                         bool $verbatim = null)
     {

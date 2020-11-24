@@ -50,7 +50,7 @@ class StaticMultiSelect extends MultiSelectMenu
             'options' => $this->options()
         ], array_filter([
             'option_groups' => $this->groups(),
-            'initial_options' => $this->initialOptions()
+            'initial_options' => $this->initial_options()
         ], function($val) {
             return !empty($val);
         }));

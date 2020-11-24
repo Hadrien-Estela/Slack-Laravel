@@ -35,7 +35,7 @@ class OptionGroup implements JsonSerializable
      * @param string $label
      * @param \Slack\Objects\CompositionObjects\Option[] $options
      */
-    public function __construct(string $label = '', array $options = [])
+    public function __construct(string $label, array $options = [])
     {
         $this->label = new Text(Text::Plain, $label);
         $this->options = $options;

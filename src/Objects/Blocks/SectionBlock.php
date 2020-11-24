@@ -30,7 +30,7 @@ class SectionBlock extends Block
      *
      * @var \Slack\Objects\CompositionObjects\Text[]
      */
-    private $fields = [];
+    private $fields;
 
     /**
      * One of the available Block elements.
@@ -44,11 +44,18 @@ class SectionBlock extends Block
      *
      * @param string $text
      * @param bool $markdown
+     * @param \Slack\Objects\CompositionObjects\Text[] $fields
+     * @param \Slack\Objects\BlockElements\BlockElement|null $accessory
      */
-    public function __construct(string $text = '', bool $markdown = false)
+    public function __construct(string $text = '',
+                                bool $markdown = false,
+                                array $fields = [],
+                                BlockElement $accessory = null)
     {
         parent::__construct(Block::Section);
         $this->text = new Text($markdown ? Text::Markdown : Text::Plain, substr($text,0,3000));
+        $this->fields = $fields;
+        $this->accessory = $accessory;
     }
 
     /**

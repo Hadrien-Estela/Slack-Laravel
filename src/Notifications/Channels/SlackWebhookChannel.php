@@ -18,14 +18,14 @@ class SlackWebhookChannel
      *
      * @param mixed $notifiable
      * @param \Illuminate\Notifications\Notification $notification
-     * @return \Illuminate\Http\Client\Response
+     * @return \Illuminate\Http\Client\Response|null
      */
     public function send($notifiable, Notification $notification)
     {
         $message = $notification->toSlack($notifiable);
 
         if (! $webhook_url = $notifiable->routeNotificationFor('slack-webhook', $notification))
-            return ;
+            return null;
 
         return Slack::sendMessageUsingWebhook($message, $webhook_url);
     }

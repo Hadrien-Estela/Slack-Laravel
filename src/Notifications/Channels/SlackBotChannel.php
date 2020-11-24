@@ -18,7 +18,7 @@ class SlackBotChannel
      *
      * @param mixed $notifiable
      * @param \Illuminate\Notifications\Notification $notification
-     * @return \Illuminate\Http\Client\Response
+     * @return \Illuminate\Http\Client\Response|null
      */
     public function send($notifiable, Notification $notification)
     {
@@ -26,7 +26,7 @@ class SlackBotChannel
         $channel_id = $notifiable->routeNotificationFor('slack-bot', $notification);
 
         if (!$channel_id)
-            return ;
+            return null;
         else
             $message->to($channel_id);
 

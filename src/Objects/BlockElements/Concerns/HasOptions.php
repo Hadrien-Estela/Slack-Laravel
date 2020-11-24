@@ -68,8 +68,6 @@ trait HasOptions
     public function group(OptionGroup $group, bool $initial = false)
     {
         array_push($this->option_groups, $group);
-         if ($initial)
-            $this->initial_option = $group;
         return $this;
     }
 
@@ -82,6 +80,18 @@ trait HasOptions
     public function initialOption(Option $option)
     {
         $this->initial_option = $option;
+        return $this;
+    }
+
+    /**
+     * Set the initial options.
+     *
+     * @param Option[] $option
+     * @return $this
+     */
+    public function initialOptions(array $options)
+    {
+        $this->initial_options = $options;
         return $this;
     }
 
@@ -104,7 +114,7 @@ trait HasOptions
      *
      * @return array
      */
-    private function initialOptions()
+    private function initial_options()
     {
         $options = array();
         foreach ($this->initial_options as $option)
