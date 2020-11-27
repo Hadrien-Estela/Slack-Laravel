@@ -1,5 +1,10 @@
 # Changelog
 
+## [UNRELEASED]
+
+* Add `files.list` API method to service class as `listFiles()`.
+* Add `files.delete` API method to service class as `deleteFiles()`.
+
 ## [1.2.5] - 2020-11-24
 
 * Add `deleteMessage` method to Slack service

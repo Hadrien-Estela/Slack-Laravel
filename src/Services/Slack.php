@@ -5,7 +5,6 @@ namespace Slack\Services;
 use Slack\Api;
 use Slack\Objects\SlackMessage;
 use Slack\Objects\SlackView;
-use Slack\Exceptions;
 use Slack\Exceptions\ApiException;
 use Slack\Exceptions\MessageException;
 use Slack\Exceptions\ViewException;
@@ -222,7 +221,7 @@ class Slack
         })));
 
         if (!$response->json()['ok'])
-            throw new Exceptions\ViewException($response->json(), $view);
+            throw new ViewException($response->json(), $view);
 
         return $response;
     }
@@ -245,7 +244,7 @@ class Slack
         ]);
 
         if (!$response->json()['ok'])
-            throw new Exceptions\ViewException($response->json(), $view);
+            throw new ViewException($response->json(), $view);
 
         return $response;
     }
@@ -273,7 +272,63 @@ class Slack
         })));
 
         if (!$response->json()['ok'])
-            throw new Exceptions\ViewException($response->json(), $view);
+            throw new ViewException($response->json(), $view);
+
+        return $response;
+    }
+
+    /**
+     * List for a team, in a channel, or from a user with applied filters.
+     * @link(https://api.slack.com/methods/files.list, more)
+     *
+     * @param string|null $channel_id Filter files appearing in a specific channel, indicated by its ID.
+     * @param string|null $user_id Filter files created by a single user.
+     * @param int|null $from_ts Filter files created after this timestamp (inclusive).
+     * @param int|null $to_ts Filter files created before this timestamp (inclusive).
+     * @param int|null $count Number of items to return per page. (Default: 100)
+     * @param int|null $page Page number of results to return. (Default: 1)
+     * @return array
+     * @throws \Illuminate\Http\Client\RequestException
+     * @throws \Slack\Exceptions\ApiException
+     */
+    public function listFiles(string $channel_id = null, string $user_id = null,
+                              int $from_ts = null, int $to_ts = null,
+                              int $count = null, int $page = null)
+    {
+        $response = $this->app->post('files.list', array_filter([
+            'channel' => $channel_id,
+            'user' => $user_id,
+            'ts_from' => $from_ts,
+            'ts_to' => $to_ts,
+            'count' => $count,
+            'page' => $page
+        ], function($val) {
+            return !empty($val);
+        }));
+
+        if (!$response->json()['ok'])
+            throw new ApiException($response->json());
+
+        return $response->json();
+    }
+
+    /**
+     * Deletes a file.
+     * @link(https://api.slack.com/methods/files.delete, more)
+     *
+     * @param string $file_id
+     * @return \Illuminate\Http\Client\Response
+     * @throws \Illuminate\Http\Client\RequestException
+     * @throws \Slack\Exceptions\ApiException
+     */
+    public function deleteFile(string $file_id)
+    {
+        $response = $this->app->post('files.delete', [
+            'file' => $file_id
+        ]);
+
+        if (!$response->json()['ok'])
+            throw new ApiException($response->json());
 
         return $response;
     }
