@@ -1,6 +1,6 @@
 # Changelog
 
-## [UNRELEASED]
+## [1.2.6] - 2020-12-14
 
 * Add `files.list` API method to service class as `listFiles()`.
 * Add `files.delete` API method to service class as `deleteFiles()`.
