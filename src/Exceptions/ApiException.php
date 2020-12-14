@@ -12,12 +12,21 @@ use Exception;
 class ApiException extends Exception
 {
 
+    public const ERROR_RATE_LIMITED = 'ratelimited';
+
     /**
      * The name of the error.
      *
      * @var string
      */
     private $error;
+
+    /**
+     * Json response returned by the API
+     *
+     * @var array
+     */
+    private $response;
 
     /**
      * ApiException constructor.
@@ -31,6 +40,7 @@ class ApiException extends Exception
         else
             parent::__construct($response['response_metadata']['messages'][0]);
         $this->error = $response['error'];
+        $this->response = $response;
     }
 
     /**
@@ -39,6 +49,14 @@ class ApiException extends Exception
     final public function getError()
     {
         return $this->error;
+    }
+
+    /**
+     * @return mixed|string
+     */
+    final public function getJsonResponse()
+    {
+        return $this->response;
     }
 
 }

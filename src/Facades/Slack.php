@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Facade;
  * @method static updateView(\Slack\Objects\SlackView $view, string $view_id = null, string $external_id = null, string $hash = null)
  * @method static pushView(\Slack\Objects\SlackView $view, string $trigger_id)
  * @method static publishView(\Slack\Objects\SlackView $view, string $user_id, string $hash = null)
+ * @method static listFiles(string $channel_id = null, string $user_id = null, int $from_ts = null, int $to_ts = null, int $count = null, int $page = null)
+ * @method static deleteFile(string $file_id)
  *
  * @package Slack\Facades
  */
