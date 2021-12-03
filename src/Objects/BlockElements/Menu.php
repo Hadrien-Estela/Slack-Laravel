@@ -1,14 +1,14 @@
 <?php
 
-namespace Slack\Objects\BlockElements;
+namespace Slack\Laravel\Objects\BlockElements;
 
-use Slack\Objects\BlockElements\Concerns;
-use Slack\Objects\CompositionObjects\Text;
+use Slack\Laravel\Objects\BlockElements\Concerns;
+use Slack\Laravel\Objects\CompositionObjects\Text;
 
 /**
  * Base class for menu elements.
  *
- * @package Slack\Objects\BlockElements
+ * @package Slack\Laravel\Objects\BlockElements
  */
 abstract class Menu extends InteractiveBlockElement
 {

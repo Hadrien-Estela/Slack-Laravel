@@ -1,6 +1,6 @@
 <?php
 
-namespace Slack\Http\Controllers;
+namespace Slack\Laravel\Http\Controllers;
 
 use BadFunctionCallException;
 use Exception;

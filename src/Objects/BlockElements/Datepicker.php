@@ -1,17 +1,17 @@
 <?php
 
-namespace Slack\Objects\BlockElements;
+namespace Slack\Laravel\Objects\BlockElements;
 
 use DateTime;
-use Slack\Objects\BlockElements\Concerns;
-use Slack\Objects\CompositionObjects\ConfirmationDialog;
-use Slack\Objects\CompositionObjects\Text;
+use Slack\Laravel\Objects\BlockElements\Concerns;
+use Slack\Laravel\Objects\CompositionObjects\ConfirmationDialog;
+use Slack\Laravel\Objects\CompositionObjects\Text;
 
 /**
  * An element which lets users easily select a date from a calendar style UI.
  * @link(https://api.slack.com/reference/block-kit/block-elements#datepicker, more)
  *
- * @package Slack\Objects\BlockElements
+ * @package Slack\Laravel\Objects\BlockElements
  */
 class Datepicker extends InteractiveBlockElement
 {
@@ -33,7 +33,7 @@ class Datepicker extends InteractiveBlockElement
      * @param string $action_id
      * @param string|null $placeholder
      * @param \DateTime|null $initial_date
-     * @param \Slack\Objects\CompositionObjects\ConfirmationDialog|null $confirm
+     * @param \Slack\Laravel\Objects\CompositionObjects\ConfirmationDialog|null $confirm
      */
     public function __construct(string $action_id,
                                 string $placeholder = null,

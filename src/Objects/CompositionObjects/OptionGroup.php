@@ -1,6 +1,6 @@
 <?php
 
-namespace Slack\Objects\CompositionObjects;
+namespace Slack\Laravel\Objects\CompositionObjects;
 
 use JsonSerializable;
 
@@ -8,7 +8,7 @@ use JsonSerializable;
  * An object containing some text, formatted either as plain_text or using mrkdwn.
  * @link(https://api.slack.com/reference/block-kit/composition-objects#option_group, more)
  *
- * @package Slack\Objects\CompositionObjects
+ * @package Slack\Laravel\Objects\CompositionObjects
  */
 class OptionGroup implements JsonSerializable
 {
@@ -17,7 +17,7 @@ class OptionGroup implements JsonSerializable
      * A plain_text only text object that defines the label shown above this group of options.
      * Max length of 75 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text
      */
     private $label;
 
@@ -25,7 +25,7 @@ class OptionGroup implements JsonSerializable
      * An array of option objects that belong to this specific group.
      * Maximum of 100 items.
      *
-     * @var \Slack\Objects\CompositionObjects\Option[]
+     * @var \Slack\Laravel\Objects\CompositionObjects\Option[]
      */
     private $options;
 
@@ -33,7 +33,7 @@ class OptionGroup implements JsonSerializable
      * OptionGroup constructor.
      *
      * @param string $label
-     * @param \Slack\Objects\CompositionObjects\Option[] $options
+     * @param \Slack\Laravel\Objects\CompositionObjects\Option[] $options
      */
     public function __construct(string $label, array $options = [])
     {
@@ -58,7 +58,7 @@ class OptionGroup implements JsonSerializable
      * Add an option.
      * Maximum of 100 items.
      *
-     * @param \Slack\Objects\CompositionObjects\Option $option
+     * @param \Slack\Laravel\Objects\CompositionObjects\Option $option
      * @return $this
      */
     public function option(Option $option)

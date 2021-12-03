@@ -1,13 +1,13 @@
 <?php
 
-namespace Slack\Helpers;
+namespace Slack\Laravel\Helpers;
 
-use Slack\Objects\SlackView;
+use Slack\Laravel\Objects\SlackView;
 
 /**
  * Class View
  *
- * @package Slack\Helpers
+ * @package Slack\Laravel\Helpers
  */
 class View
 {
@@ -29,7 +29,7 @@ class View
      * Copy the metadata of a submitted view to a new View.
      *
      * @param Object $src_view
-     * @param \Slack\Objects\SlackView $dst_view
+     * @param \Slack\Laravel\Objects\SlackView $dst_view
      */
     public static function copy_metadata(Object $src_view, SlackView $dst_view)
     {
@@ -39,7 +39,7 @@ class View
     /**
      * Encode the metadata payload for a view.
      *
-     * @param \Slack\Objects\SlackView $view
+     * @param \Slack\Laravel\Objects\SlackView $view
      * @param array $data
      */
     public static function encode_metadata(SlackView $view, array $data)

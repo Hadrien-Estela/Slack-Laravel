@@ -1,13 +1,13 @@
 <?php
 
-namespace Slack\Exceptions;
+namespace Slack\Laravel\Exceptions;
 
-use Slack\Objects\SlackMessage;
+use Slack\Laravel\Objects\SlackMessage;
 
 /**
  * Class MessageException
  *
- * @package Slack\Exceptions
+ * @package Slack\Laravel\Exceptions
  */
 class MessageException extends ApiException
 {
@@ -23,7 +23,7 @@ class MessageException extends ApiException
      * MessageException constructor.
      *
      * @param array $response
-     * @param \Slack\Objects\SlackMessage $sent
+     * @param \Slack\Laravel\Objects\SlackMessage $sent
      */
     public function __construct(array $response, SlackMessage $sent)
     {
@@ -32,7 +32,7 @@ class MessageException extends ApiException
     }
 
     /**
-     * @return \Slack\Objects\SlackMessage
+     * @return \Slack\Laravel\Objects\SlackMessage
      */
     final public function getSentMessage()
     {

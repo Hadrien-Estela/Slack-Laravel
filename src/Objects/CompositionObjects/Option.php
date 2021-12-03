@@ -1,6 +1,6 @@
 <?php
 
-namespace Slack\Objects\CompositionObjects;
+namespace Slack\Laravel\Objects\CompositionObjects;
 
 use JsonSerializable;
 
@@ -8,7 +8,7 @@ use JsonSerializable;
  * An object containing some text, formatted either as plain_text or using mrkdwn.
  * @link(https://api.slack.com/reference/block-kit/composition-objects#option, more)
  *
- * @package Slack\Objects\CompositionObjects
+ * @package Slack\Laravel\Objects\CompositionObjects
  */
 class Option implements JsonSerializable
 {
@@ -17,7 +17,7 @@ class Option implements JsonSerializable
      * A text object that defines the text shown in the option on the menu.
      * Max length of 75 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text
      */
     private $text;
 
@@ -34,7 +34,7 @@ class Option implements JsonSerializable
      * shown below the text field beside the radio button.
      * Max length of 75 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text
      */
     private $description;
 

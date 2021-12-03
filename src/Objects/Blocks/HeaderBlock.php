@@ -1,15 +1,15 @@
 <?php
 
-namespace Slack\Objects\Blocks;
+namespace Slack\Laravel\Objects\Blocks;
 
-use Slack\Objects\CompositionObjects\Text;
+use Slack\Laravel\Objects\CompositionObjects\Text;
 
 /**
  * A header is a plain-text block that displays in a larger, bold font.
  * Use it to delineate between different groups of content in your app's surfaces.
  * @link(https://api.slack.com/reference/block-kit/blocks#header, more)
  *
- * @packages Slack\Objects\Blocks
+ * @packages Slack\Laravel\Objects\Blocks
  */
 class HeaderBlock extends Block
 {
@@ -19,7 +19,7 @@ class HeaderBlock extends Block
      * Maximum length for the text in this field is 150 characters.
      * Max length of 150 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text
      */
     private $text;
 

@@ -1,6 +1,6 @@
 <?php
 
-use Slack\Factories\ResponseActionFactory;
+use Slack\Laravel\Factories\ResponseActionFactory;
 
 if (! function_exists('slack_response_action'))
 {

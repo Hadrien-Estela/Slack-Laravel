@@ -1,11 +1,11 @@
 <?php
 
-namespace Slack\Objects\BlockElements;
+namespace Slack\Laravel\Objects\BlockElements;
 
 /**
  * Base class for interactive elements.
  *
- * @package Slack\Objects\BlockElements
+ * @package Slack\Laravel\Objects\BlockElements
  */
 abstract class InteractiveBlockElement extends BlockElement
 {

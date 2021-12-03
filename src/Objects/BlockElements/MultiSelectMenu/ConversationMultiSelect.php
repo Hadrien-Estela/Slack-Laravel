@@ -1,8 +1,8 @@
 <?php
 
-namespace Slack\Objects\BlockElements\MultiSelectMenu;
+namespace Slack\Laravel\Objects\BlockElements\MultiSelectMenu;
 
-use Slack\Objects\CompositionObjects\ConversationFilter;
+use Slack\Laravel\Objects\CompositionObjects\ConversationFilter;
 
 /**
  * This multi-select menu will populate its options with a list of
@@ -10,7 +10,7 @@ use Slack\Objects\CompositionObjects\ConversationFilter;
  * user in the active workspace.
  * @link(https://api.slack.com/reference/block-kit/block-elements#conversation_multi_select, more)
  *
- * @package Slack\Objects\BlockElements\MultiSelectMenu
+ * @package Slack\Laravel\Objects\BlockElements\MultiSelectMenu
  */
 class ConversationMultiSelect extends MultiSelectMenu
 {
@@ -37,7 +37,7 @@ class ConversationMultiSelect extends MultiSelectMenu
      * A filter object that reduces the list of available conversations
      * using the specified criteria.
      *
-     * @var \Slack\Objects\CompositionObjects\ConversationFilter|null
+     * @var \Slack\Laravel\Objects\CompositionObjects\ConversationFilter|null
      */
     private $filter;
 
@@ -46,7 +46,7 @@ class ConversationMultiSelect extends MultiSelectMenu
      *
      * @param string $action_id
      * @param string $placeholder
-     * @param \Slack\Objects\CompositionObjects\ConversationFilter|null $filter
+     * @param \Slack\Laravel\Objects\CompositionObjects\ConversationFilter|null $filter
      * @param array $initialConversations
      * @param bool|null $currentByDefault
      */

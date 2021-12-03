@@ -13,13 +13,17 @@
             "email": "hadrien@virtuosereality.com"
         }
     ],
+    "support": {
+        "issues": "https://gitlab.virtuosereality.com/virtuose-reality/slack-laravel/-/issues",
+        "source": "https://gitlab.virtuosereality.com/virtuose-reality/slack-laravel"
+    },
     "minimum-stability": "stable",
     "require-dev": {
         "phpunit/phpunit": "^9.3",
         "orchestra/testbench": "^6.0"
     },
     "require": {
-        "php": "^7.3",
+        "php": "^8.0",
         "symfony/console": "^5.0",
         "illuminate/console": "^8.0",
         "illuminate/routing": "^8.0",
@@ -31,18 +35,26 @@
         "ulrichsg/getopt-php": "^3.4",
         "ext-json": "*"
     },
+    "archive": {
+        "exclude": ["/tests"]
+    },
     "autoload": {
         "psr-4": {
-            "Slack\\": "src/"
+            "Slack\\Laravel\\": "src/"
         },
         "files": [
             "src/helpers.php"
         ]
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Slack\\Laravel\\Tests\\": "tests/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
-                "Slack\\Providers\\SlackServiceProvider"
+                "Slack\\Laravel\\Providers\\SlackServiceProvider"
             ],
             "aliases": {
                 "Slack": "Slack\\Facades\\Slack"

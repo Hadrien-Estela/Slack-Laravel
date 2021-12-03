@@ -1,6 +1,6 @@
 <?php
 
-namespace Slack\Objects\CompositionObjects;
+namespace Slack\Laravel\Objects\CompositionObjects;
 
 use JsonSerializable;
 
@@ -8,7 +8,7 @@ use JsonSerializable;
  * An object containing some text, formatted either as plain_text or using mrkdwn.
  * @link(https://api.slack.com/reference/block-kit/composition-objects#text, more)
  *
- * @package Slack\Objects\CompositionObjects
+ * @package Slack\Laravel\Objects\CompositionObjects
  */
 class Text implements JsonSerializable
 {

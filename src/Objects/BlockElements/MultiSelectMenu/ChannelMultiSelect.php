@@ -1,13 +1,13 @@
 <?php
 
-namespace Slack\Objects\BlockElements\MultiSelectMenu;
+namespace Slack\Laravel\Objects\BlockElements\MultiSelectMenu;
 
 /**
  * This multi-select menu will populate its options with a list of public channels
  * visible to the current user in the active workspace.
  * @link(https://api.slack.com/reference/block-kit/block-elements#channel_multi_select, more)
  *
- * @package Slack\Objects\BlockElements\MultiSelectMenu
+ * @package Slack\Laravel\Objects\BlockElements\MultiSelectMenu
  */
 class ChannelMultiSelect extends MultiSelectMenu
 {

@@ -1,16 +1,16 @@
 <?php
 
-namespace Slack\Objects\BlockElements\SelectMenu;
+namespace Slack\Laravel\Objects\BlockElements\SelectMenu;
 
-use Slack\Objects\BlockElements\Concerns;
-use Slack\Objects\CompositionObjects\Option;
+use Slack\Laravel\Objects\BlockElements\Concerns;
+use Slack\Laravel\Objects\CompositionObjects\Option;
 
 /**
  * This select menu will load its options from an external data source,
  * allowing for a dynamic list of options.
  * @link(https://api.slack.com/reference/block-kit/block-elements#external_select, more)
  *
- * @package Slack\Objects\BlockElements\SelectMenu
+ * @package Slack\Laravel\Objects\BlockElements\SelectMenu
  */
 class ExternalSelect extends SelectMenu
 {
@@ -30,7 +30,7 @@ class ExternalSelect extends SelectMenu
      * @param string $action_id
      * @param string $placeholder
      * @param int|null $minQueryLength
-     * @param \Slack\Objects\CompositionObjects\Option|null $initialOption
+     * @param \Slack\Laravel\Objects\CompositionObjects\Option|null $initialOption
      */
     public function __construct(string $action_id,
                                 string $placeholder = 'Select an option',

@@ -2,7 +2,7 @@
 
 namespace {{ namespace }};
 
-use Slack\Objects\SlackMessage;
+use Slack\Laravel\Objects\SlackMessage;
 
 class {{ class }} extends SlackMessage
 {

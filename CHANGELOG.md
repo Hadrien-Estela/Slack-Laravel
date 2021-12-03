@@ -8,8 +8,8 @@
 ## [1.2.5] - 2020-11-24
 
 * Add `deleteMessage` method to Slack service
-* Fix `initial_options` name collision in `\Slack\Objects\BlockElements\Concerns\HasOptions`
-* Add extra constructor parameters to `\Slack\Objects\Blocks\SectionBlock`
+* Fix `initial_options` name collision in `\Slack\Laravel\Objects\BlockElements\Concerns\HasOptions`
+* Add extra constructor parameters to `\Slack\Laravel\Objects\Blocks\SectionBlock`
 
 ## [1.2.4] - 2020-11-19
 
@@ -35,9 +35,9 @@
 
 ## [1.1.1] - 2020-11-11
 
-* Fix `Slack\Objects\BlockElements\SelectMenu\StaticSelect`
+* Fix `Slack\Laravel\Objects\BlockElements\SelectMenu\StaticSelect`
   Construct now takes a single option as `initial_option`.
-* `Slack\Objects\Blocks\ActionBlock` constructor can now take an array of elements.
+* `Slack\Laravel\Objects\Blocks\ActionBlock` constructor can now take an array of elements.
 * Fix `Slack\Http\Controllers\InteractionController` block_suggestions.
 * Fix missing user authentication in `Slack\Http\Middleware\SlackCommand`.
 * Improve `Slack\Helpers\View`.

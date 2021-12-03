@@ -1,6 +1,6 @@
 <?php
 
-namespace Slack\Tests;
+namespace Slack\Laravel\Tests;
 
 class ExampleTest extends TestCase
 {

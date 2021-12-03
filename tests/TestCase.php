@@ -1,6 +1,6 @@
 <?php
 
-namespace Slack\Tests;
+namespace Slack\Laravel\Tests;
 
 use Orchestra\Testbench\TestCase as BaseTestCase;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Slack\Objects\BlockElements;
+namespace Slack\Laravel\Objects\BlockElements;
 
-use Slack\Objects\BlockElements\Concerns;
-use Slack\Objects\CompositionObjects\ConfirmationDialog;
+use Slack\Laravel\Objects\BlockElements\Concerns;
+use Slack\Laravel\Objects\CompositionObjects\ConfirmationDialog;
 
 /**
  *This is like a cross between a button and a select menu
@@ -11,7 +11,7 @@ use Slack\Objects\CompositionObjects\ConfirmationDialog;
  * be presented with a list of options to choose from.
  * @link(https://api.slack.com/reference/block-kit/block-elements#overflow, more)
  *
- * @package Slack\Objects\BlockElements
+ * @package Slack\Laravel\Objects\BlockElements
  */
 class OverflowMenu extends InteractiveBlockElement
 {
@@ -24,7 +24,7 @@ class OverflowMenu extends InteractiveBlockElement
      *
      * @param string $action_id
      * @param array $options
-     * @param \Slack\Objects\CompositionObjects\ConfirmationDialog|null $confirm
+     * @param \Slack\Laravel\Objects\CompositionObjects\ConfirmationDialog|null $confirm
      */
     public function __construct(string $action_id,
                                 array $options = [],

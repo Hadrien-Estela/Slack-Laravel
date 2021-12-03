@@ -1,15 +1,15 @@
 <?php
 
-namespace Slack\Objects\Blocks;
+namespace Slack\Laravel\Objects\Blocks;
 
-use Slack\Objects\CompositionObjects\Text;
-use Slack\Objects\BlockElements\InteractiveBlockElement;
+use Slack\Laravel\Objects\CompositionObjects\Text;
+use Slack\Laravel\Objects\BlockElements\InteractiveBlockElement;
 
 /**
  * A block that collects information from users.
  * @link(https://api.slack.com/reference/block-kit/blocks#input, more)
  *
- * @package Slack\Objects\Blocks
+ * @package Slack\Laravel\Objects\Blocks
  */
 class InputBlock extends Block
 {
@@ -18,14 +18,14 @@ class InputBlock extends Block
      * A label that appears above an input element in the form.
      * Max length of 2000 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text
      */
     private $label;
 
     /**
      * The input element.
      *
-     * @var \Slack\Objects\BlockElements\InteractiveBlockElement
+     * @var \Slack\Laravel\Objects\BlockElements\InteractiveBlockElement
      */
     private $element;
 
@@ -42,7 +42,7 @@ class InputBlock extends Block
      * An optional hint that appears below an input element in a lighter grey.
      * Max length of 2000 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text
      */
     private $hint;
 
@@ -59,7 +59,7 @@ class InputBlock extends Block
      * InputBlock constructor.
      *
      * @param string $label
-     * @param \Slack\Objects\BlockElements\InteractiveBlockElement|null $element
+     * @param \Slack\Laravel\Objects\BlockElements\InteractiveBlockElement|null $element
      * @param bool|null $optional
      * @param string|null $hint
      */
@@ -92,7 +92,7 @@ class InputBlock extends Block
     /**
      * Set the input element.
      *
-     * @param \Slack\Objects\BlockElements\InteractiveBlockElement $element
+     * @param \Slack\Laravel\Objects\BlockElements\InteractiveBlockElement $element
      * @return $this
      */
     public function element(InteractiveBlockElement $element)

@@ -1,13 +1,13 @@
 <?php
 
-namespace Slack\Exceptions;
+namespace Slack\Laravel\Exceptions;
 
-use Slack\Objects\SlackView;
+use Slack\Laravel\Objects\SlackView;
 
 /**
  * Class ViewException
  *
- * @package Slack\Exceptions
+ * @package Slack\Laravel\Exceptions
  */
 class ViewException extends ApiException
 {
@@ -23,7 +23,7 @@ class ViewException extends ApiException
      * ViewException constructor.
      *
      * @param array $response
-     * @param \Slack\Objects\SlackView $view
+     * @param \Slack\Laravel\Objects\SlackView $view
      */
     public function __construct(array $response, SlackView $view)
     {
@@ -32,7 +32,7 @@ class ViewException extends ApiException
     }
 
     /**
-     * @return \Slack\Objects\SlackView
+     * @return \Slack\Laravel\Objects\SlackView
      */
     final public function getView()
     {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Slack\Objects\Blocks;
+namespace Slack\Laravel\Objects\Blocks;
 
 /**
  * Displays a remote file. You can't add this block to app surfaces directly,
  * but it will show up when retrieving messages that contain remote files.
  * @link(https://api.slack.com/reference/block-kit/blocks#file, more)
  *
- * @package Slack\Objects\Blocks
+ * @package Slack\Laravel\Objects\Blocks
  */
 class FileBlock extends Block
 {
