@@ -1,19 +1,19 @@
 <?php
 
-namespace Slack\Objects;
+namespace Slack\Laravel\Objects;
 
 use JsonSerializable;
 
 use Illuminate\Contracts\Support\Jsonable;
 
-use Slack\Objects\CompositionObjects\Text;
-use Slack\Objects\Blocks\Block;
+use Slack\Laravel\Objects\CompositionObjects\Text;
+use Slack\Laravel\Objects\Blocks\Block;
 
 /**
  * Build a serializable view.
  * @link(https://api.slack.com/reference/surfaces/views, more)
  *
- * @package Slack\Objects
+ * @package Slack\Laravel\Objects
  */
 class SlackView implements JsonSerializable, Jsonable
 {
@@ -32,14 +32,14 @@ class SlackView implements JsonSerializable, Jsonable
      * The title that appears in the top-left of the modal.
      * Max length of 24 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text
      */
     private $title;
 
     /**
      * An array of blocks that defines the content of the view. Max of 100 blocks.
      *
-     * @var \Slack\Objects\Blocks\Block[]
+     * @var \Slack\Laravel\Objects\Blocks\Block[]
      */
     private $blocks = [];
 
@@ -48,7 +48,7 @@ class SlackView implements JsonSerializable, Jsonable
      * close button at the bottom-right of the view.
      * Max length of 24 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text|null
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text|null
      */
     private $close;
 
@@ -58,7 +58,7 @@ class SlackView implements JsonSerializable, Jsonable
      * an input block is within the blocks array.
      * Max length of 24 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text|null
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text|null
      */
     private $submit;
 
@@ -109,7 +109,7 @@ class SlackView implements JsonSerializable, Jsonable
      *
      * @param string $type
      * @param string $title
-     * @param \Slack\Objects\Blocks\Block[] $blocks
+     * @param \Slack\Laravel\Objects\Blocks\Block[] $blocks
      * @param string|null $close
      * @param string|null $submit
      * @param string|null $private_metadata
@@ -158,7 +158,7 @@ class SlackView implements JsonSerializable, Jsonable
     /**
      * Add a block.
      *
-     * @param \Slack\Objects\Blocks\Block $block
+     * @param \Slack\Laravel\Objects\Blocks\Block $block
      * @return $this
      */
     public function block(Block $block)

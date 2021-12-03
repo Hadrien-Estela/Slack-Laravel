@@ -1,18 +1,18 @@
 <?php
 
-namespace Slack\Services;
+namespace Slack\Laravel\Services;
 
-use Slack\Api;
-use Slack\Objects\SlackMessage;
-use Slack\Objects\SlackView;
-use Slack\Exceptions\ApiException;
-use Slack\Exceptions\MessageException;
-use Slack\Exceptions\ViewException;
+use Slack\Laravel\Api;
+use Slack\Laravel\Objects\SlackMessage;
+use Slack\Laravel\Objects\SlackView;
+use Slack\Laravel\Exceptions\ApiException;
+use Slack\Laravel\Exceptions\MessageException;
+use Slack\Laravel\Exceptions\ViewException;
 
 /**
  * Class Slack
  *
- * @package Slack\Services
+ * @package Slack\Laravel\Services
  */
 class Slack
 {
@@ -119,7 +119,7 @@ class Slack
      * Send a message on a webhook.
      * @link(https://api.slack.com/messaging/webhooks, more)
      *
-     * @param \Slack\Objects\SlackMessage $message The message to send.
+     * @param \Slack\Laravel\Objects\SlackMessage $message The message to send.
      * @param string $webhook_url The webhook url.
      * @return \Illuminate\Http\Client\Response
      * @throws \Illuminate\Http\Client\RequestException
@@ -133,10 +133,10 @@ class Slack
      * Send a message on a channel.
      * @link(https://api.slack.com/methods/chat.postMessage, more)
      *
-     * @param \Slack\Objects\SlackMessage message The message to send.
+     * @param \Slack\Laravel\Objects\SlackMessage message The message to send.
      * @return \Illuminate\Http\Client\Response
      * @throws \Illuminate\Http\Client\RequestException
-     * @throws \Slack\Exceptions\MessageException
+     * @throws \Slack\Laravel\Exceptions\MessageException
      */
     public function sendMessage(SlackMessage $message)
     {
@@ -155,7 +155,7 @@ class Slack
      * @param string $channel_id Channel containing the message to be deleted.
      * @param string $message_ts Timestamp of the message to be deleted.
      * @return \Illuminate\Http\Client\Response
-     * @throws \Illuminate\Http\Client\RequestException|\Slack\Exceptions\ApiException
+     * @throws \Illuminate\Http\Client\RequestException|\Slack\Laravel\Exceptions\ApiException
      */
     public function deleteMessage(string $channel_id, string $message_ts)
     {
@@ -174,11 +174,11 @@ class Slack
      * Open a view for a user.
      * @link(https://api.slack.com/methods/views.open, more)
      *
-     * @param \Slack\Objects\SlackView $view The view to open.
+     * @param \Slack\Laravel\Objects\SlackView $view The view to open.
      * @param string $trigger_id The trigger ID.
      * @return \Illuminate\Http\Client\Response
      * @throws \Illuminate\Http\Client\RequestException
-     * @throws \Slack\Exceptions\ViewException
+     * @throws \Slack\Laravel\Exceptions\ViewException
      */
     public function openView(SlackView $view, string $trigger_id)
     {
@@ -197,13 +197,13 @@ class Slack
      * Update an existing view.
      * @link(https://api.slack.com/methods/views.update, more)
      *
-     * @param \Slack\Objects\SlackView $view The content to send as update.
+     * @param \Slack\Laravel\Objects\SlackView $view The content to send as update.
      * @param string|null $view_id The ID of the view to update.
      * @param string|null $external_id The eternal ID of the view to update.
      * @param string|null $hash A string that represents view state.
      * @return \Illuminate\Http\Client\Response
      * @throws \Illuminate\Http\Client\RequestException
-     * @throws \Slack\Exceptions\ViewException
+     * @throws \Slack\Laravel\Exceptions\ViewException
      */
     public function updateView(SlackView $view,
                                 string $view_id = null,
@@ -230,11 +230,11 @@ class Slack
      * Push a view onto the stack of a root view.
      * @link(https://api.slack.com/methods/views.push, more)
      *
-     * @param \Slack\Objects\SlackView $view The view to push.
+     * @param \Slack\Laravel\Objects\SlackView $view The view to push.
      * @param string $trigger_id The trigger ID.
      * @return \Illuminate\Http\Client\Response
      * @throws \Illuminate\Http\Client\RequestException
-     * @throws \Slack\Exceptions\ViewException
+     * @throws \Slack\Laravel\Exceptions\ViewException
      */
     public function pushView(SlackView $view, string $trigger_id)
     {
@@ -253,12 +253,12 @@ class Slack
      * Publish a static view for a User.
      * @link(https://api.slack.com/methods/views.publish, more)
      *
-     * @param \Slack\Objects\SlackView $view The view to publish.
+     * @param \Slack\Laravel\Objects\SlackView $view The view to publish.
      * @param string $user_id The ID of the user you want to push the view for.
      * @param string|null $hash A string that represents view state.
      * @return \Illuminate\Http\Client\Response
      * @throws \Illuminate\Http\Client\RequestException
-     * @throws \Slack\Exceptions\ViewException
+     * @throws \Slack\Laravel\Exceptions\ViewException
      */
     public function publishView(SlackView $view, string $user_id, string $hash = null)
     {
@@ -289,7 +289,7 @@ class Slack
      * @param int|null $page Page number of results to return. (Default: 1)
      * @return array
      * @throws \Illuminate\Http\Client\RequestException
-     * @throws \Slack\Exceptions\ApiException
+     * @throws \Slack\Laravel\Exceptions\ApiException
      */
     public function listFiles(string $channel_id = null, string $user_id = null,
                               int $from_ts = null, int $to_ts = null,
@@ -319,7 +319,7 @@ class Slack
      * @param string $file_id
      * @return \Illuminate\Http\Client\Response
      * @throws \Illuminate\Http\Client\RequestException
-     * @throws \Slack\Exceptions\ApiException
+     * @throws \Slack\Laravel\Exceptions\ApiException
      */
     public function deleteFile(string $file_id)
     {

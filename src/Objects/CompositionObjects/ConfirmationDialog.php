@@ -1,6 +1,6 @@
 <?php
 
-namespace Slack\Objects\CompositionObjects;
+namespace Slack\Laravel\Objects\CompositionObjects;
 
 use JsonSerializable;
 
@@ -9,7 +9,7 @@ use JsonSerializable;
  * This dialog will ask the user to confirm their action by offering a confirm and deny buttons.
  * @link(https://api.slack.com/reference/block-kit/composition-objects#confirm, more)
  *
- * @package Slack\Objects\CompositionObjects
+ * @package Slack\Laravel\Objects\CompositionObjects
  */
 class ConfirmationDialog implements JsonSerializable
 {
@@ -18,7 +18,7 @@ class ConfirmationDialog implements JsonSerializable
      * A plain_text-only text object that defines the dialog's title.
      * Max length of 100 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text
      */
     private $title;
 
@@ -26,7 +26,7 @@ class ConfirmationDialog implements JsonSerializable
      * A text object that defines the explanatory text that appears in the confirm dialog.
      * Max length of 300 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text
      */
     private $text;
 
@@ -34,7 +34,7 @@ class ConfirmationDialog implements JsonSerializable
      * A plain_text-only text object to define the text of the button that confirms the action.
      * Max length of 30 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text
      */
     private $confirm;
 
@@ -42,7 +42,7 @@ class ConfirmationDialog implements JsonSerializable
      * A plain_text-only text object to define the text of the button that cancels the action.
      * Max length of 30 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text
      */
     private $deny;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Slack\Factories;
+namespace Slack\Laravel\Factories;
 
-use Slack\Objects\SlackView;
+use Slack\Laravel\Objects\SlackView;
 
 /**
  * Build a response action to a slack interaction request.
@@ -14,7 +14,7 @@ class ResponseActionFactory
     /**
      * Update view action.
      *
-     * @param \Slack\Objects\SlackView $view The content view to send as update.
+     * @param \Slack\Laravel\Objects\SlackView $view The content view to send as update.
      * @return \Illuminate\Http\JsonResponse
      */
     public function update(SlackView $view)
@@ -28,7 +28,7 @@ class ResponseActionFactory
     /**
      * Push view action.
      *
-     * @param \Slack\Objects\SlackView $view The content to push
+     * @param \Slack\Laravel\Objects\SlackView $view The content to push
      * @return \Illuminate\Http\JsonResponse
      */
     public function push(SlackView $view)
@@ -68,7 +68,7 @@ class ResponseActionFactory
     /**
      * Suggestion options response.
      *
-     * @param \Slack\Objects\CompositionObjects\Option[] $options The suggestions to return.
+     * @param \Slack\Laravel\Objects\CompositionObjects\Option[] $options The suggestions to return.
      * @return \Illuminate\Http\JsonResponse
      */
     public function options(array $options)

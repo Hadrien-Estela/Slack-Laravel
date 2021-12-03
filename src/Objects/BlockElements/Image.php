@@ -1,12 +1,12 @@
 <?php
 
-namespace Slack\Objects\BlockElements;
+namespace Slack\Laravel\Objects\BlockElements;
 
 /**
  * An element to insert an image as part of a larger block of content.
  * @link(https://api.slack.com/reference/block-kit/block-elements#image, more)
  *
- * @package Slack\Objects\BlockElements
+ * @package Slack\Laravel\Objects\BlockElements
  */
 class Image extends BlockElement
 {

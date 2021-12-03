@@ -58,7 +58,7 @@ return [
     | Webhooks
     |--------------------------------------------------------------------------
     |
-    | The channels ID you want to bind to the service.
+    | The webhooks urls.
     |
     */
 

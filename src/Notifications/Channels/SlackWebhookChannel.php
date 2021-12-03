@@ -1,14 +1,14 @@
 <?php
 
-namespace Slack\Notifications\Channels;
+namespace Slack\Laravel\Notifications\Channels;
 
 use Illuminate\Notifications\Notification;
-use Slack\Facades\Slack;
+use Slack\Laravel\Facades\Slack;
 
 /**
  * Class SlackWebhookChannel
  *
- * @package Slack\Notifications\Channels
+ * @package Slack\Laravel\Notifications\Channels
  */
 class SlackWebhookChannel
 {

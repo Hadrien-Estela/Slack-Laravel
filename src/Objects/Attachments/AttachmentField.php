@@ -1,6 +1,6 @@
 <?php
 
-namespace Slack\Objects\Attachments;
+namespace Slack\Laravel\Objects\Attachments;
 
 use JsonSerializable;
 
@@ -8,7 +8,7 @@ use JsonSerializable;
  * Class AttachmentField
  * @link(https://api.slack.com/reference/messaging/attachments#field_objects)
  *
- * @package Slack\Objects\Attachments
+ * @package Slack\Laravel\Objects\Attachments
  */
 class AttachmentField implements JsonSerializable
 {

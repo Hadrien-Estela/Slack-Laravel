@@ -1,6 +1,6 @@
 <?php
 
-namespace Slack;
+namespace Slack\Laravel;
 
 use Illuminate\Support\Facades\Http;
 

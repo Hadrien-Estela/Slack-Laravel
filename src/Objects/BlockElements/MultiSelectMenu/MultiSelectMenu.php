@@ -1,8 +1,8 @@
 <?php
 
-namespace Slack\Objects\BlockElements\MultiSelectMenu;
+namespace Slack\Laravel\Objects\BlockElements\MultiSelectMenu;
 
-use Slack\Objects\BlockElements\Menu;
+use Slack\Laravel\Objects\BlockElements\Menu;
 
 /**
  * A multi-select menu allows a user to select multiple items from a list of options.
@@ -10,7 +10,7 @@ use Slack\Objects\BlockElements\Menu;
  * where a user can type a part or all of an option string to filter the list.
  * @link(https://api.slack.com/reference/block-kit/block-elements#multi_select, more)
  *
- * @package Slack\Objects\BlockElements\MultiSelectMenu
+ * @package Slack\Laravel\Objects\BlockElements\MultiSelectMenu
  */
 abstract class MultiSelectMenu extends Menu
 {

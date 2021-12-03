@@ -1,15 +1,15 @@
 <?php
 
-namespace Slack\Objects\BlockElements\MultiSelectMenu;
+namespace Slack\Laravel\Objects\BlockElements\MultiSelectMenu;
 
-use Slack\Objects\BlockElements\Concerns;
+use Slack\Laravel\Objects\BlockElements\Concerns;
 
 /**
  * This menu will load its options from an external data source,
  * allowing for a dynamic list of options.
  * @link(https://api.slack.com/reference/block-kit/block-elements#external_multi_select, more)
  *
- * @package Slack\Objects\BlockElements\MultiSelectMenu
+ * @package Slack\Laravel\Objects\BlockElements\MultiSelectMenu
  */
 class ExternalMultiSelect extends MultiSelectMenu
 {

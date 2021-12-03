@@ -1,12 +1,12 @@
 <?php
 
-namespace Slack\Objects\Blocks;
+namespace Slack\Laravel\Objects\Blocks;
 
 /**
  * Displays message context, which can include both images and text.
  * @link(https://api.slack.com/reference/block-kit/blocks#context, more)
  *
- * @package Slack\Objects\Blocks
+ * @package Slack\Laravel\Objects\Blocks
  */
 class ContextBlock extends Block
 {
@@ -32,7 +32,7 @@ class ContextBlock extends Block
     /**
      * Add an element.
      *
-     * @param \Slack\Objects\CompositionObjects\Text|\Slack\Objects\BlockElements\Image $element
+     * @param \Slack\Laravel\Objects\CompositionObjects\Text|\Slack\Laravel\Objects\BlockElements\Image $element
      * @return $this
      */
     public function element($element)

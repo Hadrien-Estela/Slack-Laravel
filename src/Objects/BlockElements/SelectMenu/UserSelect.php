@@ -1,13 +1,13 @@
 <?php
 
-namespace Slack\Objects\BlockElements\SelectMenu;
+namespace Slack\Laravel\Objects\BlockElements\SelectMenu;
 
 /**
  * This select menu will populate its options with a list of Slack users
  * visible to the current user in the active workspace.
  * @link(https://api.slack.com/reference/block-kit/block-elements#users_select, more)
  *
- * @package Slack\Objects\BlockElements\SelectMenu
+ * @package Slack\Laravel\Objects\BlockElements\SelectMenu
  */
 class UserSelect extends SelectMenu
 {

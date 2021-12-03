@@ -1,14 +1,14 @@
 <?php
 
-namespace Slack\Objects\Blocks;
+namespace Slack\Laravel\Objects\Blocks;
 
-use Slack\Objects\CompositionObjects\Text;
+use Slack\Laravel\Objects\CompositionObjects\Text;
 
 /**
  * A simple image block, designed to make those cat photos really pop.
  * @link(https://api.slack.com/reference/block-kit/blocks#image, more)
  *
- * @package Slack\Objects\Blocks
+ * @package Slack\Laravel\Objects\Blocks
  */
 class ImageBlock extends Block
 {
@@ -33,7 +33,7 @@ class ImageBlock extends Block
      * An optional title for the image.
      * Max length of 2000 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text
      */
     private $title;
 
@@ -42,7 +42,7 @@ class ImageBlock extends Block
      *
      * @param string $url
      * @param string $alt
-     * @param \Slack\Objects\CompositionObjects\Text|null $title
+     * @param \Slack\Laravel\Objects\CompositionObjects\Text|null $title
      */
     public function __construct(string $url = '', string $alt = '', Text $title = null)
     {

@@ -1,15 +1,15 @@
 <?php
 
-namespace Slack\Objects\BlockElements\MultiSelectMenu;
+namespace Slack\Laravel\Objects\BlockElements\MultiSelectMenu;
 
-use Slack\Objects\BlockElements\Concerns;
+use Slack\Laravel\Objects\BlockElements\Concerns;
 
 /**
  * This is the simplest form of select menu, with a static list of options
  * passed in when defining the element.
  * @link(https://api.slack.com/reference/block-kit/block-elements#static_multi_select, more)
  *
- * @package Slack\Objects\BlockElements\MultiSelectMenu
+ * @package Slack\Laravel\Objects\BlockElements\MultiSelectMenu
  */
 class StaticMultiSelect extends MultiSelectMenu
 {

@@ -1,17 +1,17 @@
 <?php
 
-namespace Slack\Objects\BlockElements;
+namespace Slack\Laravel\Objects\BlockElements;
 
-use Slack\Objects\BlockElements\Concerns;
-use Slack\Objects\CompositionObjects\ConfirmationDialog;
-use Slack\Objects\CompositionObjects\Option;
+use Slack\Laravel\Objects\BlockElements\Concerns;
+use Slack\Laravel\Objects\CompositionObjects\ConfirmationDialog;
+use Slack\Laravel\Objects\CompositionObjects\Option;
 
 /**
  * A radio button group that allows a user to choose one item from a
  * list of possible options.
  * @link(https://api.slack.com/reference/block-kit/block-elements#radio, more)
  *
- * @package Slack\Objects\BlockElements
+ * @package Slack\Laravel\Objects\BlockElements
  */
 class RadioButtonGroup extends InteractiveBlockElement
 {
@@ -24,8 +24,8 @@ class RadioButtonGroup extends InteractiveBlockElement
      *
      * @param string $action_id
      * @param array $options
-     * @param \Slack\Objects\CompositionObjects\Option|null $initial
-     * @param \Slack\Objects\CompositionObjects\ConfirmationDialog|null $confirm
+     * @param \Slack\Laravel\Objects\CompositionObjects\Option|null $initial
+     * @param \Slack\Laravel\Objects\CompositionObjects\ConfirmationDialog|null $confirm
      */
     public function __construct(string $action_id,
                                 array $options = [],

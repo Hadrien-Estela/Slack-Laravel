@@ -12,7 +12,7 @@
         <img alt="badge-version" src="https://img.shields.io/badge/version-1.2.4-b51993">
     </a>
     <a href="https://www.php.net/releases/7_3_0.php">
-        <img alt="badge-php" src="https://img.shields.io/badge/php->= 7.3-informational">
+        <img alt="badge-php" src="https://img.shields.io/badge/php->= 8.0-informational">
     </a>
     <a href="https://laravel.com">
         <img alt="badge-laravel" src="https://img.shields.io/badge/Laravel->= 8.0-informational">
@@ -37,3 +37,15 @@
 
 * [Manual](https://gitlab.virtuosereality.com/virtuose-reality/slack-laravel/-/wikis/home)
 * [Documentation](https://virtuose-reality.gitlab-pages.virtuosereality.com/slack-laravel/api/index.xhtml)
+
+
+## Development
+
+* [Laravel Package Documentation](https://laravel.com/docs/8.x/packages)
+* [Laravel Package Development](https://laravelpackage.com/)
+
+
+### Tests
+
+- composer test-unit
+- composer test-feature

@@ -1,15 +1,10 @@
 <?php
 
-namespace Slack\Console\Commands;
+namespace Slack\Laravel\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Input\InputOption;
 
-/**
- * Class SlackViewMakeCommand
- *
- * @package Slack\Console\Commands
- */
 class SlackViewMakeCommand extends GeneratorCommand
 {
     /**
@@ -40,7 +35,7 @@ class SlackViewMakeCommand extends GeneratorCommand
      *
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
-    public function handle()
+    public function handle() : bool|null
     {
         if (!$this->option('modal') && !$this->option('home-tab'))
         {
@@ -63,7 +58,7 @@ class SlackViewMakeCommand extends GeneratorCommand
      *
      * @return string
      */
-    protected function getStub()
+    protected function getStub() : string
     {
         return __DIR__.'/stubs/SlackView.stub';
     }
@@ -74,7 +69,7 @@ class SlackViewMakeCommand extends GeneratorCommand
      * @param string $rootNamespace
      * @return string
      */
-    protected function getDefaultNamespace($rootNamespace)
+    protected function getDefaultNamespace($rootNamespace) : string
     {
         if ($this->option('modal'))
             return $rootNamespace.'\Slack\Views\Modals';
@@ -92,7 +87,7 @@ class SlackViewMakeCommand extends GeneratorCommand
      * @return string
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
-    protected function buildClass($name)
+    protected function buildClass($name) : string
     {
         if ($this->option('modal'))
         {
@@ -119,7 +114,7 @@ class SlackViewMakeCommand extends GeneratorCommand
      *
      * @return array
      */
-    protected function getOptions()
+    protected function getOptions() : array
     {
         return [
             ['modal', null, InputOption::VALUE_NONE, 'Set the view as a Modal view'],

@@ -1,6 +1,6 @@
 <?php
 
-namespace Slack\Objects\Blocks;
+namespace Slack\Laravel\Objects\Blocks;
 
 use JsonSerializable;
 
@@ -9,7 +9,7 @@ use JsonSerializable;
  * visually rich and compellingly interactive messages.
  * @link(https://api.slack.com/reference/block-kit/blocks, more)
  *
- * @package Slack\Objects\Blocks
+ * @package Slack\Laravel\Objects\Blocks
  */
 abstract class Block implements JsonSerializable
 {

@@ -1,17 +1,17 @@
 <?php
 
-namespace Slack\Objects\BlockElements;
+namespace Slack\Laravel\Objects\BlockElements;
 
-use Slack\Objects\BlockElements\Concerns;
-use Slack\Objects\CompositionObjects\Text;
-use Slack\Objects\CompositionObjects\ConfirmationDialog;
+use Slack\Laravel\Objects\BlockElements\Concerns;
+use Slack\Laravel\Objects\CompositionObjects\Text;
+use Slack\Laravel\Objects\CompositionObjects\ConfirmationDialog;
 
 /**
  * An interactive component that inserts a button. The button can be a trigger
  * for anything from opening a simple link to starting a complex workflow.
  * @link(https://api.slack.com/reference/block-kit/block-elements#button, more)
  *
- * @package Slack\Objects\BlockElements
+ * @package Slack\Laravel\Objects\BlockElements
  */
 class Button extends InteractiveBlockElement
 {
@@ -22,7 +22,7 @@ class Button extends InteractiveBlockElement
      * A text object that defines the button's text.
      * Max length of 75 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text
      */
     private $text;
 
@@ -56,7 +56,7 @@ class Button extends InteractiveBlockElement
      * @param string $text
      * @param string|null $value
      * @param string|null $url
-     * @param \Slack\Objects\CompositionObjects\ConfirmationDialog|null $confirm
+     * @param \Slack\Laravel\Objects\CompositionObjects\ConfirmationDialog|null $confirm
      */
     public function __construct(string $action_id,
                                 string $text = 'Button',
