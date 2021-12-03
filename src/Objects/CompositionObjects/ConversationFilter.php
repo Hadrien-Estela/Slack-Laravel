@@ -1,6 +1,6 @@
 <?php
 
-namespace Slack\Objects\CompositionObjects;
+namespace Slack\Laravel\Objects\CompositionObjects;
 
 use JsonSerializable;
 
@@ -9,7 +9,7 @@ use JsonSerializable;
  * select menu or conversations multi-select menu.
  * @link(https://api.slack.com/reference/block-kit/composition-objects#filter_conversations, more)
  *
- * @package Slack\Objects\CompositionObjects
+ * @package Slack\Laravel\Objects\CompositionObjects
  */
 class ConversationFilter implements JsonSerializable
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Slack\Objects\BlockElements\Concerns;
+namespace Slack\Laravel\Objects\BlockElements\Concerns;
 
-use Slack\Objects\CompositionObjects\Text;
+use Slack\Laravel\Objects\CompositionObjects\Text;
 
 /**
  * Trait for Block elements with `placeholder` attribute.
  *
- * @package Slack\Objects\BlockElements\Concerns
+ * @package Slack\Laravel\Objects\BlockElements\Concerns
  */
 trait HasPlaceholder
 {
@@ -16,7 +16,7 @@ trait HasPlaceholder
      * A plain_text only text object that defines the placeholder text.
      * Max length of 150 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text|null
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text|null
      */
     private $placeholder;
 

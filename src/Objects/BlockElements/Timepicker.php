@@ -1,17 +1,17 @@
 <?php
 
-namespace Slack\Objects\BlockElements;
+namespace Slack\Laravel\Objects\BlockElements;
 
 use DateTime;
-use Slack\Objects\BlockElements\Concerns;
-use Slack\Objects\CompositionObjects\ConfirmationDialog;
-use Slack\Objects\CompositionObjects\Text;
+use Slack\Laravel\Objects\BlockElements\Concerns;
+use Slack\Laravel\Objects\CompositionObjects\ConfirmationDialog;
+use Slack\Laravel\Objects\CompositionObjects\Text;
 
 /**
  * An element which allows selection of a time of day.
  * @link(https://api.slack.com/reference/block-kit/block-elements#timepicker, more)
  *
- * @package Slack\Objects\BlockElements
+ * @package Slack\Laravel\Objects\BlockElements
  */
 class Timepicker extends InteractiveBlockElement
 {
@@ -35,7 +35,7 @@ class Timepicker extends InteractiveBlockElement
      * @param string $action_id
      * @param string|null $placeholder
      * @param \DateTime|null $initial_time
-     * @param \Slack\Objects\CompositionObjects\ConfirmationDialog|null $confirm
+     * @param \Slack\Laravel\Objects\CompositionObjects\ConfirmationDialog|null $confirm
      */
     public function __construct(string $action_id,
                                 string $placeholder = null,

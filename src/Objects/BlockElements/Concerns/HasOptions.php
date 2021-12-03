@@ -1,14 +1,14 @@
 <?php
 
-namespace Slack\Objects\BlockElements\Concerns;
+namespace Slack\Laravel\Objects\BlockElements\Concerns;
 
-use Slack\Objects\CompositionObjects\Option;
-use Slack\Objects\CompositionObjects\OptionGroup;
+use Slack\Laravel\Objects\CompositionObjects\Option;
+use Slack\Laravel\Objects\CompositionObjects\OptionGroup;
 
 /**
  * Trait for Block elements with `options` attribute.
  *
- * @package Slack\Objects\BlockElements\Concerns
+ * @package Slack\Laravel\Objects\BlockElements\Concerns
  */
 trait HasOptions
 {
@@ -16,14 +16,14 @@ trait HasOptions
     /**
      * An array of option.
      *
-     * @var \Slack\Objects\CompositionObjects\Option[]
+     * @var \Slack\Laravel\Objects\CompositionObjects\Option[]
      */
     private $options = [];
 
     /**
      * An option object that exactly matches one of the options within options.
      *
-     * @var \Slack\Objects\CompositionObjects\Option
+     * @var \Slack\Laravel\Objects\CompositionObjects\Option
      */
     private $initial_option;
 
@@ -31,19 +31,19 @@ trait HasOptions
      * An array of option objects that exactly matches one or more of
      * the options within options.
      *
-     * @var \Slack\Objects\CompositionObjects\Option[]
+     * @var \Slack\Laravel\Objects\CompositionObjects\Option[]
      */
     private $initial_options = [];
 
     /**
      * An array of option group objects.
      *
-     * @var \Slack\Objects\CompositionObjects\OptionGroup[]
+     * @var \Slack\Laravel\Objects\CompositionObjects\OptionGroup[]
      */
     private $option_groups = [];
 
     /**
-     * @param \Slack\Objects\CompositionObjects\Option $option
+     * @param \Slack\Laravel\Objects\CompositionObjects\Option $option
      * @param bool $initial
      * @return $this
      */
@@ -61,7 +61,7 @@ trait HasOptions
     /**
      * Add an options group
      *
-     * @param \Slack\Objects\CompositionObjects\OptionGroup $group
+     * @param \Slack\Laravel\Objects\CompositionObjects\OptionGroup $group
      * @param bool $initial
      * @return $this
      */

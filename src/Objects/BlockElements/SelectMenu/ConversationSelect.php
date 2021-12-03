@@ -1,8 +1,8 @@
 <?php
 
-namespace Slack\Objects\BlockElements\SelectMenu;
+namespace Slack\Laravel\Objects\BlockElements\SelectMenu;
 
-use Slack\Objects\CompositionObjects\ConversationFilter;
+use Slack\Laravel\Objects\CompositionObjects\ConversationFilter;
 
 /**
  * This select menu will populate its options with a list of public
@@ -10,7 +10,7 @@ use Slack\Objects\CompositionObjects\ConversationFilter;
  * in the active workspace.
  * @link(https://api.slack.com/reference/block-kit/block-elements#conversation_select, more)
  *
- * @package Slack\Objects\BlockElements\SelectMenu
+ * @package Slack\Laravel\Objects\BlockElements\SelectMenu
  */
 class ConversationSelect extends SelectMenu
 {
@@ -46,7 +46,7 @@ class ConversationSelect extends SelectMenu
      * A filter object that reduces the list of available conversations
      * using the specified criteria.
      *
-     * @var \Slack\Objects\CompositionObjects\ConversationFilter|null
+     * @var \Slack\Laravel\Objects\CompositionObjects\ConversationFilter|null
      */
     private $filter;
 
@@ -55,7 +55,7 @@ class ConversationSelect extends SelectMenu
      *
      * @param string $action_id
      * @param string $placeholder
-     * @param \Slack\Objects\CompositionObjects\ConversationFilter|null $filter
+     * @param \Slack\Laravel\Objects\CompositionObjects\ConversationFilter|null $filter
      * @param string|null $initialConversationID
      * @param bool|null $currentByDefault
      * @param bool|null $responseUrl
@@ -89,7 +89,7 @@ class ConversationSelect extends SelectMenu
     /**
      * Set the conversation filter
      *
-     * @param \Slack\Objects\CompositionObjects\ConversationFilter $filter [description]
+     * @param \Slack\Laravel\Objects\CompositionObjects\ConversationFilter $filter [description]
      * @return $this
      */
     public function filter(ConversationFilter $filter)

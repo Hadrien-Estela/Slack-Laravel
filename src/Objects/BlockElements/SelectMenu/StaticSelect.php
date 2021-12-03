@@ -1,16 +1,16 @@
 <?php
 
-namespace Slack\Objects\BlockElements\SelectMenu;
+namespace Slack\Laravel\Objects\BlockElements\SelectMenu;
 
-use Slack\Objects\BlockElements\Concerns;
-use Slack\Objects\CompositionObjects\Option;
+use Slack\Laravel\Objects\BlockElements\Concerns;
+use Slack\Laravel\Objects\CompositionObjects\Option;
 
 /**
  * This is the simplest form of select menu, with a static list
  * of options passed in when defining the element.
  * @link(https://api.slack.com/reference/block-kit/block-elements#static_select, more)
  *
- * @package Slack\Objects\BlockElements\SelectMenu
+ * @package Slack\Laravel\Objects\BlockElements\SelectMenu
  */
 class StaticSelect extends SelectMenu
 {
@@ -24,7 +24,7 @@ class StaticSelect extends SelectMenu
      * @param string $placeholder
      * @param array $options
      * @param array $groups
-     * @param \Slack\Objects\CompositionObjects\Option|null $initialOption
+     * @param \Slack\Laravel\Objects\CompositionObjects\Option|null $initialOption
      */
     public function __construct(string $action_id,
                                 string $placeholder = 'Select an option',

@@ -1,21 +1,21 @@
 <?php
 
-namespace Slack\Providers;
+namespace Slack\Laravel\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Notifications\ChannelManager;
 
-use Slack\Console\Commands\SlackMessageMakeCommand;
-use Slack\Console\Commands\SlackViewMakeCommand;
-use Slack\Services\Slack;
-use Slack\Notifications\Channels;
+use Slack\Laravel\Console\Commands\SlackMessageMakeCommand;
+use Slack\Laravel\Console\Commands\SlackViewMakeCommand;
+use Slack\Laravel\Services\Slack;
+use Slack\Laravel\Notifications\Channels;
 
 /**
  * Class SlackServiceProvider
  *
- * @package Slack\Providers
+ * @package Slack\Laravel\Providers
  */
 class SlackServiceProvider extends ServiceProvider implements DeferrableProvider
 {
@@ -61,7 +61,7 @@ class SlackServiceProvider extends ServiceProvider implements DeferrableProvider
      */
     public function register()
     {
-        $this->app->singleton('Slack\Services\Slack', function () {
+        $this->app->singleton('Slack\Laravel\Services\Slack', function () {
             return new Slack();
         });
 

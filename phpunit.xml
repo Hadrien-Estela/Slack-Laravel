@@ -9,9 +9,17 @@
          processIsolation="false"
          stopOnFailure="false"
         >
+    <coverage>
+        <include>
+            <directory suffix=".php">src/</directory>
+        </include>
+    </coverage>
     <testsuites>
-        <testsuite name="Slack-Laravel Test Suite">
-            <directory suffix="Test.php">./tests/</directory>
+        <testsuite name="Unit">
+            <directory suffix="Test.php">./tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Feature">
+            <directory suffix="Test.php">./tests/Feature</directory>
         </testsuite>
     </testsuites>
 </phpunit>

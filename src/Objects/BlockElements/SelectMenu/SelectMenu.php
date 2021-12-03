@@ -1,8 +1,8 @@
 <?php
 
-namespace Slack\Objects\BlockElements\SelectMenu;
+namespace Slack\Laravel\Objects\BlockElements\SelectMenu;
 
-use Slack\Objects\BlockElements\Menu;
+use Slack\Laravel\Objects\BlockElements\Menu;
 
 /**
  * A select menu, just as with a standard HTML <select> tag,
@@ -11,7 +11,7 @@ use Slack\Objects\BlockElements\Menu;
  * where a user can type a part or all of an option string to filter the list.
  * @link(https://api.slack.com/reference/block-kit/block-elements#select, more)
  *
- * @package Slack\Objects\BlockElements\SelectMenu
+ * @package Slack\Laravel\Objects\BlockElements\SelectMenu
  */
 abstract class SelectMenu extends Menu
 {

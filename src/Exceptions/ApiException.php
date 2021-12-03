@@ -1,13 +1,13 @@
 <?php
 
-namespace Slack\Exceptions;
+namespace Slack\Laravel\Exceptions;
 
 use Exception;
 
 /**
  * Class ApiException
  *
- * @package Slack\Exceptions
+ * @package Slack\Laravel\Exceptions
  */
 class ApiException extends Exception
 {

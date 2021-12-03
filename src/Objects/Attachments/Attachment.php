@@ -1,15 +1,15 @@
 <?php
 
-namespace Slack\Objects\Attachments;
+namespace Slack\Laravel\Objects\Attachments;
 
 use JsonSerializable;
-use Slack\Objects\Blocks\Block;
+use Slack\Laravel\Objects\Blocks\Block;
 
 /**
  * Secondary content can be attached to messages
  * @link(https://api.slack.com/reference/messaging/attachments, more)
  *
- * @package Slack\Objects\Attachments
+ * @package Slack\Laravel\Objects\Attachments
  */
 class Attachment implements JsonSerializable
 {
@@ -27,7 +27,7 @@ class Attachment implements JsonSerializable
     /**
      * An array of layout blocks
      *
-     * @var \Slack\Objects\Blocks\Block[]
+     * @var \Slack\Laravel\Objects\Blocks\Block[]
      */
     private $blocks = [];
 
@@ -66,7 +66,7 @@ class Attachment implements JsonSerializable
      * An array of field objects that get displayed in a table-like way.
      * For best results, include no more than 2-3 field objects.
      *
-     * @var \Slack\Objects\Attachments\AttachmentField[]
+     * @var \Slack\Laravel\Objects\Attachments\AttachmentField[]
      */
     private $fields = [];
 
@@ -204,7 +204,7 @@ class Attachment implements JsonSerializable
     /**
      * Add block.
      *
-     * @param \Slack\Objects\Blocks\Block $block
+     * @param \Slack\Laravel\Objects\Blocks\Block $block
      * @return $this
      */
     public function block(Block $block)
@@ -264,7 +264,7 @@ class Attachment implements JsonSerializable
     /**
      * Add field.
      *
-     * @param \Slack\Objects\Attachments\AttachmentField $field
+     * @param \Slack\Laravel\Objects\Attachments\AttachmentField $field
      * @return $this
      */
     public function field(AttachmentField $field)

@@ -1,17 +1,17 @@
 <?php
 
-namespace Slack\Objects;
+namespace Slack\Laravel\Objects;
 
 use JsonSerializable;
 use Illuminate\Contracts\Support\Jsonable;
-use Slack\Objects\Blocks\Block;
-use Slack\Objects\Attachments\Attachment;
+use Slack\Laravel\Objects\Blocks\Block;
+use Slack\Laravel\Objects\Attachments\Attachment;
 
 /**
  * Build a serializable message.
  * @link(https://api.slack.com/reference/messaging/payload, more)
  *
- * @package Slack\Objects
+ * @package Slack\Laravel\Objects
  */
 class SlackMessage implements JsonSerializable, Jsonable
 {
@@ -47,14 +47,14 @@ class SlackMessage implements JsonSerializable, Jsonable
     /**
      * An array of layout blocks
      *
-     * @var \Slack\Objects\Blocks\Block[]
+     * @var \Slack\Laravel\Objects\Blocks\Block[]
      */
     private $blocks = [];
 
     /**
      * An array of legacy secondary attachments.
      *
-     * @var \Slack\Objects\Attachments\Attachment[]
+     * @var \Slack\Laravel\Objects\Attachments\Attachment[]
      */
     private $attachments = [];
 
@@ -79,7 +79,7 @@ class SlackMessage implements JsonSerializable, Jsonable
      * @param string $text
      * @param bool|null $markdown
      * @param string|null $channel_id
-     * @param \Slack\Objects\Blocks\Block[] $blocks
+     * @param \Slack\Laravel\Objects\Blocks\Block[] $blocks
      */
     public function __construct(string $text = 'Empty message.',
                                 bool $markdown = null,

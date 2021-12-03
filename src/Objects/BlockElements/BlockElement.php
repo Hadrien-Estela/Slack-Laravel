@@ -1,6 +1,6 @@
 <?php
 
-namespace Slack\Objects\BlockElements;
+namespace Slack\Laravel\Objects\BlockElements;
 
 use JsonSerializable;
 
@@ -8,7 +8,7 @@ use JsonSerializable;
  * Base class for block Elements.
  * @link(https://api.slack.com/reference/block-kit/block-elements, more)
  *
- * @package Slack\Objects\BlockElements
+ * @package Slack\Laravel\Objects\BlockElements
  */
 abstract class BlockElement implements JsonSerializable
 {

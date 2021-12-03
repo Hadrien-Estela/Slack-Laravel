@@ -1,6 +1,6 @@
 <?php
 
-namespace Slack\Objects\CompositionObjects;
+namespace Slack\Laravel\Objects\CompositionObjects;
 
 use JsonSerializable;
 
@@ -9,7 +9,7 @@ use JsonSerializable;
  * a block_actions interaction payload.
  * @link(https://api.slack.com/reference/block-kit/composition-objects#dispatch_action_config, more)
  *
- * @package Slack\Objects\CompositionObjects
+ * @package Slack\Laravel\Objects\CompositionObjects
  */
 class DispatchActionConfig implements JsonSerializable
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Slack\Objects\BlockElements;
+namespace Slack\Laravel\Objects\BlockElements;
 
-use Slack\Objects\BlockElements\Concerns;
-use Slack\Objects\CompositionObjects\Text;
-use Slack\Objects\CompositionObjects\DispatchActionConfig as DispatchActionConfigAlias;
+use Slack\Laravel\Objects\BlockElements\Concerns;
+use Slack\Laravel\Objects\CompositionObjects\Text;
+use Slack\Laravel\Objects\CompositionObjects\DispatchActionConfig as DispatchActionConfigAlias;
 
 /**
  * A plain-text input, similar to the HTML <input> tag,
@@ -12,7 +12,7 @@ use Slack\Objects\CompositionObjects\DispatchActionConfig as DispatchActionConfi
  * It can appear as a single-line field or a larger textarea using the multiline flag.
  * @link(https://api.slack.com/reference/block-kit/block-elements#input, more)
  *
- * @package Slack\Objects\BlockElements
+ * @package Slack\Laravel\Objects\BlockElements
  */
 class TextInput extends InteractiveBlockElement
 {
@@ -68,7 +68,7 @@ class TextInput extends InteractiveBlockElement
      * @param bool|null $multiline
      * @param int|null $minLength
      * @param int|null $maxLength
-     * @param \Slack\Objects\CompositionObjects\DispatchActionConfig|null $dispatchConfig
+     * @param \Slack\Laravel\Objects\CompositionObjects\DispatchActionConfig|null $dispatchConfig
      */
     public function __construct(string $action_id,
                                 string $placeholder = null,
@@ -137,7 +137,7 @@ class TextInput extends InteractiveBlockElement
     /**
      * Set the dispatch config.
      *
-     * @param \Slack\Objects\CompositionObjects\DispatchActionConfig $config
+     * @param \Slack\Laravel\Objects\CompositionObjects\DispatchActionConfig $config
      * @return $this
      */
     public function dispatchConfig(DispatchActionConfigAlias $config)

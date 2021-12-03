@@ -1,6 +1,6 @@
 <?php
 
-namespace Slack\Helpers;
+namespace Slack\Laravel\Helpers;
 
 use Illuminate\Support\Traits\Macroable;
 use Exception;

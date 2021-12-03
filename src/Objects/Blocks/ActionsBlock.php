@@ -1,14 +1,14 @@
 <?php
 
-namespace Slack\Objects\Blocks;
+namespace Slack\Laravel\Objects\Blocks;
 
-use Slack\Objects\BlockElements\InteractiveBlockElement;
+use Slack\Laravel\Objects\BlockElements\InteractiveBlockElement;
 
 /**
  * A block that is used to hold interactive elements.
  * @link(https://api.slack.com/reference/block-kit/blocks#actions, more)
  *
- * @package Slack\Objects\Blocks
+ * @package Slack\Laravel\Objects\Blocks
  */
 class ActionsBlock extends Block
 {
@@ -16,14 +16,14 @@ class ActionsBlock extends Block
     /**
      * An array of interactive element.
      *
-     * @var \Slack\Objects\BlockElements\InteractiveBlockElement[]
+     * @var \Slack\Laravel\Objects\BlockElements\InteractiveBlockElement[]
      */
     private $elements;
 
     /**
      * ActionsBlock constructor.
      *
-     * @param \Slack\Objects\BlockElements\InteractiveBlockElement[] $elements
+     * @param \Slack\Laravel\Objects\BlockElements\InteractiveBlockElement[] $elements
      */
     public function __construct(array $elements = [])
     {
@@ -34,7 +34,7 @@ class ActionsBlock extends Block
     /**
      * Add an interactive element.
      *
-     * @param \Slack\Objects\BlockElements\InteractiveBlockElement $element
+     * @param \Slack\Laravel\Objects\BlockElements\InteractiveBlockElement $element
      * @return $this
      */
     public function element(InteractiveBlockElement $element)

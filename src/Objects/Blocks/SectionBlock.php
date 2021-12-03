@@ -1,9 +1,9 @@
 <?php
 
-namespace Slack\Objects\Blocks;
+namespace Slack\Laravel\Objects\Blocks;
 
-use Slack\Objects\CompositionObjects\Text;
-use Slack\Objects\BlockElements\BlockElement;
+use Slack\Laravel\Objects\CompositionObjects\Text;
+use Slack\Laravel\Objects\BlockElements\BlockElement;
 
 /**
  * A section is one of the most flexible blocks available.
@@ -11,7 +11,7 @@ use Slack\Objects\BlockElements\BlockElement;
  * or side-by-side with any of the available block elements.
  * @link(https://api.slack.com/reference/block-kit/blocks#section, more)
  *
- * @package Slack\Objects\Blocks
+ * @package Slack\Laravel\Objects\Blocks
  */
 class SectionBlock extends Block
 {
@@ -20,7 +20,7 @@ class SectionBlock extends Block
      * The text for the block, in the form of a text object.
      * Max length of 3000 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text
      */
     private $text;
 
@@ -28,14 +28,14 @@ class SectionBlock extends Block
      * An array of text objects.
      * Max length of 2000 characters.
      *
-     * @var \Slack\Objects\CompositionObjects\Text[]
+     * @var \Slack\Laravel\Objects\CompositionObjects\Text[]
      */
     private $fields;
 
     /**
      * One of the available Block elements.
      *
-     * @var \Slack\Objects\BlockElements\BlockElement;
+     * @var \Slack\Laravel\Objects\BlockElements\BlockElement;
      */
     private $accessory;
 
@@ -44,8 +44,8 @@ class SectionBlock extends Block
      *
      * @param string $text
      * @param bool $markdown
-     * @param \Slack\Objects\CompositionObjects\Text[] $fields
-     * @param \Slack\Objects\BlockElements\BlockElement|null $accessory
+     * @param \Slack\Laravel\Objects\CompositionObjects\Text[] $fields
+     * @param \Slack\Laravel\Objects\BlockElements\BlockElement|null $accessory
      */
     public function __construct(string $text = '',
                                 bool $markdown = false,
@@ -75,7 +75,7 @@ class SectionBlock extends Block
     /**
      * Add additional text.
      *
-     * @param \Slack\Objects\CompositionObjects\Text $field
+     * @param \Slack\Laravel\Objects\CompositionObjects\Text $field
      * @return $this
      */
     public function field(Text $field)
@@ -87,7 +87,7 @@ class SectionBlock extends Block
     /**
      * Set Accessory.
      *
-     * @param \Slack\Objects\BlockElements\BlockElement $element
+     * @param \Slack\Laravel\Objects\BlockElements\BlockElement $element
      * @return $this
      */
     public function accessory(BlockElement $element)

@@ -1,6 +1,6 @@
 <?php
 
-namespace Slack\Http\Middleware;
+namespace Slack\Laravel\Http\Middleware;
 
 use Closure;
 use Exception;

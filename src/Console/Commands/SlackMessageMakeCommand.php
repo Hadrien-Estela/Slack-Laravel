@@ -1,14 +1,9 @@
 <?php
 
-namespace Slack\Console\Commands;
+namespace Slack\Laravel\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 
-/**
- * Class SlackMessageMakeCommand
- *
- * @package Slack\Console\Commands
- */
 class SlackMessageMakeCommand extends GeneratorCommand
 {
     /**
@@ -37,7 +32,7 @@ class SlackMessageMakeCommand extends GeneratorCommand
      *
      * @return string
      */
-    protected function getStub()
+    protected function getStub() : string
     {
         return __DIR__.'/stubs/SlackMessage.stub';
     }
@@ -48,7 +43,7 @@ class SlackMessageMakeCommand extends GeneratorCommand
      * @param string $rootNamespace
      * @return string
      */
-    protected function getDefaultNamespace($rootNamespace)
+    protected function getDefaultNamespace($rootNamespace) : string
     {
         return $rootNamespace.'\Slack\Messages';
     }

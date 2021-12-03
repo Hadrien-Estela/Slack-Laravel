@@ -1,6 +1,6 @@
 <?php
 
-namespace Slack\Http\Middleware;
+namespace Slack\Laravel\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 /**
  * Class SlackInteraction
  *
- * @package Slack\Http\Middleware
+ * @package Slack\Laravel\Http\Middleware
  */
 abstract class SlackInteraction
 {
