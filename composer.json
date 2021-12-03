@@ -57,7 +57,7 @@
                 "Slack\\Laravel\\Providers\\SlackServiceProvider"
             ],
             "aliases": {
-                "Slack": "Slack\\Facades\\Slack"
+                "Slack": "Slack\\Laravel\\Facades\\Slack"
             }
         }
     }

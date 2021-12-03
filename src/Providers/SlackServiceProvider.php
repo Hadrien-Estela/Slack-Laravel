@@ -61,7 +61,7 @@ class SlackServiceProvider extends ServiceProvider implements DeferrableProvider
      */
     public function register()
     {
-        $this->app->singleton('Slack\Services\Slack', function () {
+        $this->app->singleton('Slack\Laravel\Services\Slack', function () {
             return new Slack();
         });
 

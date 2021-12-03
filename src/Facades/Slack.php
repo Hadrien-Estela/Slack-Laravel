@@ -32,6 +32,6 @@ class Slack extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'Slack\Services\Slack';
+        return 'Slack\Laravel\Services\Slack';
     }
 }
